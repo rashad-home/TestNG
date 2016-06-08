@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Alfresco Login" duration-ms="134037" started-at="2016-06-08T11:50:47Z" finished-at="2016-06-08T11:53:02Z">
+  <suite name="Alfresco Login" duration-ms="133423" started-at="2016-06-08T11:57:23Z" finished-at="2016-06-08T11:59:37Z">
     <groups>
     </groups>
-    <test name="Test-Login Alfresco" duration-ms="134000" started-at="2016-06-08T11:50:47Z" finished-at="2016-06-08T11:53:01Z">
+    <test name="Test-Login Alfresco" duration-ms="133319" started-at="2016-06-08T11:57:23Z" finished-at="2016-06-08T11:59:37Z">
       <class name="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="beforeClass" is-config="true" duration-ms="14" started-at="2016-06-08T17:20:47Z" finished-at="2016-06-08T17:20:47Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="beforeClass" is-config="true" duration-ms="14" started-at="2016-06-08T17:27:23Z" finished-at="2016-06-08T17:27:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="beforemethod" is-config="true" duration-ms="1983" started-at="2016-06-08T17:20:47Z" finished-at="2016-06-08T17:20:49Z">
+        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="beforemethod" is-config="true" duration-ms="1868" started-at="2016-06-08T17:27:23Z" finished-at="2016-06-08T17:27:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="createUser" duration-ms="49314" started-at="2016-06-08T17:20:49Z" data-provider="getData" finished-at="2016-06-08T17:21:39Z">
+        <test-method status="PASS" signature="createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="createUser" duration-ms="48635" started-at="2016-06-08T17:27:25Z" data-provider="getData" finished-at="2016-06-08T17:28:14Z">
           <params>
             <param index="0">
               <value>
@@ -56,15 +56,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser -->
-        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="clod" is-config="true" duration-ms="79" started-at="2016-06-08T17:21:39Z" finished-at="2016-06-08T17:21:39Z">
+        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="clod" is-config="true" duration-ms="74" started-at="2016-06-08T17:28:14Z" finished-at="2016-06-08T17:28:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clod -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="beforemethod" is-config="true" duration-ms="1511" started-at="2016-06-08T17:21:39Z" finished-at="2016-06-08T17:21:40Z">
+        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="beforemethod" is-config="true" duration-ms="1457" started-at="2016-06-08T17:28:14Z" finished-at="2016-06-08T17:28:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="loginANDlogout(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="loginANDlogout" duration-ms="21118" started-at="2016-06-08T17:21:40Z" data-provider="getData" finished-at="2016-06-08T17:22:02Z">
+        <test-method status="PASS" signature="loginANDlogout(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="loginANDlogout" duration-ms="21786" started-at="2016-06-08T17:28:15Z" data-provider="getData" finished-at="2016-06-08T17:28:37Z">
           <params>
             <param index="0">
               <value>
@@ -90,15 +90,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginANDlogout -->
-        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="clod" is-config="true" duration-ms="77" started-at="2016-06-08T17:22:02Z" finished-at="2016-06-08T17:22:02Z">
+        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="clod" is-config="true" duration-ms="71" started-at="2016-06-08T17:28:37Z" finished-at="2016-06-08T17:28:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clod -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="beforemethod" is-config="true" duration-ms="1502" started-at="2016-06-08T17:22:02Z" finished-at="2016-06-08T17:22:03Z">
+        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="beforemethod" is-config="true" duration-ms="1450" started-at="2016-06-08T17:28:37Z" finished-at="2016-06-08T17:28:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="deleteUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="deleteUser" duration-ms="58293" started-at="2016-06-08T17:22:03Z" data-provider="getData" finished-at="2016-06-08T17:23:01Z">
+        <test-method status="PASS" signature="deleteUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="deleteUser" duration-ms="57845" started-at="2016-06-08T17:28:39Z" data-provider="getData" finished-at="2016-06-08T17:29:37Z">
           <params>
             <param index="0">
               <value>
@@ -124,19 +124,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteUser -->
-        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="clod" is-config="true" duration-ms="78" started-at="2016-06-08T17:23:01Z" finished-at="2016-06-08T17:23:01Z">
+        <test-method status="PASS" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="clod" is-config="true" duration-ms="85" started-at="2016-06-08T17:29:37Z" finished-at="2016-06-08T17:29:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clod -->
-        <test-method status="PASS" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@7ec7ffd3]" name="extent" is-config="true" duration-ms="21" started-at="2016-06-08T17:23:01Z" finished-at="2016-06-08T17:23:01Z">
+        <test-method status="PASS" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome@6572421]" name="extent" is-config="true" duration-ms="21" started-at="2016-06-08T17:29:37Z" finished-at="2016-06-08T17:29:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extent -->
       </class> <!-- com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome -->
     </test> <!-- Test-Login Alfresco -->
-    <test name="Email Report" duration-ms="0" started-at="2016-06-08T11:53:02Z" finished-at="2016-06-08T11:53:02Z">
+    <test name="Email Report" duration-ms="0" started-at="2016-06-08T11:59:37Z" finished-at="2016-06-08T11:59:37Z">
       <class name="com.zaizi.automation.email.sendEmailReport">
-        <test-method status="PASS" signature="aftersuite()[pri:0, instance:com.zaizi.automation.email.sendEmailReport@2b662a77]" name="aftersuite" is-config="true" duration-ms="19924" started-at="2016-06-08T17:23:02Z" finished-at="2016-06-08T17:23:21Z">
+        <test-method status="PASS" signature="aftersuite()[pri:0, instance:com.zaizi.automation.email.sendEmailReport@5c33f1a9]" name="aftersuite" is-config="true" duration-ms="18038" started-at="2016-06-08T17:29:37Z" finished-at="2016-06-08T17:29:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->

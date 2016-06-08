@@ -38,7 +38,7 @@
 	<DriverType>SeleniumGrid</DriverType>	
 	<NodeURLChrome>http://192.168.1.55:5566/wd/hub</NodeURLChrome>	
 	<NodeURLIE>http://192.168.1.22:5567/wd/hub</NodeURLIE>
-	<NodeURLFF>http://192.168.1.55:5555/wd/hub</NodeURLFF>
+	<NodeURLFF>http://192.168.1.70:5555/wd/hub</NodeURLFF>
 	<ChromeDriverPath>/Users/mrashad/Downloads/chromedriver/</ChromeDriverPath>
 	<ReportPathCHROME>./Reports/testNGChrome/</ReportPathCHROME>
 	<ReportPathFF>./Reports/testNGFF/</ReportPathFF>

@@ -1,32 +1,37 @@
 package com.zaizi.automation.email;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
 import org.testng.annotations.AfterSuite;
+
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
+
 public class sendEmailReport {
-    
-    @AfterSuite
-    public  void aftersuite() throws IOException
-    {
-        /*AppZip appZip = new AppZip();
-        appZip.generateFileList(new File(TestCaseProperties.SOURCE_FOLDER));
-        appZip.zipIt(TestCaseProperties.OUTPUT_ZIP_FILE);*/
-        
-        String dirpath = TestCaseProperties.SOURCE_FOLDER;
-        String ZipName = TestCaseProperties.OUTPUT_ZIP_FILE;
-        ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(ZipName));
-        zipdirectory(dirpath,zos); 
-        zos.close(); 
-    
-        emailReport a=new emailReport();
-        a.sendEmail2();
-    }
-    
-    public static void zipdirectory(String dirpath, ZipOutputStream zos) throws IOException
+	
+	@AfterSuite
+	public  void aftersuite() throws IOException
+	{
+		/*AppZip appZip = new AppZip();
+		appZip.generateFileList(new File(TestCaseProperties.SOURCE_FOLDER));
+		appZip.zipIt(TestCaseProperties.OUTPUT_ZIP_FILE);*/
+		
+		String dirpath = TestCaseProperties.SOURCE_FOLDER;
+		String ZipName = TestCaseProperties.OUTPUT_ZIP_FILE;
+		ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(ZipName));
+		zipdirectory(dirpath,zos); 
+		zos.close(); 
+	
+		emailReport a=new emailReport();
+		a.sendEmail2();
+	}
+
+	
+	public static void zipdirectory(String dirpath, ZipOutputStream zos) throws IOException
     {
 File f = new File(dirpath);
 String[] flist = f.list();

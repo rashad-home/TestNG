@@ -282,7 +282,7 @@ static ExtentReports extent;
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	/*@Parameters({"fullNameFF","screenShotNameFF" })*/
+	/*@Parameters({"fullNameFF","screenShotNameFF" })
 	@Test(dataProvider="getData",retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2)
     public void loginANDlogout(String fullName,String screenShotName) throws InterruptedException, IOException
     {
@@ -399,13 +399,13 @@ static ExtentReports extent;
 		
     }
 	
-	/**
+	*//**
      * deleteUser test case
      * 
      * @throws InterruptedException
 	 * @throws IOException 
-     */
-	/*@Parameters({"firstNameFF", "lastNameFF","screenShotNameFF" })*/
+     *//*
+	@Parameters({"firstNameFF", "lastNameFF","screenShotNameFF" })
 	@Test(dataProvider="getData",retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
     public void deleteUser(String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
@@ -516,7 +516,7 @@ static ExtentReports extent;
                 extent.endTest(test);
 		
 		
-    }
+    }*/
 
 	@DataProvider(name = "getData")
     public Object[][] provideData(Method method) {
