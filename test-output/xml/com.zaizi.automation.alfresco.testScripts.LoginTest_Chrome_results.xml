@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test-Login Alfresco"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="210.210">
+  <properties />
+  
+  
+            <testcase name="loginANDlogout" time="25.458" classname="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome" />
+                <testcase name="createUser" time="84.050" classname="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome" />
+                <testcase name="deleteUser" time="100.702" classname="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome" />
+      
+</testsuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test-UserGroup test Alfresco"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="149.122">
+  <properties />
+  
+  
+            <testcase name="EditGroup" time="40.462" classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" />
+                <testcase name="createGroup" time="43.325" classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" />
+                <testcase name="removeGroup" time="65.335" classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" />
+      
+</testsuite>

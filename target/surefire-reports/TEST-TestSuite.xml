@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="39" failures="6" name="TestSuite" time="892.707" errors="0" skipped="24">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.51-b03"/>
+    <property name="user.country.format" value="LK"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/mketheeswaran/Downloads/TestNG"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/mketheeswaran/Downloads/TestNG"/>
+    <property name="java.runtime.version" value="1.8.0_51-b16"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/rd/hpcwt8314m15ys9lsn7d_26r00010h/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.3.9/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/mketheeswaran/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.11.4"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/mketheeswaran"/>
+    <property name="user.timezone" value="Asia/Colombo"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="mketheeswaran"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.3.9/libexec/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -DsuiteFile=testng.xml"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_51"/>
+    <property name="java.ext.dirs" value="/Users/mketheeswaran/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.3.9/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="suiteFile" value="testng.xml"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="beforemethod" time="21.006">
+    <failure message="Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+
+Command duration or timeout: 78.88 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+Command duration or timeout: 78.88 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+	at com.zaizi.automation.alfresco.testScripts.UserTest_FF.beforemethod(UserTest_FF.java:94)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</failure>
+    <system-out>...
+... TestNG 6.8beta 20120825_1010 by C�dric Beust (cedric@beust.com)
+...
+
+17:44:59.519 [main] INFO  - Testcases Started
+17:44:59.673 [main] INFO  - Testcases Started
+17:44:59.730 [main] INFO  - Testcases Started
+17:45:15.989 [pool-3-thread-3] INFO  - Executing Test :  Create User in IE testIE ...
+17:45:15.990 [pool-3-thread-3] INFO  - Test case createUser started executing
+17:45:15.990 [pool-3-thread-3] INFO  - Accessing the Login Page
+17:45:15.990 [pool-3-thread-3] INFO  - Login as &quot;Admin&quot;
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:45:27.086 [pool-3-thread-3] INFO  - Enter username as admin
+17:45:27.272 [pool-3-thread-3] INFO  - Enter username as admin
+17:45:48.457 [pool-3-thread-3] INFO  - Create new user : &quot; testIE &quot;
+17:45:48.458 [pool-3-thread-3] INFO  - Accessing the AdminTool Page
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:45:49.653 [pool-3-thread-3] INFO  - Click  &quot;AdminTools&quot; 
+17:46:08.973 [pool-3-thread-2] INFO  - Executing Test :  Create User in Chrome testChrome ...
+17:46:08.977 [pool-3-thread-2] INFO  - Test case createUser started executing
+17:46:08.977 [pool-3-thread-2] INFO  - Accessing the Login Page
+17:46:08.977 [pool-3-thread-2] INFO  - Login as &quot;Admin&quot;
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:46:11.361 [pool-3-thread-3] INFO  - Navigate &quot;Users&quot; IN AdminTools
+17:46:12.730 [pool-3-thread-2] INFO  - Enter username as admin
+17:46:15.504 [pool-3-thread-2] INFO  - Enter username as admin
+17:46:16.207 [pool-3-thread-3] INFO  - Click &quot;New User&quot;
+17:46:19.213 [pool-3-thread-3] INFO  - Fill the userfields
+17:46:21.587 [pool-3-thread-3] INFO  - Enter FirstName: test
+17:46:22.183 [pool-3-thread-3] INFO  - Enter lastName: test
+17:46:22.752 [pool-3-thread-3] INFO  - Enter Email: test@gmail.com
+17:46:23.467 [pool-3-thread-3] INFO  - Enter UserName : testIE
+17:46:24.182 [pool-3-thread-3] INFO  - Enter password: user@123
+17:46:24.977 [pool-3-thread-3] INFO  - Enter Verify password: user@123
+17:46:25.338 [pool-3-thread-3] INFO  - Click &quot;Create User&quot;
+</system-out>
+    <system-err>java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.TestNGClassFinder.isTestNGClass(TestNGClassFinder.java:223)
+	at org.testng.internal.TestNGClassFinder.&lt;init&gt;(TestNGClassFinder.java:107)
+	at org.testng.TestRunner.initMethods(TestRunner.java:409)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.IERetryAnalyzer.&lt;init&gt;(IERetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.FFRetryAnalyzer.&lt;init&gt;(FFRetryAnalyzer.java:18)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+java.text.ParseException: Unparseable date: &quot;&quot;
+	at java.text.DateFormat.parse(DateFormat.java:366)
+	at com.relevantcodes.extentreports.utils.DateTimeUtil.getDate(DateTimeUtil.java:22)
+	at com.relevantcodes.extentreports.converters.TestConverter.createTestList(TestConverter.java:94)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:91)
+	at com.relevantcodes.extentreports.ExtentReports.&lt;init&gt;(ExtentReports.java:373)
+	at com.zaizi.automation.extentReports.ExtentManagerRetry.getReporter(ExtentManagerRetry.java:18)
+	at com.zaizi.automation.listeners.ChromeRetryAnalyzer.&lt;init&gt;(ChromeRetryAnalyzer.java:21)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at java.lang.Class.newInstance(Class.java:442)
+	at org.testng.internal.annotations.TestAnnotation.setRetryAnalyzer(TestAnnotation.java:180)
+	at org.testng.internal.annotations.JDK15TagFactory.createTestTag(JDK15TagFactory.java:412)
+	at org.testng.internal.annotations.JDK15TagFactory.createTag(JDK15TagFactory.java:72)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:187)
+	at org.testng.internal.annotations.JDK15AnnotationFinder.findAnnotation(JDK15AnnotationFinder.java:100)
+	at org.testng.internal.annotations.AnnotationHelper.isAnnotationPresent(AnnotationHelper.java:292)
+	at org.testng.internal.annotations.AnnotationHelper.findMethodsWithAnnotation(AnnotationHelper.java:216)
+	at org.testng.internal.TestNGMethodFinder.getTestMethods(TestNGMethodFinder.java:49)
+	at org.testng.TestClass.initMethods(TestClass.java:123)
+	at org.testng.TestClass.init(TestClass.java:86)
+	at org.testng.TestClass.&lt;init&gt;(TestClass.java:45)
+	at org.testng.TestRunner.initMethods(TestRunner.java:427)
+	at org.testng.TestRunner.init(TestRunner.java:235)
+	at org.testng.TestRunner.init(TestRunner.java:205)
+	at org.testng.TestRunner.&lt;init&gt;(TestRunner.java:153)
+	at org.testng.SuiteRunner$DefaultTestRunnerFactory.newTestRunner(SuiteRunner.java:522)
+	at org.testng.SuiteRunner.init(SuiteRunner.java:157)
+	at org.testng.SuiteRunner.&lt;init&gt;(SuiteRunner.java:111)
+	at org.testng.TestNG.createSuiteRunner(TestNG.java:1273)
+	at org.testng.TestNG.createSuiteRunners(TestNG.java:1260)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</system-err>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="createUser" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="clod" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="beforemethod" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="EditUser" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="clod" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="beforemethod" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="deleteUser" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_FF" name="clod" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" name="createUser" time="85.343"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_IE" name="createUser" time="89.756"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" name="EditUser" time="40.486"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_IE" name="EditUser" time="4.534"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" name="deleteUser" time="89.613"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_IE" name="deleteUser" time="144.89"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" name="extent" time="145.713">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+	at com.zaizi.automation.alfresco.testScripts.UserTest_FF.extent(UserTest_FF.java:513)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</failure>
+    <system-out>17:51:37.857 [main] INFO  - Test case closed
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:51:37.894 [main] INFO  - Test case closed
+</system-out>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="beforemethod" time="31.387">
+    <failure message="Unable to bind to locking port 7054 within 45000 ms
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;mathuja-PC&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: driver.version: FirefoxDriver
+Command duration or timeout: 46.89 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Unable to bind to locking port 7054 within 45000 ms
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;mathuja-PC&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: driver.version: FirefoxDriver
+Command duration or timeout: 46.89 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF.beforemethod(UserGroupTest_FF.java:94)
+Caused by: org.openqa.selenium.WebDriverException: Unable to bind to locking port 7054 within 45000 ms
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;mathuja-PC&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: driver.version: FirefoxDriver
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.internal.SocketLock.lock(SocketLock.java:99)
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:80)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</failure>
+    <system-out>17:51:37.898 [main] INFO  - Test case closed
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:51:38.121 [main] INFO  - Testcases Started
+17:51:38.124 [main] INFO  - Testcases Started
+17:51:38.127 [main] INFO  - Testcases Started
+17:51:53.654 [pool-4-thread-2] INFO  - Executing Test :  Create Group called&quot; GroupChrome &quot; ...
+17:51:53.655 [pool-4-thread-2] INFO  - Test case create Group started executing
+17:51:53.657 [pool-4-thread-2] INFO  - Accessing the Login Page
+17:51:53.657 [pool-4-thread-2] INFO  - Login as ADMIN
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:51:55.405 [pool-4-thread-2] INFO  - Enter username as admin
+17:51:55.718 [pool-4-thread-2] INFO  - Enter username as admin
+17:52:09.337 [pool-4-thread-2] INFO  - Create Group
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:52:17.389 [pool-4-thread-2] INFO  - Click &quot;Browse&quot; Button
+17:52:22.000 [pool-4-thread-2] INFO  - Click &quot;+&quot; ,to create Group
+17:52:24.233 [pool-4-thread-2] INFO  - Enter the groupID as GroupChromeID
+</system-out>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="createGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="close" time="0.003">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="beforemethod" time="0.004">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="EditGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="close" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="beforemethod" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="removeGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF" name="close" time="0.002">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="beforemethod" time="0.644">
+    <failure message="Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+se,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;bootstrap&quot;:true,&quot;skinnable&quot;:false,&quot;size&quot;:4185303,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:false,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0a1&quot;,&quot;maxVersion&quot;:&quot;46.*&quot;},{&quot;id&quot;:&quot;xpcshell@tests.mozilla.org&quot;,&quot;minVersion&quot;:&quot;0&quot;,&quot;maxVersion&quot;:&quot;10&quot;}],&quot;targetPlatforms&quot;:[],&quot;multiprocessCompatible&quot;:false,&quot;seen&quot;:true}
+1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1464778890483	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;syncGUID&quot;:&quot;50MQZzg2IF-d&quot;,&quot;location&quot;:&quot;app-global&quot;,&quot;version&quot;:&quot;46.0.1&quot;,&quot;type&quot;:&quot;theme&quot;,&quot;internalName&quot;:&quot;classic/1.0&quot;,&quot;updateURL&quot;:null,&quot;updateKey&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;aboutURL&quot;:null,&quot;icons&quot;:{&quot;32&quot;:&quot;icon.png&quot;,&quot;48&quot;:&quot;icon.png&quot;},&quot;iconURL&quot;:null,&quot;icon64URL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Default&quot;,&quot;description&quot;:&quot;The default theme.&quot;,&quot;creator&quot;:&quot;Mozilla&quot;,&quot;homepageURL&quot;:null,&quot;contributors&quot;:[&quot;Mozilla Contributors&quot;]},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;skinnable&quot;:true,&quot;size&quot;:22012,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0.1&quot;,&quot;maxVersion&quot;:&quot;46.0.1&quot;}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true}
+1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
+1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
+1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
+1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
+1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
+1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1464778890657	addons.manager	DEBUG	Completed startup sequence
+1464778900545	addons.manager	DEBUG	Starting provider: &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Registering shutdown blocker for &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Provider finished startup: &lt;unnamed-provider&gt;
+
+Command duration or timeout: 47.55 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+se,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;bootstrap&quot;:true,&quot;skinnable&quot;:false,&quot;size&quot;:4185303,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:false,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0a1&quot;,&quot;maxVersion&quot;:&quot;46.*&quot;},{&quot;id&quot;:&quot;xpcshell@tests.mozilla.org&quot;,&quot;minVersion&quot;:&quot;0&quot;,&quot;maxVersion&quot;:&quot;10&quot;}],&quot;targetPlatforms&quot;:[],&quot;multiprocessCompatible&quot;:false,&quot;seen&quot;:true}
+1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1464778890483	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;syncGUID&quot;:&quot;50MQZzg2IF-d&quot;,&quot;location&quot;:&quot;app-global&quot;,&quot;version&quot;:&quot;46.0.1&quot;,&quot;type&quot;:&quot;theme&quot;,&quot;internalName&quot;:&quot;classic/1.0&quot;,&quot;updateURL&quot;:null,&quot;updateKey&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;aboutURL&quot;:null,&quot;icons&quot;:{&quot;32&quot;:&quot;icon.png&quot;,&quot;48&quot;:&quot;icon.png&quot;},&quot;iconURL&quot;:null,&quot;icon64URL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Default&quot;,&quot;description&quot;:&quot;The default theme.&quot;,&quot;creator&quot;:&quot;Mozilla&quot;,&quot;homepageURL&quot;:null,&quot;contributors&quot;:[&quot;Mozilla Contributors&quot;]},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;skinnable&quot;:true,&quot;size&quot;:22012,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0.1&quot;,&quot;maxVersion&quot;:&quot;46.0.1&quot;}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true}
+1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
+1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
+1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
+1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
+1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
+1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1464778890657	addons.manager	DEBUG	Completed startup sequence
+1464778900545	addons.manager	DEBUG	Starting provider: &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Registering shutdown blocker for &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Provider finished startup: &lt;unnamed-provider&gt;
+Command duration or timeout: 47.55 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.beforemethod(UserGroupTest_IE.java:94)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+se,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;bootstrap&quot;:true,&quot;skinnable&quot;:false,&quot;size&quot;:4185303,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:false,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0a1&quot;,&quot;maxVersion&quot;:&quot;46.*&quot;},{&quot;id&quot;:&quot;xpcshell@tests.mozilla.org&quot;,&quot;minVersion&quot;:&quot;0&quot;,&quot;maxVersion&quot;:&quot;10&quot;}],&quot;targetPlatforms&quot;:[],&quot;multiprocessCompatible&quot;:false,&quot;seen&quot;:true}
+1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1464778890483	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;syncGUID&quot;:&quot;50MQZzg2IF-d&quot;,&quot;location&quot;:&quot;app-global&quot;,&quot;version&quot;:&quot;46.0.1&quot;,&quot;type&quot;:&quot;theme&quot;,&quot;internalName&quot;:&quot;classic/1.0&quot;,&quot;updateURL&quot;:null,&quot;updateKey&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;aboutURL&quot;:null,&quot;icons&quot;:{&quot;32&quot;:&quot;icon.png&quot;,&quot;48&quot;:&quot;icon.png&quot;},&quot;iconURL&quot;:null,&quot;icon64URL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Default&quot;,&quot;description&quot;:&quot;The default theme.&quot;,&quot;creator&quot;:&quot;Mozilla&quot;,&quot;homepageURL&quot;:null,&quot;contributors&quot;:[&quot;Mozilla Contributors&quot;]},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;skinnable&quot;:true,&quot;size&quot;:22012,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0.1&quot;,&quot;maxVersion&quot;:&quot;46.0.1&quot;}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true}
+1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
+1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
+1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
+1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
+1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
+1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1464778890657	addons.manager	DEBUG	Completed startup sequence
+1464778900545	addons.manager	DEBUG	Starting provider: &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Registering shutdown blocker for &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Provider finished startup: &lt;unnamed-provider&gt;
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver
+	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
+	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+	at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+</failure>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="createGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="close" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="beforemethod" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="EditGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="close" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="beforemethod" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="removeGroup" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE" name="close" time="0">
+    <skipped/>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" name="createGroup" time="21.347"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" name="EditGroup" time="47.347"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" name="removeGroup" time="55.96"/>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" name="extent" time="57.332">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF.extent(UserGroupTest_FF.java:532)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</failure>
+    <system-out>17:54:46.444 [main] INFO  - Test case closed
+DEBUG   14652   [freemark] (): Couldn&apos;t find template in cache for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed); will try to load it.
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en_US.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent_en.ftl&quot;): Not found
+DEBUG   14652   [freemark] (): TemplateLoader.findTemplateSource(&quot;Extent.ftl&quot;): Found
+DEBUG   14652   [freemark] (): Loading template for &quot;Extent.ftl&quot;(&quot;en_US&quot;, UTF-8, parsed) from &quot;jar:file:/Users/mketheeswaran/.m2/repository/com/relevantcodes/extentreports/2.41.0/extentreports-2.41.0.jar!/com/relevantcodes/extentreports/view/Extent.ftl&quot;
+17:54:46.467 [main] INFO  - Test case closed
+</system-out>
+  </testcase>
+  <testcase classname="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome" name="extent" time="57.333">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.extent(UserGroupTest_IE.java:531)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</failure>
+    <system-out>17:54:46.469 [main] INFO  - Test case closed
+</system-out>
+  </testcase>
+</testsuite>

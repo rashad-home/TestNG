@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Test-User test Alfresco</td><td class="numi">6</td><td class="numi">6</td><td class="numi_attn">3</td><td class="numi">0</td><td class="numi">398.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="stripe"><td style="text-align:left;padding-right:2em">Test-UserGroup test Alfresco</td><td class="numi">3</td><td class="numi">3</td><td class="numi_attn">6</td><td class="numi">0</td><td class="numi">188.4 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Email Report</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr class="total"><td>Total</td>
+<td class="numi">9</td><td class="numi">9</td><td class="numi_attn">9</td><td class="numi">0</td><td class="numi">587.3 seconds</td><td colspan="2">&nbsp;</td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Test-User test Alfresco &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="2">com.zaizi.automation.alfresco.testScripts.UserTest_FF</td><td><a href="#m1"><b>beforemethod</b>  </a></td><td class="numi">1</td><td>1465215299840</td><td class="numi">0</td></tr><tr class="failedodd"><td><a href="#m2"><b>extent</b>  </a></td><td class="numi">1</td><td>1465215697894</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Test-User test Alfresco &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="2">com.zaizi.automation.alfresco.testScripts.UserTest_FF</td><td><a href="#m3"><b>beforemethod</b>  </a></td><td class="numi">2</td><td>1465215389964</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m4"><b>clod</b>  </a></td><td class="numi">3</td><td>1465215389961</td><td class="numi">5</td></tr>
+<tr><th colspan="4">Test-User test Alfresco &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="3">com.zaizi.automation.alfresco.testScripts.UserTest_FF</td><td><a href="#m5"><b>createUser</b>  </a></td><td class="numi">1</td><td>1465215389956</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m6"><b>EditUser</b>  </a></td><td class="numi">1</td><td>1465215389964</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m7"><b>deleteUser</b>  </a></td><td class="numi">1</td><td>1465215389966</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Test-User test Alfresco &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserTest_IE</td><td><a href="#m8"><b>createUser</b>  </a></td><td class="numi">1</td><td>1465215315954</td><td class="numi">163813</td></tr>
+<tr class="passedeven"><td rowspan="2">com.zaizi.automation.alfresco.testScripts.UserTest_Chrome</td><td><a href="#m9"><b>createUser</b>  </a></td><td class="numi">1</td><td>1465215368969</td><td class="numi">106384</td></tr><tr class="passedeven"><td><a href="#m10"><b>EditUser</b>  </a></td><td class="numi">1</td><td>1465215483862</td><td class="numi">41473</td></tr>
+<tr class="passedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserTest_IE</td><td><a href="#m11"><b>EditUser</b>  </a></td><td class="numi">1</td><td>1465215484850</td><td class="numi">63339</td></tr>
+<tr class="passedeven"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserTest_Chrome</td><td><a href="#m12"><b>deleteUser</b>  </a></td><td class="numi">1</td><td>1465215543657</td><td class="numi">98139</td></tr>
+<tr class="passedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserTest_IE</td><td><a href="#m13"><b>deleteUser</b>  </a></td><td class="numi">1</td><td>1465215552184</td><td class="numi">144884</td></tr>
+<tr><th colspan="4">Test-UserGroup test Alfresco &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF</td><td><a href="#m14"><b>beforemethod</b>  </a></td><td class="numi">1</td><td>1465215698134</td><td class="numi">0</td></tr>
+<tr class="failedeven"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE</td><td><a href="#m15"><b>beforemethod</b>  </a></td><td class="numi">1</td><td>1465215698136</td><td class="numi">0</td></tr>
+<tr class="failedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF</td><td><a href="#m16"><b>extent</b>  </a></td><td class="numi">1</td><td>1465215886467</td><td class="numi">0</td></tr>
+<tr class="failedeven"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE</td><td><a href="#m17"><b>extent</b>  </a></td><td class="numi">1</td><td>1465215886469</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Test-UserGroup test Alfresco &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF</td><td><a href="#m18"><b>beforemethod</b>  </a></td><td class="numi">2</td><td>1465215745051</td><td class="numi">1</td></tr>
+<tr class="skippedeven"><td rowspan="2">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE</td><td><a href="#m19"><b>beforemethod</b>  </a></td><td class="numi">2</td><td>1465215745697</td><td class="numi">2</td></tr><tr class="skippedeven"><td><a href="#m20"><b>close</b>  </a></td><td class="numi">3</td><td>1465215745696</td><td class="numi">3</td></tr>
+<tr class="skippedodd"><td rowspan="1">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF</td><td><a href="#m21"><b>close</b>  </a></td><td class="numi">3</td><td>1465215745044</td><td class="numi">9</td></tr>
+<tr><th colspan="4">Test-UserGroup test Alfresco &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="3">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF</td><td><a href="#m22"><b>createGroup</b>  </a></td><td class="numi">1</td><td>1465215745039</td><td class="numi">1</td></tr><tr class="skippedodd"><td><a href="#m23"><b>EditGroup</b>  </a></td><td class="numi">1</td><td>1465215745051</td><td class="numi">0</td></tr><tr class="skippedodd"><td><a href="#m24"><b>removeGroup</b>  </a></td><td class="numi">1</td><td>1465215745052</td><td class="numi">0</td></tr>
+<tr class="skippedeven"><td rowspan="3">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE</td><td><a href="#m25"><b>createGroup</b>  </a></td><td class="numi">1</td><td>1465215745695</td><td class="numi">1</td></tr><tr class="skippedeven"><td><a href="#m26"><b>EditGroup</b>  </a></td><td class="numi">1</td><td>1465215745698</td><td class="numi">0</td></tr><tr class="skippedeven"><td><a href="#m27"><b>removeGroup</b>  </a></td><td class="numi">1</td><td>1465215745699</td><td class="numi">0</td></tr>
+<tr><th colspan="4">Test-UserGroup test Alfresco &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="3">com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome</td><td><a href="#m28"><b>createGroup</b>  </a></td><td class="numi">1</td><td>1465215713654</td><td class="numi">53391</td></tr><tr class="passedodd"><td><a href="#m29"><b>EditGroup</b>  </a></td><td class="numi">1</td><td>1465215772752</td><td class="numi">47345</td></tr><tr class="passedodd"><td><a href="#m30"><b>removeGroup</b>  </a></td><td class="numi">1</td><td>1465215829138</td><td class="numi">55956</td></tr>
+</table>
+<h1>Test-User test Alfresco</h1>
+<h2 id="m1">com.zaizi.automation.alfresco.testScripts.UserTest_FF:extent</h2>
+<div style="padding-left:3em">
+<p>null</p>
+com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+<br/>at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserTest_FF.extent(UserTest_FF.java:513)
+<br/>32 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.zaizi.automation.alfresco.testScripts.UserTest_FF:beforemethod</h2>
+<div style="padding-left:3em">
+<p>Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+
+Command duration or timeout: 78.88 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserTest_FF.beforemethod(UserTest_FF.java:94)
+<br/>16 lines not shown
+<p>Caused by Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver</p>
+org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+<br/>at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+<br/>at java.util.concurrent.FutureTask.run(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+<br/>at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+<br/>at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+<br/>at java.lang.Thread.run(Unknown Source)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">com.zaizi.automation.alfresco.testScripts.UserTest_FF:clod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">com.zaizi.automation.alfresco.testScripts.UserTest_FF:clod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">com.zaizi.automation.alfresco.testScripts.UserTest_FF:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">com.zaizi.automation.alfresco.testScripts.UserTest_FF:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">com.zaizi.automation.alfresco.testScripts.UserTest_FF:clod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">com.zaizi.automation.alfresco.testScripts.UserTest_FF:EditUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>testMF</td>
+<td>test</td>
+<td>FFUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">com.zaizi.automation.alfresco.testScripts.UserTest_FF:deleteUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>testMF</td>
+<td>test</td>
+<td>FFUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">com.zaizi.automation.alfresco.testScripts.UserTest_FF:createUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr>
+<tr class="param stripe"><td>test</td>
+<td>test</td>
+<td>test@gmail.com</td>
+<td>test test</td>
+<td>FFUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">com.zaizi.automation.alfresco.testScripts.UserTest_Chrome:EditUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr>
+<tr class="param stripe"><td>testChrome</td>
+<td>user@123</td>
+<td>testM</td>
+<td>test</td>
+<td>ChromeUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">com.zaizi.automation.alfresco.testScripts.UserTest_IE:EditUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr>
+<tr class="param stripe"><td>testIE</td>
+<td>user@123</td>
+<td>testIM</td>
+<td>test</td>
+<td>IEUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">com.zaizi.automation.alfresco.testScripts.UserTest_IE:deleteUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
+<tr class="param stripe"><td>testIE</td>
+<td>testIM</td>
+<td>test</td>
+<td>IEUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">com.zaizi.automation.alfresco.testScripts.UserTest_Chrome:createUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th></tr>
+<tr class="param stripe"><td>test</td>
+<td>test</td>
+<td>test@gmail.com</td>
+<td>testChrome</td>
+<td>user@123</td>
+<td>test test</td>
+<td>ChromeUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">com.zaizi.automation.alfresco.testScripts.UserTest_Chrome:deleteUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr>
+<tr class="param stripe"><td>testChrome</td>
+<td>testM</td>
+<td>test</td>
+<td>ChromeUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">com.zaizi.automation.alfresco.testScripts.UserTest_IE:createUser</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th><th>Parameter #7</th></tr>
+<tr class="param stripe"><td>test</td>
+<td>test</td>
+<td>test@gmail.com</td>
+<td>testIE</td>
+<td>user@123</td>
+<td>test test</td>
+<td>IEUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Test-UserGroup test Alfresco</h1>
+<h2 id="m17">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:extent</h2>
+<div style="padding-left:3em">
+<p>null</p>
+com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+<br/>at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.extent(UserGroupTest_IE.java:531)
+<br/>32 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:beforemethod</h2>
+<div style="padding-left:3em">
+<p>Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+se,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;bootstrap&quot;:true,&quot;skinnable&quot;:false,&quot;size&quot;:4185303,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:false,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0a1&quot;,&quot;maxVersion&quot;:&quot;46.*&quot;},{&quot;id&quot;:&quot;xpcshell@tests.mozilla.org&quot;,&quot;minVersion&quot;:&quot;0&quot;,&quot;maxVersion&quot;:&quot;10&quot;}],&quot;targetPlatforms&quot;:[],&quot;multiprocessCompatible&quot;:false,&quot;seen&quot;:true}
+1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1464778890483	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;syncGUID&quot;:&quot;50MQZzg2IF-d&quot;,&quot;location&quot;:&quot;app-global&quot;,&quot;version&quot;:&quot;46.0.1&quot;,&quot;type&quot;:&quot;theme&quot;,&quot;internalName&quot;:&quot;classic/1.0&quot;,&quot;updateURL&quot;:null,&quot;updateKey&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;aboutURL&quot;:null,&quot;icons&quot;:{&quot;32&quot;:&quot;icon.png&quot;,&quot;48&quot;:&quot;icon.png&quot;},&quot;iconURL&quot;:null,&quot;icon64URL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Default&quot;,&quot;description&quot;:&quot;The default theme.&quot;,&quot;creator&quot;:&quot;Mozilla&quot;,&quot;homepageURL&quot;:null,&quot;contributors&quot;:[&quot;Mozilla Contributors&quot;]},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;skinnable&quot;:true,&quot;size&quot;:22012,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0.1&quot;,&quot;maxVersion&quot;:&quot;46.0.1&quot;}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true}
+1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
+1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
+1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
+1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
+1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
+1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1464778890657	addons.manager	DEBUG	Completed startup sequence
+1464778900545	addons.manager	DEBUG	Starting provider: &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Registering shutdown blocker for &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Provider finished startup: &lt;unnamed-provider&gt;
+
+Command duration or timeout: 47.55 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.beforemethod(UserGroupTest_IE.java:94)
+<br/>16 lines not shown
+<p>Caused by Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
+se,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;bootstrap&quot;:true,&quot;skinnable&quot;:false,&quot;size&quot;:4185303,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:false,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0a1&quot;,&quot;maxVersion&quot;:&quot;46.*&quot;},{&quot;id&quot;:&quot;xpcshell@tests.mozilla.org&quot;,&quot;minVersion&quot;:&quot;0&quot;,&quot;maxVersion&quot;:&quot;10&quot;}],&quot;targetPlatforms&quot;:[],&quot;multiprocessCompatible&quot;:false,&quot;seen&quot;:true}
+1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
+1464778890483	addons.xpi	DEBUG	Updating XPIState for {&quot;id&quot;:&quot;{972ce4c6-7e08-4474-a285-3208198ce6fd}&quot;,&quot;syncGUID&quot;:&quot;50MQZzg2IF-d&quot;,&quot;location&quot;:&quot;app-global&quot;,&quot;version&quot;:&quot;46.0.1&quot;,&quot;type&quot;:&quot;theme&quot;,&quot;internalName&quot;:&quot;classic/1.0&quot;,&quot;updateURL&quot;:null,&quot;updateKey&quot;:null,&quot;optionsURL&quot;:null,&quot;optionsType&quot;:null,&quot;aboutURL&quot;:null,&quot;icons&quot;:{&quot;32&quot;:&quot;icon.png&quot;,&quot;48&quot;:&quot;icon.png&quot;},&quot;iconURL&quot;:null,&quot;icon64URL&quot;:null,&quot;defaultLocale&quot;:{&quot;name&quot;:&quot;Default&quot;,&quot;description&quot;:&quot;The default theme.&quot;,&quot;creator&quot;:&quot;Mozilla&quot;,&quot;homepageURL&quot;:null,&quot;contributors&quot;:[&quot;Mozilla Contributors&quot;]},&quot;visible&quot;:true,&quot;active&quot;:true,&quot;userDisabled&quot;:false,&quot;appDisabled&quot;:false,&quot;descriptor&quot;:&quot;C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi&quot;,&quot;installDate&quot;:1462246394000,&quot;updateDate&quot;:1462246394000,&quot;applyBackgroundUpdates&quot;:1,&quot;skinnable&quot;:true,&quot;size&quot;:22012,&quot;sourceURI&quot;:null,&quot;releaseNotesURI&quot;:null,&quot;softDisabled&quot;:false,&quot;foreignInstall&quot;:false,&quot;hasBinaryComponents&quot;:false,&quot;strictCompatibility&quot;:true,&quot;locales&quot;:[],&quot;targetApplications&quot;:[{&quot;id&quot;:&quot;{ec8030f7-c20a-464f-9b0e-13a3a9e97384}&quot;,&quot;minVersion&quot;:&quot;46.0.1&quot;,&quot;maxVersion&quot;:&quot;46.0.1&quot;}],&quot;targetPlatforms&quot;:[],&quot;seen&quot;:true}
+1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
+1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
+1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
+1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
+1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
+1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
+1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
+1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
+1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
+1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
+1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
+1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
+1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
+1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
+1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
+1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
+1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
+1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
+1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
+1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
+1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
+1464778890657	addons.manager	DEBUG	Completed startup sequence
+1464778900545	addons.manager	DEBUG	Starting provider: &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Registering shutdown blocker for &lt;unnamed-provider&gt;
+1464778900546	addons.manager	DEBUG	Provider finished startup: &lt;unnamed-provider&gt;
+
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver</p>
+org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+<br/>at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+<br/>at java.util.concurrent.FutureTask.run(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+<br/>at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+<br/>at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+<br/>at java.lang.Thread.run(Unknown Source)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:extent</h2>
+<div style="padding-left:3em">
+<p>null</p>
+com.relevantcodes.extentreports.Report.terminate(Report.java:417)
+<br/>at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF.extent(UserGroupTest_FF.java:532)
+<br/>32 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:beforemethod</h2>
+<div style="padding-left:3em">
+<p>Unable to bind to locking port 7054 within 45000 ms
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;mathuja-PC&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: driver.version: FirefoxDriver
+Command duration or timeout: 46.89 seconds
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:158)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
+<br/>at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
+<br/>at com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF.beforemethod(UserGroupTest_FF.java:94)
+<br/>16 lines not shown
+<p>Caused by Unable to bind to locking port 7054 within 45000 ms
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b&apos;, time: &apos;2016-03-15 17:00:58&apos;
+System info: host: &apos;mathuja-PC&apos;, ip: &apos;192.168.1.12&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_91&apos;
+Driver info: driver.version: FirefoxDriver
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
+System info: host: &apos;mathuja.local&apos;, ip: &apos;192.168.1.70&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.11.4&apos;, java.version: &apos;1.8.0_51&apos;
+Driver info: driver.version: FirefoxDriver</p>
+org.openqa.selenium.internal.SocketLock.lock(SocketLock.java:99)
+<br/>at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:80)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:119)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:218)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:211)
+<br/>at org.openqa.selenium.firefox.FirefoxDriver.&lt;init&gt;(FirefoxDriver.java:129)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
+<br/>at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
+<br/>at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
+<br/>at java.util.concurrent.FutureTask.run(Unknown Source)
+<br/>at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
+<br/>at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+<br/>at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+<br/>at java.lang.Thread.run(Unknown Source)
+<br/>1 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m26">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m27">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m28">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:beforemethod</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m29">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m30">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:close</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m31">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:createGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupFF</td>
+<td>GroupFFID</td>
+<td>FFGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m32">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:EditGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupFF</td>
+<td>newGroupFF</td>
+<td>FFGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m33">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:createGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupIE</td>
+<td>GroupIEID</td>
+<td>IEGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m34">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:removeGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>newGroupIE</td>
+<td>IEGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m35">com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE:EditGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupIE</td>
+<td>newGroupIE</td>
+<td>IEGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m36">com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF:removeGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>newGroupFF</td>
+<td>FFGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m37">com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome:EditGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupChrome</td>
+<td>newGroupChrome</td>
+<td>ChromeGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m38">com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome:removeGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>newGroupChrome</td>
+<td>ChromeGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m39">com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome:createGroup</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>GroupChrome</td>
+<td>GroupChromeID</td>
+<td>ChromeGroupUserTest</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h1>Email Report</h1>
+</body></html>

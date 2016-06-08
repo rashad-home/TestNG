@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test-User test Alfresco"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="179.947">
+  <properties />
+  
+  
+            <testcase name="deleteUser" time="74.624" classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" />
+                <testcase name="createUser" time="58.714" classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" />
+                <testcase name="EditUser" time="46.609" classname="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome" />
+      
+</testsuite>
