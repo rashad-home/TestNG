@@ -2,8 +2,8 @@
 
 <suite name="Alfresco Login" verbose="1" parallel="classes" thread-count="80">
  <listeners>
-		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<!-- 	<listener class-name="com.zaizi.testng.rade.RetryListener" /> -->
 		<listener class-name="com.zaizi.automation.listeners.TestListener" />
 		<!--  <listener class-name="com.zaizi.testng.rade.ExtentReporterNG" /> -->
@@ -37,15 +37,15 @@
 			
 		</classes>
 	</test> -->
-	<test name="Test-UserGroup test Alfresco">	
+	<!-- <test name="Test-UserGroup test Alfresco">	
 				
 		<classes>
 			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF"/>
-			<!-- <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome"/>
-			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE"/> -->
+			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE"/>
 			
 		</classes>
-	</test>
+	</test> -->
 	<!-- <test name="Test-Folder creation Alfresco">	
 				
 		<classes>
