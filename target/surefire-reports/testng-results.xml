@@ -1,525 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="9" failed="0" total="18" passed="9">
+<testng-results skipped="3" failed="0" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Alfresco Login" duration-ms="587348" started-at="2016-06-06T12:14:59Z" finished-at="2016-06-06T12:24:46Z">
+  <suite name="Alfresco Login" duration-ms="75960" started-at="2016-06-08T06:33:34Z" finished-at="2016-06-08T06:34:50Z">
     <groups>
     </groups>
-    <test name="Test-User test Alfresco" duration-ms="398674" started-at="2016-06-06T12:14:59Z" finished-at="2016-06-06T12:21:37Z">
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_IE">
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="beforemethod" is-config="true" duration-ms="16114" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:45:15Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="createUser" duration-ms="163813" started-at="2016-06-06T17:45:15Z" data-provider="getData" finished-at="2016-06-06T17:47:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[testIE]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[user@123]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test test]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[IEUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="close" is-config="true" duration-ms="925" started-at="2016-06-06T17:47:59Z" finished-at="2016-06-06T17:48:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="beforemethod" is-config="true" duration-ms="4156" started-at="2016-06-06T17:48:00Z" finished-at="2016-06-06T17:48:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="EditUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="EditUser" duration-ms="63339" started-at="2016-06-06T17:48:04Z" data-provider="getData" finished-at="2016-06-06T17:49:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testIE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[user@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[testIM]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[IEUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="close" is-config="true" duration-ms="780" started-at="2016-06-06T17:49:08Z" finished-at="2016-06-06T17:49:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="beforemethod" is-config="true" duration-ms="3213" started-at="2016-06-06T17:49:08Z" finished-at="2016-06-06T17:49:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="deleteUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="deleteUser" duration-ms="144884" started-at="2016-06-06T17:49:12Z" data-provider="getData" finished-at="2016-06-06T17:51:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testIE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[testIM]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[IEUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="close" is-config="true" duration-ms="783" started-at="2016-06-06T17:51:37Z" finished-at="2016-06-06T17:51:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_IE -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="beforeClass" is-config="true" duration-ms="301" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:44:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="beforeClass" is-config="true" duration-ms="97" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:44:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="beforeClass" is-config="true" duration-ms="58" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:44:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="beforemethod" is-config="true" duration-ms="69128" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:46:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="createUser" duration-ms="106384" started-at="2016-06-06T17:46:08Z" data-provider="getData" finished-at="2016-06-06T17:47:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[testChrome]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[user@123]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[test test]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[ChromeUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="close" is-config="true" duration-ms="807" started-at="2016-06-06T17:47:55Z" finished-at="2016-06-06T17:47:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="beforemethod" is-config="true" duration-ms="7697" started-at="2016-06-06T17:47:56Z" finished-at="2016-06-06T17:48:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="EditUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="EditUser" duration-ms="41473" started-at="2016-06-06T17:48:03Z" data-provider="getData" finished-at="2016-06-06T17:48:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testChrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[user@123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[testM]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[ChromeUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="close" is-config="true" duration-ms="455" started-at="2016-06-06T17:48:45Z" finished-at="2016-06-06T17:48:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="beforemethod" is-config="true" duration-ms="17864" started-at="2016-06-06T17:48:45Z" finished-at="2016-06-06T17:49:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="deleteUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="deleteUser" duration-ms="98139" started-at="2016-06-06T17:49:03Z" data-provider="getData" finished-at="2016-06-06T17:50:41Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testChrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[testM]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[ChromeUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="close" is-config="true" duration-ms="569" started-at="2016-06-06T17:50:41Z" finished-at="2016-06-06T17:50:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_Chrome@3023df74]" name="extent" is-config="true" duration-ms="37" started-at="2016-06-06T17:51:37Z" finished-at="2016-06-06T17:51:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extent -->
-        <test-method status="FAIL" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="extent" is-config="true" duration-ms="0" started-at="2016-06-06T17:51:37Z" finished-at="2016-06-06T17:51:37Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.relevantcodes.extentreports.Report.terminate(Report.java:417)
-	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
-	at com.zaizi.automation.alfresco.testScripts.UserTest_FF.extent(UserTest_FF.java:513)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extent -->
-        <test-method status="PASS" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_IE@a1153bc]" name="extent" is-config="true" duration-ms="49" started-at="2016-06-06T17:51:37Z" finished-at="2016-06-06T17:51:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extent -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_Chrome -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_FF">
-        <test-method status="FAIL" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:44:59Z" finished-at="2016-06-06T17:44:59Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-
-Command duration or timeout: 78.88 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-
-Command duration or timeout: 78.88 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:158)
-	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
-	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
-	at com.zaizi.automation.alfresco.testScripts.UserTest_FF.beforemethod(UserTest_FF.java:94)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: driver.version: FirefoxDriver
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
-	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:119)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:211)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:129)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="createUser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="createUser" duration-ms="1" started-at="2016-06-06T17:46:29Z" data-provider="getData" finished-at="2016-06-06T17:46:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[test@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[test test]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FFUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createUser -->
-        <test-method status="SKIP" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="clod" is-config="true" duration-ms="0" started-at="2016-06-06T17:46:29Z" finished-at="2016-06-06T17:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clod -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:46:29Z" finished-at="2016-06-06T17:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="EditUser(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="EditUser" duration-ms="0" started-at="2016-06-06T17:46:29Z" data-provider="getData" finished-at="2016-06-06T17:46:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testMF]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[FFUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditUser -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:46:29Z" finished-at="2016-06-06T17:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="clod" is-config="true" duration-ms="0" started-at="2016-06-06T17:46:29Z" finished-at="2016-06-06T17:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clod -->
-        <test-method status="SKIP" signature="clod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="clod" is-config="true" duration-ms="0" started-at="2016-06-06T17:46:29Z" finished-at="2016-06-06T17:46:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clod -->
-        <test-method status="SKIP" signature="deleteUser(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserTest_FF@4218d6a3]" name="deleteUser" duration-ms="0" started-at="2016-06-06T17:46:29Z" data-provider="getData" finished-at="2016-06-06T17:46:29Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testMF]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[test]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[FFUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteUser -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_FF -->
-    </test> <!-- Test-User test Alfresco -->
-    <test name="Test-UserGroup test Alfresco" duration-ms="188356" started-at="2016-06-06T12:21:38Z" finished-at="2016-06-06T12:24:46Z">
+    <test name="Test-UserGroup test Alfresco" duration-ms="75945" started-at="2016-06-08T06:33:34Z" finished-at="2016-06-08T06:34:50Z">
       <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF">
-        <test-method status="FAIL" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:38Z">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="beforeClass" is-config="true" duration-ms="12" started-at="2016-06-08T12:03:34Z" finished-at="2016-06-08T12:03:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="FAIL" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-08T12:03:34Z" finished-at="2016-06-08T12:03:34Z">
+          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
-              <![CDATA[Unable to bind to locking port 7054 within 45000 ms
-Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
-System info: host: 'mathuja-PC', ip: '192.168.1.12', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: driver.version: FirefoxDriver
-Command duration or timeout: 46.89 seconds
+              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver]]>
+System info: host: 'Rashad', ip: '192.168.1.55', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.4', java.version: '1.8.0_73'
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Unable to bind to locking port 7054 within 45000 ms
-Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
-System info: host: 'mathuja-PC', ip: '192.168.1.12', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: driver.version: FirefoxDriver
-Command duration or timeout: 46.89 seconds
+              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+System info: host: 'Rashad', ip: '192.168.1.55', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.4', java.version: '1.8.0_73'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:665)
 	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
 	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:158)
@@ -541,41 +46,39 @@ Driver info: org.openqa.selenium.remote.RemoteWebDriver
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.openqa.selenium.WebDriverException: Unable to bind to locking port 7054 within 45000 ms
-Build info: version: '2.53.0', revision: '35ae25b', time: '2016-03-15 17:00:58'
-System info: host: 'mathuja-PC', ip: '192.168.1.12', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_91'
-Driver info: driver.version: FirefoxDriver
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: driver.version: FirefoxDriver
-	at org.openqa.selenium.internal.SocketLock.lock(SocketLock.java:99)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:80)
-	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:119)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:211)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:129)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 192.168.1.12:5555 [/192.168.1.12] failed: Operation timed out
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:151)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:71)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:144)
+	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:90)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:644)
+	... 21 more
+Caused by: java.net.ConnectException: Operation timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:74)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:134)
+	... 34 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="createGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="createGroup" duration-ms="1" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="createGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="createGroup" duration-ms="1" started-at="2016-06-08T12:04:50Z" data-provider="getData" finished-at="2016-06-08T12:04:50Z">
           <params>
             <param index="0">
               <value>
@@ -596,11 +99,15 @@ Driver info: driver.version: FirefoxDriver
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createGroup -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="close" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-        <test-method status="SKIP" signature="EditGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="EditGroup" duration-ms="0" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="close" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method status="SKIP" signature="EditGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="EditGroup" duration-ms="0" started-at="2016-06-08T12:04:50Z" data-provider="getData" finished-at="2016-06-08T12:04:50Z">
           <params>
             <param index="0">
               <value>
@@ -621,15 +128,15 @@ Driver info: driver.version: FirefoxDriver
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EditGroup -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="SKIP" signature="removeGroup(java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="removeGroup" duration-ms="0" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
+        </test-method> <!-- beforemethod -->
+        <test-method status="SKIP" signature="removeGroup(java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="removeGroup" duration-ms="0" started-at="2016-06-08T12:04:50Z" data-provider="getData" finished-at="2016-06-08T12:04:50Z">
           <params>
             <param index="0">
               <value>
@@ -645,115 +152,11 @@ Driver info: driver.version: FirefoxDriver
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeGroup -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
+        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="close" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="beforeClass" is-config="true" duration-ms="7" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="beforeClass" is-config="true" duration-ms="3" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="beforeClass" is-config="true" duration-ms="3" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="beforemethod" is-config="true" duration-ms="15520" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="createGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="createGroup" duration-ms="53391" started-at="2016-06-06T17:51:53Z" data-provider="getData" finished-at="2016-06-06T17:52:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupChrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[GroupChromeID]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ChromeGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createGroup -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="close" is-config="true" duration-ms="340" started-at="2016-06-06T17:52:47Z" finished-at="2016-06-06T17:52:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="beforemethod" is-config="true" duration-ms="5366" started-at="2016-06-06T17:52:47Z" finished-at="2016-06-06T17:52:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="EditGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="EditGroup" duration-ms="47345" started-at="2016-06-06T17:52:52Z" data-provider="getData" finished-at="2016-06-06T17:53:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupChrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[newGroupChrome]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[ChromeGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditGroup -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="close" is-config="true" duration-ms="662" started-at="2016-06-06T17:53:40Z" finished-at="2016-06-06T17:53:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="beforemethod" is-config="true" duration-ms="8376" started-at="2016-06-06T17:53:40Z" finished-at="2016-06-06T17:53:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="PASS" signature="removeGroup(java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="removeGroup" duration-ms="55956" started-at="2016-06-06T17:53:49Z" data-provider="getData" finished-at="2016-06-06T17:54:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[newGroupChrome]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ChromeGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeGroup -->
-        <test-method status="PASS" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="close" is-config="true" duration-ms="1345" started-at="2016-06-06T17:54:45Z" finished-at="2016-06-06T17:54:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="PASS" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome@3c41ed1d]" name="extent" is-config="true" duration-ms="24" started-at="2016-06-06T17:54:46Z" finished-at="2016-06-06T17:54:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extent -->
-        <test-method status="FAIL" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@c730b35]" name="extent" is-config="true" duration-ms="0" started-at="2016-06-06T17:54:46Z" finished-at="2016-06-06T17:54:46Z">
+        <test-method status="FAIL" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF@77167fb7]" name="extent" is-config="true" duration-ms="0" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:50Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -797,298 +200,11 @@ Driver info: driver.version: FirefoxDriver
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extent -->
-        <test-method status="FAIL" signature="extent()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="extent" is-config="true" duration-ms="0" started-at="2016-06-06T17:54:46Z" finished-at="2016-06-06T17:54:46Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.relevantcodes.extentreports.Report.terminate(Report.java:417)
-	at com.relevantcodes.extentreports.ExtentReports.close(ExtentReports.java:919)
-	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.extent(UserGroupTest_IE.java:531)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
-	at org.testng.TestRunner.afterRun(TestRunner.java:1021)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:177)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:92)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:105)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- extent -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE">
-        <test-method status="FAIL" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:51:38Z" finished-at="2016-06-06T17:51:38Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-se,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4185303,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0a1","maxVersion":"46.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
-1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1464778890483	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"50MQZzg2IF-d","location":"app-global","version":"46.0.1","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0.1","maxVersion":"46.0.1"}],"targetPlatforms":[],"seen":true}
-1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
-1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
-1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
-1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
-1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
-1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
-1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
-1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
-1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1464778890657	addons.manager	DEBUG	Completed startup sequence
-1464778900545	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-
-Command duration or timeout: 47.55 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-se,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4185303,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0a1","maxVersion":"46.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
-1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1464778890483	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"50MQZzg2IF-d","location":"app-global","version":"46.0.1","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0.1","maxVersion":"46.0.1"}],"targetPlatforms":[],"seen":true}
-1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
-1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
-1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
-1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
-1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
-1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
-1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
-1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
-1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1464778890657	addons.manager	DEBUG	Completed startup sequence
-1464778900545	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-
-Command duration or timeout: 47.55 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:249)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:158)
-	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.gridDriver(TestCaseProperties.java:318)
-	at com.zaizi.automation.alfresco.core.info.TestCaseProperties.driverType(TestCaseProperties.java:377)
-	at com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE.beforemethod(UserGroupTest_IE.java:94)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:653)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output:
-se,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\features\\loop@mozilla.org.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"bootstrap":true,"skinnable":false,"size":4185303,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":false,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0a1","maxVersion":"46.*"},{"id":"xpcshell@tests.mozilla.org","minVersion":"0","maxVersion":"10"}],"targetPlatforms":[],"multiprocessCompatible":false,"seen":true}
-1464778890482	addons.xpi	DEBUG	getModTime: Recursive scan of loop@mozilla.org
-1464778890483	addons.xpi	DEBUG	Updating XPIState for {"id":"{972ce4c6-7e08-4474-a285-3208198ce6fd}","syncGUID":"50MQZzg2IF-d","location":"app-global","version":"46.0.1","type":"theme","internalName":"classic/1.0","updateURL":null,"updateKey":null,"optionsURL":null,"optionsType":null,"aboutURL":null,"icons":{"32":"icon.png","48":"icon.png"},"iconURL":null,"icon64URL":null,"defaultLocale":{"name":"Default","description":"The default theme.","creator":"Mozilla","homepageURL":null,"contributors":["Mozilla Contributors"]},"visible":true,"active":true,"userDisabled":false,"appDisabled":false,"descriptor":"C:\\Program Files\\Mozilla Firefox\\browser\\extensions\\{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi","installDate":1462246394000,"updateDate":1462246394000,"applyBackgroundUpdates":1,"skinnable":true,"size":22012,"sourceURI":null,"releaseNotesURI":null,"softDisabled":false,"foreignInstall":false,"hasBinaryComponents":false,"strictCompatibility":true,"locales":[],"targetApplications":[{"id":"{ec8030f7-c20a-464f-9b0e-13a3a9e97384}","minVersion":"46.0.1","maxVersion":"46.0.1"}],"targetPlatforms":[],"seen":true}
-1464778890483	addons.xpi	DEBUG	getModTime: Recursive scan of {972ce4c6-7e08-4474-a285-3208198ce6fd}
-1464778890484	DeferredSave.extensions.json	DEBUG	Save changes
-1464778890484	addons.xpi	DEBUG	Updating database with changes to installed add-ons
-1464778890484	addons.xpi-utils	DEBUG	Updating add-on states
-1464778890485	addons.xpi-utils	DEBUG	Writing add-ons list
-1464778890490	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\e10srollout@mozilla.org.xpi
-1464778890491	addons.xpi	DEBUG	Calling bootstrap method startup on e10srollout@mozilla.org version 1.0
-1464778890526	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\firefox@getpocket.com.xpi
-1464778890527	addons.xpi	DEBUG	Calling bootstrap method startup on firefox@getpocket.com version 1.0
-1464778890528	addons.xpi	DEBUG	Registering manifest for C:\Program Files\Mozilla Firefox\browser\features\loop@mozilla.org.xpi
-1464778890529	addons.xpi	DEBUG	Calling bootstrap method startup on loop@mozilla.org version 1.2.6
-1464778890599	addons.manager	DEBUG	Registering shutdown blocker for XPIProvider
-1464778890599	addons.manager	DEBUG	Provider finished startup: XPIProvider
-1464778890599	addons.manager	DEBUG	Starting provider: LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Registering shutdown blocker for LightweightThemeManager
-1464778890600	addons.manager	DEBUG	Provider finished startup: LightweightThemeManager
-1464778890601	addons.manager	DEBUG	Starting provider: GMPProvider
-1464778890654	addons.manager	DEBUG	Registering shutdown blocker for GMPProvider
-1464778890655	addons.manager	DEBUG	Provider finished startup: GMPProvider
-1464778890655	addons.manager	DEBUG	Starting provider: PluginProvider
-1464778890655	addons.manager	DEBUG	Registering shutdown blocker for PluginProvider
-1464778890656	addons.manager	DEBUG	Provider finished startup: PluginProvider
-1464778890657	addons.manager	DEBUG	Completed startup sequence
-1464778900545	addons.manager	DEBUG	Starting provider: <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Registering shutdown blocker for <unnamed-provider>
-1464778900546	addons.manager	DEBUG	Provider finished startup: <unnamed-provider>
-
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mathuja.local', ip: '192.168.1.70', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.11.4', java.version: '1.8.0_51'
-Driver info: driver.version: FirefoxDriver
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.start(NewProfileExtensionConnection.java:112)
-	at org.openqa.selenium.firefox.FirefoxDriver.startClient(FirefoxDriver.java:271)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:119)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:218)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:211)
-	at org.openqa.selenium.firefox.FirefoxDriver.<init>(FirefoxDriver.java:129)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.callConstructor(FirefoxDriverProvider.java:91)
-	at org.openqa.selenium.remote.server.FirefoxDriverProvider.newInstance(FirefoxDriverProvider.java:68)
-	at org.openqa.selenium.remote.server.DefaultDriverFactory.newInstance(DefaultDriverFactory.java:60)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:222)
-	at org.openqa.selenium.remote.server.DefaultSession$BrowserCreator.call(DefaultSession.java:1)
-	at java.util.concurrent.FutureTask.run(Unknown Source)
-	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:176)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="createGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="createGroup" duration-ms="1" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupIE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[GroupIEID]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[IEGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createGroup -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="SKIP" signature="EditGroup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="EditGroup" duration-ms="0" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[GroupIE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[newGroupIE]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[IEGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EditGroup -->
-        <test-method status="SKIP" signature="close()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="close" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-        <test-method status="SKIP" signature="beforemethod()[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="beforemethod" is-config="true" duration-ms="0" started-at="2016-06-06T17:52:25Z" finished-at="2016-06-06T17:52:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforemethod -->
-        <test-method status="SKIP" signature="removeGroup(java.lang.String, java.lang.String)[pri:0, instance:com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE@1d296da]" name="removeGroup" duration-ms="0" started-at="2016-06-06T17:52:25Z" data-provider="getData" finished-at="2016-06-06T17:52:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[newGroupIE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[IEGroupUserTest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeGroup -->
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE -->
+      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF -->
     </test> <!-- Test-UserGroup test Alfresco -->
-    <test name="Email Report" duration-ms="0" started-at="2016-06-06T12:24:46Z" finished-at="2016-06-06T12:24:46Z">
+    <test name="Email Report" duration-ms="0" started-at="2016-06-08T06:34:50Z" finished-at="2016-06-08T06:34:50Z">
       <class name="com.zaizi.automation.email.sendEmailReport">
-        <test-method status="PASS" signature="aftersuite()[pri:0, instance:com.zaizi.automation.email.sendEmailReport@4c402120]" name="aftersuite" is-config="true" duration-ms="60574" started-at="2016-06-06T17:54:46Z" finished-at="2016-06-06T17:55:47Z">
+        <test-method status="PASS" signature="aftersuite()[pri:0, instance:com.zaizi.automation.email.sendEmailReport@12e61fe6]" name="aftersuite" is-config="true" duration-ms="7486" started-at="2016-06-08T12:04:50Z" finished-at="2016-06-08T12:04:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->

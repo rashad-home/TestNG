@@ -4,116 +4,18 @@
   <listeners>
     <listener class-name="com.zaizi.automation.listeners.TestListener"/>
   </listeners>
-  <test name="Test-User test Alfresco(failed)" parallel="classes">
-    <classes>
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE">
-        <methods>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome">
-        <methods>
-          <include name="close"/>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_Chrome -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF">
-        <methods>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-          <include name="beforemethod"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_IE">
-        <methods>
-          <include name="extent"/>
-          <include name="close"/>
-          <include name="beforemethod"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_IE -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome">
-        <methods>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-          <include name="beforemethod"/>
-          <include name="close"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_FF">
-        <methods>
-          <include name="createUser"/>
-          <include name="deleteUser"/>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-          <include name="EditUser"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_FF -->
-      <class name="com.zaizi.automation.email.sendEmailReport">
-        <methods>
-          <include name="aftersuite"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.email.sendEmailReport -->
-    </classes>
-  </test> <!-- Test-User test Alfresco(failed) -->
   <test name="Test-UserGroup test Alfresco(failed)" parallel="classes">
     <classes>
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE">
-        <methods>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="removeGroup"/>
-          <include name="beforeClass"/>
-          <include name="EditGroup"/>
-          <include name="createGroup"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome">
-        <methods>
-          <include name="close"/>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_Chrome -->
       <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF">
         <methods>
           <include name="EditGroup"/>
           <include name="createGroup"/>
           <include name="removeGroup"/>
-          <include name="extent"/>
           <include name="beforeClass"/>
+          <include name="extent"/>
           <include name="beforemethod"/>
         </methods>
       </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_IE">
-        <methods>
-          <include name="extent"/>
-          <include name="close"/>
-          <include name="beforemethod"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_IE -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome">
-        <methods>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-          <include name="beforemethod"/>
-          <include name="close"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome -->
-      <class name="com.zaizi.automation.alfresco.testScripts.UserTest_FF">
-        <methods>
-          <include name="beforemethod"/>
-          <include name="extent"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- com.zaizi.automation.alfresco.testScripts.UserTest_FF -->
       <class name="com.zaizi.automation.email.sendEmailReport">
         <methods>
           <include name="aftersuite"/>

@@ -9,15 +9,15 @@
 		<!--  <listener class-name="com.zaizi.testng.rade.ExtentReporterNG" /> -->
     </listeners>
 
-	<!-- <test name="Test-Login Alfresco">	
+	<test name="Test-Login Alfresco">	
 				
 		<classes>
-			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_FF"/>
+			<!-- <class name="com.zaizi.automation.alfresco.testScripts.LoginTest_FF"/> -->
 			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome"/>
-			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_IE"/>
+		<!-- 	<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_IE"/> -->
 			
 		</classes>
-	</test> -->
+	</test>
 	<!-- <test name="Test-Site creation Alfresco">	
 				
 		<classes>

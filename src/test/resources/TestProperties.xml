@@ -20,7 +20,7 @@
 
 <TestProperties>
 	<!-- <Host>http://localhost:8080</Host> -->
-	<LoginScreen>http://192.168.1.70:8081/share</LoginScreen>
+	<LoginScreen>http://192.168.1.55:8081/share</LoginScreen>
 	<UserProfilePage>http://localhost:8080/share/page/console/admin-console/users#state=panel%3Dview%26userid%3Dtest</UserProfilePage> 
 	<EditUserProfilePage>http://localhost:8080/share/page/console/admin-console/users%71state%3Dpanel%3Dupdate%26userid%3Dtest#state=panel%3Dupdate%26userid%3Dtest%26search%3Dtest</EditUserProfilePage>
 	<ChangePasswordPage>http://localhost:8080/share/page/user/admin/change-password</ChangePasswordPage>
@@ -36,19 +36,19 @@
 	<OS>MAC/VISTA/WINDOWS</OS> -->
 	<!--<DriverType>SeleniumWebDriver</DriverType>-->	
 	<DriverType>SeleniumGrid</DriverType>	
-	<NodeURLChrome>http://192.168.1.70:5566/wd/hub</NodeURLChrome>	
+	<NodeURLChrome>http://192.168.1.55:5566/wd/hub</NodeURLChrome>	
 	<NodeURLIE>http://192.168.1.22:5567/wd/hub</NodeURLIE>
-	<NodeURLFF>http://192.168.1.12:5555/wd/hub</NodeURLFF>
-	<ChromeDriverPath>/Users/mketheeswaran/Downloads/chromedriver/</ChromeDriverPath>
-	<ReportPathCHROME>/Users/mketheeswaran/Desktop/Reports/testNGChrome/</ReportPathCHROME>
-	<ReportPathFF>/Users/mketheeswaran/Desktop/Reports/testNGFF/</ReportPathFF>
-	<ReportPathIE>/Users/mketheeswaran/Desktop/Reports/testNGIE/</ReportPathIE>
-	<ReportPathRetry>/Users/mketheeswaran/Desktop/Reports/Retry/</ReportPathRetry>
+	<NodeURLFF>http://192.168.1.55:5555/wd/hub</NodeURLFF>
+	<ChromeDriverPath>/Users/mrashad/Downloads/chromedriver/</ChromeDriverPath>
+	<ReportPathCHROME>./Reports/testNGChrome/</ReportPathCHROME>
+	<ReportPathFF>./Reports/testNGFF/</ReportPathFF>
+	<ReportPathIE>./Reports/testNGIE/</ReportPathIE>
+	<ReportPathRetry>./Reports/Retry/</ReportPathRetry>
 	<UploadPath>./SampleDocument/</UploadPath>
 	<IEDriverPath>smb://192.168.1.89/Users/QA/Downloads/ie/IEDriverServer.exe</IEDriverPath>
 	<DefaultDownloadPath>/Users/ljayasinghe/Downloads</DefaultDownloadPath>
-	<ZipFileOutput>/Users/mketheeswaran/Desktop/Reports.zip</ZipFileOutput>
-	<SourceFolder>/Users/mketheeswaran/Desktop/Reports</SourceFolder>
-	<EmailAddress>mketheeswaran@zaizi.com</EmailAddress>
-	<ScreenShotPath>/Users/mketheeswaran/Desktop/Reports/ScreenShots/</ScreenShotPath>
+	<ZipFileOutput>./Reports.zip</ZipFileOutput>
+	<SourceFolder>./Reports</SourceFolder>
+	<EmailAddress>mrashad@zaizi.com</EmailAddress>
+	<ScreenShotPath>./Reports/ScreenShots/</ScreenShotPath>
 </TestProperties>
