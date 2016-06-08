@@ -14,7 +14,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterSuite;
 
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
-import com.zaizi.automation.email.AppZip;
+
 import com.zaizi.automation.email.emailReport;
 
 

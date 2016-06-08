@@ -47,8 +47,8 @@
 	<UploadPath>./SampleDocument/</UploadPath>
 	<IEDriverPath>smb://192.168.1.89/Users/QA/Downloads/ie/IEDriverServer.exe</IEDriverPath>
 	<DefaultDownloadPath>/Users/ljayasinghe/Downloads</DefaultDownloadPath>
-	<ZipFileOutput>/Users/mrashad/Desktop/Reports.zip</ZipFileOutput>
-	<SourceFolder>/Users/mrashad/Desktop/Reports</SourceFolder>
+	<ZipFileOutput>./Reports.zip</ZipFileOutput>
+	<SourceFolder>./Reports</SourceFolder>
 	<EmailAddress>mrashad@zaizi.com</EmailAddress>
 	<ScreenShotPath>./Reports/ScreenShots/</ScreenShotPath>
 </TestProperties>
