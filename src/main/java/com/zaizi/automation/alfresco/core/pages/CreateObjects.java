@@ -15,9 +15,6 @@ import com.zaizi.automation.alfresco.core.elements.Span;
 import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 
-
-
-import java.io.File;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebElement;

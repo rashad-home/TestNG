@@ -9,11 +9,16 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
+
 
 public class emailReport {
 
-	
+	public static final Logger LOGGER = LogManager
+			.getLogger(emailReport.class.getName());
 
 	public  void sendEmail2() {
 
@@ -58,9 +63,9 @@ public class emailReport {
 	        multipart.addBodyPart(messageBodyPart);
 
 	        message.setContent(multipart);
-	        System.out.println("Sending");
+	        LOGGER.info("Sending");
 	        Transport.send(message);
-	        System.out.println("Done");
+	        LOGGER.info("Done");
 
 	    } catch (MessagingException e) {
 	        e.printStackTrace();

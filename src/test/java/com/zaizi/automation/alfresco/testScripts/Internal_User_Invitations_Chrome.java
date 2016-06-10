@@ -185,7 +185,7 @@ public class Internal_User_Invitations_Chrome  {
             
             TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));
+     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
             
@@ -205,7 +205,7 @@ public class Internal_User_Invitations_Chrome  {
         	
         	TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -246,7 +246,7 @@ public class Internal_User_Invitations_Chrome  {
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
@@ -256,7 +256,7 @@ public class Internal_User_Invitations_Chrome  {
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -272,7 +272,7 @@ public class Internal_User_Invitations_Chrome  {
   			
   			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -410,7 +410,7 @@ public class Internal_User_Invitations_Chrome  {
                                 
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"172");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"172"+".png"));
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"172"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				
@@ -422,7 +422,7 @@ public class Internal_User_Invitations_Chrome  {
                                 
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"172");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"173"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"173"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 							
@@ -462,7 +462,7 @@ public class Internal_User_Invitations_Chrome  {
                     
                     TakeScreenShot ts=new TakeScreenShot();
              	   	ts.takeScreenShot(driver,className, screenShotName+"174");
-             	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"174"+".png"));
+             	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"174"+".png"));
              	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                     extent.flush();   
                     
@@ -477,7 +477,7 @@ public class Internal_User_Invitations_Chrome  {
                         
                         TakeScreenShot ts=new TakeScreenShot();
                  	   	ts.takeScreenShot(driver,className, screenShotName+"175");
-                 	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"175"+".png"));
+                 	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"175"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();  
                         
@@ -487,7 +487,7 @@ public class Internal_User_Invitations_Chrome  {
                         test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         TakeScreenShot ts=new TakeScreenShot();
                  	   	ts.takeScreenShot(driver,className, screenShotName+"176");
-                 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"176"+".png"));
+                 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"176"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();  
                         
@@ -517,7 +517,7 @@ public class Internal_User_Invitations_Chrome  {
                         
 			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"177");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"177"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"177"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		    	
@@ -540,7 +540,7 @@ public class Internal_User_Invitations_Chrome  {
 
 	        	TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"178");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"178"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"178"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
                         
@@ -561,7 +561,7 @@ public class Internal_User_Invitations_Chrome  {
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"179");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"179"+".png"));
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"179"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
     	    }
@@ -591,7 +591,7 @@ public class Internal_User_Invitations_Chrome  {
                         
 			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"180");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"180"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"180"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 			
@@ -605,7 +605,7 @@ public class Internal_User_Invitations_Chrome  {
                             
                         	TakeScreenShot ts=new TakeScreenShot();
                      	   	ts.takeScreenShot(driver,className, screenShotName+"181");
-                     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"181"+".png"));
+                     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"181"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush();  
                             
@@ -617,7 +617,7 @@ public class Internal_User_Invitations_Chrome  {
                             
                         	TakeScreenShot ts=new TakeScreenShot();
                      	   	ts.takeScreenShot(driver,className, screenShotName+"182");
-                     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"182"+".png"));
+                     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"182"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush();  
 				
@@ -716,7 +716,7 @@ public class Internal_User_Invitations_Chrome  {
 				
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"183");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"183"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"183"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 			//	Element.takescreenshot(driver, className, screenShotName
@@ -734,7 +734,7 @@ public class Internal_User_Invitations_Chrome  {
 				
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"184");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"184"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"184"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				//Element.takescreenshot(driver, className, screenShotName
@@ -749,7 +749,7 @@ public class Internal_User_Invitations_Chrome  {
 			
 			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"185");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"185"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"185"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}
@@ -845,7 +845,7 @@ public class Internal_User_Invitations_Chrome  {
                 
 		TakeScreenShot ts=new TakeScreenShot();
  	   	ts.takeScreenShot(driver,className, screenShotName+"186");
- 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"186"+".png"));
+ 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"186"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush();  
 		//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
@@ -856,16 +856,28 @@ public class Internal_User_Invitations_Chrome  {
 		LOGGER.info("Check the patucular siteUrl");
 		test.log(LogStatus.INFO, "Check the patucular siteUrl");
 		
-		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div")))
+		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
 		{
-			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
 			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
-			TakeScreenShot ts1=new TakeScreenShot();
-     	   	ts1.takeScreenShot(driver,className, screenShotName+"187");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"187"+".png"));
+			
+			
+     	   	ts.takeScreenShot(driver,className, screenShotName+"187");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"187"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();  
+            extent.flush(); 
 		}
+		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
+		{
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
+			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+			
+			
+     	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+            extent.flush(); 
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteId
 					+ "')]//td//div"));
@@ -883,7 +895,7 @@ public class Internal_User_Invitations_Chrome  {
 			test.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 			TakeScreenShot ts2=new TakeScreenShot();
      	   	ts2.takeScreenShot(driver,className, screenShotName+"188");
-     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"188"+".png"));
+     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"188"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}
@@ -893,7 +905,7 @@ public class Internal_User_Invitations_Chrome  {
 			test.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 			TakeScreenShot ts3=new TakeScreenShot();
      	   	ts3.takeScreenShot(driver,className, screenShotName+"189");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"189"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"189"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}
@@ -1009,7 +1021,7 @@ public class Internal_User_Invitations_Chrome  {
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"190");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"190"+".png"));
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"190"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 		    	
@@ -1022,7 +1034,7 @@ public class Internal_User_Invitations_Chrome  {
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"191");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"191"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"191"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 		       

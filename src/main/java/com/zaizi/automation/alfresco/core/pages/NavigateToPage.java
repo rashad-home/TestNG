@@ -13,7 +13,6 @@ import com.zaizi.automation.alfresco.core.elements.Element;
 import com.zaizi.automation.alfresco.core.elements.Link;
 import com.zaizi.automation.alfresco.core.elements.Span;
 
-import static com.zaizi.automation.alfresco.core.pages.RemoveObjects.LOGGER;
 
 
 

@@ -1,7 +1,5 @@
 package com.zaizi.automation.listeners;
 
-
-import java.io.File;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -11,11 +9,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterSuite;
 
-import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
-import com.zaizi.automation.email.AppZip;
-import com.zaizi.automation.email.emailReport;
 
 
 
@@ -95,12 +89,7 @@ public class TestListener implements ITestListener {
 			}
 		}
 		
-			/*AppZip appZip = new AppZip();
-			appZip.generateFileList(new File(TestCaseProperties.SOURCE_FOLDER));
-			appZip.zipIt(TestCaseProperties.OUTPUT_ZIP_FILE);
-    	
-					emailReport a=new emailReport();
-					a.sendEmail2();*/
+			
 					
 	}
 

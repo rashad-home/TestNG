@@ -149,8 +149,8 @@ public class MainDashBoardTest_IE {
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-    	   	ts.takeScreenShot(driver,className, screenShotName+"250");
-    	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"250"+".png"));
+    	   	ts.takeScreenShotIE(driver,className, screenShotName+"250");
+    	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"250"+".png"));
     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
            extent.flush();  
 			
@@ -163,8 +163,8 @@ public class MainDashBoardTest_IE {
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-    	   	ts.takeScreenShot(driver,className, screenShotName+"251");
-    	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"251"+".png"));
+    	   	ts.takeScreenShotIE(driver,className, screenShotName+"251");
+    	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"251"+".png"));
     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
            extent.flush();  
 			

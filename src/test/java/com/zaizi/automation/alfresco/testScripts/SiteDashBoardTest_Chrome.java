@@ -184,7 +184,7 @@ static ExtentReports extent;
 				
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"250");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"105"+".png"));
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"105"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				
@@ -198,7 +198,7 @@ static ExtentReports extent;
 				
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"251");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"105"+".png"));
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"105"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				
@@ -284,7 +284,7 @@ static ExtentReports extent;
                 
 		TakeScreenShot ts=new TakeScreenShot();
  	   	ts.takeScreenShot(driver,className, screenShotName+"210");
- 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"210"+".png"));
+ 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"210"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush();  
 		//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
@@ -295,16 +295,28 @@ static ExtentReports extent;
 		LOGGER.info("Check the patucular siteUrl");
 		test.log(LogStatus.INFO, "Check the patucular siteUrl");
 		
-		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div")))
+		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
 		{
-			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
 			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
-			TakeScreenShot ts1=new TakeScreenShot();
-     	   	ts1.takeScreenShot(driver,className, screenShotName+"211");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"211"+".png"));
+			
+			
+     	   	ts.takeScreenShot(driver,className, screenShotName+"211");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"211"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();  
+            extent.flush(); 
 		}
+		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteURL+"']")))
+		{
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
+			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+			
+			
+     	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+            extent.flush(); 
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteURL
 					+ "')]//td//div"));
@@ -322,7 +334,7 @@ static ExtentReports extent;
 			test.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 			TakeScreenShot ts2=new TakeScreenShot();
      	   	ts2.takeScreenShot(driver,className, screenShotName+"212");
-     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"212"+".png"));
+     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"212"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}
@@ -332,7 +344,7 @@ static ExtentReports extent;
 			test.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 			TakeScreenShot ts3=new TakeScreenShot();
      	   	ts3.takeScreenShot(driver,className, screenShotName+"213");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"213"+".png"));
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"213"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}

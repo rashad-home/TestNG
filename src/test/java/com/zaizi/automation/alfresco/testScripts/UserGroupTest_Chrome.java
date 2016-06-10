@@ -151,7 +151,7 @@ public class UserGroupTest_Chrome {
 			
 				TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-	     	   	test.log(LogStatus.INFO, "Create Group : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));     		
+	     	   	test.log(LogStatus.INFO, "Create Group : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));     		
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();   
 				
@@ -162,7 +162,7 @@ public class UserGroupTest_Chrome {
 					
 					
 		     	   	ts.takeScreenShot(driver,className, screenShotName+"1T");
-		     	   	test.log(LogStatus.INFO, "Create Group : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1T"+".png"));     		
+		     	   	test.log(LogStatus.INFO, "Create Group : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1T"+".png"));     		
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();
 		            
@@ -201,7 +201,7 @@ public class UserGroupTest_Chrome {
 				groupSearchBar.enterText(groupName);
 				 
 				ts.takeScreenShot(driver,className, screenShotName+"2");
-	     	   	test.log(LogStatus.INFO, "Group search : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+	     	   	test.log(LogStatus.INFO, "Group search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				
@@ -226,7 +226,7 @@ public class UserGroupTest_Chrome {
 					test.log(LogStatus.PASS, "Group "+groupName+" IS SUCCESSFULLY CREATED");
 					
 					ts.takeScreenShot(driver,className, screenShotName+"3");
-		     	   	test.log(LogStatus.PASS, "Group is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+		     	   	test.log(LogStatus.PASS, "Group is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();  
 					
@@ -238,7 +238,7 @@ public class UserGroupTest_Chrome {
 					test.log(LogStatus.FAIL, "Group "+groupName+" IS NOT SUCCESSFULLY CREATED");
 					
 					ts.takeScreenShot(driver,className, screenShotName+"3");
-		     	   	test.log(LogStatus.FAIL, "Group is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+		     	   	test.log(LogStatus.FAIL, "Group is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();  
 
@@ -304,7 +304,7 @@ public class UserGroupTest_Chrome {
 		
 		TakeScreenShot ts=new TakeScreenShot();
 		ts.takeScreenShot(driver,className, screenShotName+"4");
-		test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+		test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
 	    extent.flush(); 
         
         LOGGER.info("CHECK WHETHER GROUPNAME IS SUCCESSFULLY EDITED FROM \""+groupName+"\" to \""+newGroupName+"\"");
@@ -328,7 +328,7 @@ public class UserGroupTest_Chrome {
 		groupSearchBar.enterText(newGroupName);		 
 		
 		   ts.takeScreenShot(driver,className, screenShotName+"5");
-		   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"5"+".png"));
+		   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
 	       extent.flush(); 
 		
 		LOGGER.info("Click \"Search\" Button");
@@ -353,7 +353,7 @@ public class UserGroupTest_Chrome {
 			test.log(LogStatus.PASS, "Group "+groupName+"  IS SUCCESSFULLY EDITED as Group "+newGroupName);	
 			
 			ts.takeScreenShot(driver,className, screenShotName+"6");
-			   test.log(LogStatus.PASS, "Group successfully edited: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"6"+".png"));
+			   test.log(LogStatus.PASS, "Group successfully edited: " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		       extent.flush();
 		}
 
@@ -362,7 +362,7 @@ public class UserGroupTest_Chrome {
 			test.log(LogStatus.FAIL, "Group "+groupName+" IS NOT SUCCESSFULLY EDITED as Group "+newGroupName);
 			
 				ts.takeScreenShot(driver,className, screenShotName+"7");
-			   test.log(LogStatus.FAIL, "Group is not successfully edited: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"7"+".png"));
+			   test.log(LogStatus.FAIL, "Group is not successfully edited: " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 		       extent.flush();
 		}
 		Thread.sleep(3000);
@@ -426,7 +426,7 @@ public class UserGroupTest_Chrome {
 		
 		   TakeScreenShot ts=new TakeScreenShot();
 		   ts.takeScreenShot(driver,className, screenShotName+"8");
-		   test.log(LogStatus.INFO, "Remove Group Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"8"+".png"));
+		   test.log(LogStatus.INFO, "Remove Group Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
 	       extent.flush(); 
                 
         LOGGER.info("CHECK WHTHER GROUP "+newGroupName+"IS SUCESSFULLY DELETED OR NOT");
@@ -452,7 +452,7 @@ public class UserGroupTest_Chrome {
 		 
 		
 		   ts.takeScreenShot(driver,className, screenShotName+"9");
-		   test.log(LogStatus.INFO, "Group Search below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+		   test.log(LogStatus.INFO, "Group Search below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
 	       extent.flush(); 
 		
 		LOGGER.info("Click \"Search\" Button");
@@ -477,7 +477,7 @@ public class UserGroupTest_Chrome {
 			
 			
 			   ts.takeScreenShot(driver,className, screenShotName+"10");
-			   test.log(LogStatus.FAIL, "Group is not successfully DELETE: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"10"+".png"));
+			   test.log(LogStatus.FAIL, "Group is not successfully DELETE: " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 		       extent.flush(); 
 		       
 			
@@ -490,7 +490,7 @@ public class UserGroupTest_Chrome {
 			
 			
 			   ts.takeScreenShot(driver,className, screenShotName+"11");
-			   test.log(LogStatus.PASS, "Group is successfully removed: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"11"+".png"));
+			   test.log(LogStatus.PASS, "Group is successfully removed: " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 		       extent.flush(); 
 			
 		}

@@ -15,7 +15,7 @@ import com.zaizi.automation.alfresco.core.elements.Link;
 import com.zaizi.automation.alfresco.core.elements.Span;
 import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
-import com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome;
+
 
 
 

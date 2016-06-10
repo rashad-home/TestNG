@@ -165,8 +165,8 @@ static ExtentReports extent;
              createObjects.createPrivateSite(siteName, siteId,expectedResult+ "private2");
 			
              TakeScreenShot ts=new TakeScreenShot();
-      	   	ts.takeScreenShot(driver,className, screenShotName+"195");
-      	   	test.log(LogStatus.PASS, "Snapshot below:" +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"195"+".png"));
+      	   	ts.takeScreenShotIE(driver,className, screenShotName+"195");
+      	   	test.log(LogStatus.PASS, "Snapshot below:" +test.addScreenCapture("./"+className+"/"+screenShotName+"195"+".png"));
       	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
              extent.flush();    
                         
@@ -234,8 +234,8 @@ static ExtentReports extent;
 				test.log(LogStatus.FAIL,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts1=new TakeScreenShot();
-	     	   	ts1.takeScreenShot(driver,className, screenShotName+"196");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"196"+".png"));
+	     	   	ts1.takeScreenShotIE(driver,className, screenShotName+"196");
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"196"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    
 				
@@ -246,8 +246,8 @@ static ExtentReports extent;
 				test.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts3=new TakeScreenShot();
-	     	   	ts3.takeScreenShot(driver,className, screenShotName+"197");
-	     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"197"+".png"));
+	     	   	ts3.takeScreenShotIE(driver,className, screenShotName+"197");
+	     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"197"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    
 							
@@ -286,8 +286,8 @@ static ExtentReports extent;
                     test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
                     TakeScreenShot ts4=new TakeScreenShot();
-             	   	ts4.takeScreenShot(driver,className, screenShotName+"198");
-             	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"198"+".png"));
+             	   	ts4.takeScreenShotIE(driver,className, screenShotName+"198");
+             	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"198"+".png"));
              	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                     extent.flush();    
                     
@@ -301,8 +301,8 @@ static ExtentReports extent;
                         test.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
                         TakeScreenShot ts5=new TakeScreenShot();
-                 	   	ts5.takeScreenShot(driver,className, screenShotName+"199");
-                 	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"199"+".png"));
+                 	   	ts5.takeScreenShotIE(driver,className, screenShotName+"199");
+                 	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"199"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();    
                         
@@ -313,8 +313,8 @@ static ExtentReports extent;
                         
                         
                         TakeScreenShot ts6=new TakeScreenShot();
-                 	   	ts6.takeScreenShot(driver,className, screenShotName+"200");
-                 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"200"+".png"));
+                 	   	ts6.takeScreenShotIE(driver,className, screenShotName+"200");
+                 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"200"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();    	
                         
@@ -343,8 +343,8 @@ static ExtentReports extent;
 			test.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"201");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"201"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"201");
+     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"201"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 		    	
@@ -366,8 +366,8 @@ static ExtentReports extent;
 	        	test.log(LogStatus.PASS, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"202");
-	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"202"+".png"));
+	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"202");
+	     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"202"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    	
                         
@@ -387,8 +387,8 @@ static ExtentReports extent;
 	        	test.log(LogStatus.FAIL, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"203");
-	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"203"+".png"));
+	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"203");
+	     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"203"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
     	    }
@@ -417,8 +417,8 @@ static ExtentReports extent;
 			test.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"204");
-     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"204"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"204");
+     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"204"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 			
@@ -431,8 +431,8 @@ static ExtentReports extent;
                             test.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShot(driver,className, screenShotName+"205");
-                     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"205"+".png"));
+                     	   	ts.takeScreenShotIE(driver,className, screenShotName+"205");
+                     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"205"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
                             
@@ -443,8 +443,8 @@ static ExtentReports extent;
                             test.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShot(driver,className, screenShotName+"206");
-                     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"206"+".png"));
+                     	   	ts.takeScreenShotIE(driver,className, screenShotName+"206");
+                     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"206"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
 				
@@ -568,8 +568,8 @@ static ExtentReports extent;
             LOGGER.info("The invitation has been received!");
             test.log(LogStatus.PASS, "The invitation has been received!");
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"207");
-     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"207"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"207");
+     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"207"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
         }
@@ -578,8 +578,8 @@ static ExtentReports extent;
             LOGGER.info("The invitation was not found!");
             test.log(LogStatus.FAIL, "The invitation was not found!");
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"208");
-     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"208"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"208");
+     	   	test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"208"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 	        
@@ -676,11 +676,11 @@ static ExtentReports extent;
 		Thread.sleep(2000);
                 
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShot(driver,className, screenShotName+"210");
- 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"210"+".png"));
+ 	   	ts.takeScreenShotIE(driver,className, screenShotName+"210");
+ 	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"210"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush();  
-		//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
+		//Element.takeScreenShotIE(driver, className, screenShotName+"deleteConfirmation");
 		
 		//CheckBox checkbox=new CheckBox(driver, By.xpath("//div[@class='name'][text()='"+item+"']/ancestor::td[1]/preceding-sibling::td[2]//input"));
 		//checkbox.click();
@@ -688,16 +688,28 @@ static ExtentReports extent;
 		LOGGER.info("Check the patucular siteUrl");
 		test.log(LogStatus.INFO, "Check the patucular siteUrl");
 		
-		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div")))
+		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
 		{
-			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
 			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
-			TakeScreenShot ts1=new TakeScreenShot();
-     	   	ts1.takeScreenShot(driver,className, screenShotName+"211");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"211"+".png"));
+			
+			
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"211");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"211"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();  
+            extent.flush(); 
 		}
+		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
+		{
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
+			test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+			
+			
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"A18");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+            extent.flush(); 
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteId
 					+ "')]//td//div"));
@@ -714,8 +726,8 @@ static ExtentReports extent;
 			LOGGER.info(siteName+ "SITE IS NOT DELETED");
 			test.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 			TakeScreenShot ts2=new TakeScreenShot();
-     	   	ts2.takeScreenShot(driver,className, screenShotName+"212");
-     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"212"+".png"));
+     	   	ts2.takeScreenShotIE(driver,className, screenShotName+"212");
+     	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"212"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}
@@ -724,8 +736,8 @@ static ExtentReports extent;
 			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
 			test.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 			TakeScreenShot ts3=new TakeScreenShot();
-     	   	ts3.takeScreenShot(driver,className, screenShotName+"213");
-     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"213"+".png"));
+     	   	ts3.takeScreenShotIE(driver,className, screenShotName+"213");
+     	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"213"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
 		}

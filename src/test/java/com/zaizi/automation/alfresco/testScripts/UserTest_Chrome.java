@@ -161,7 +161,7 @@ public class UserTest_Chrome {
             
             TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));
+     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
             
@@ -181,7 +181,7 @@ public class UserTest_Chrome {
         	
         	TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -221,7 +221,7 @@ public class UserTest_Chrome {
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
@@ -231,7 +231,7 @@ public class UserTest_Chrome {
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -247,7 +247,7 @@ public class UserTest_Chrome {
   			
   			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShot(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -305,7 +305,7 @@ public class UserTest_Chrome {
 		
 		   TakeScreenShot ts=new TakeScreenShot();
 		   ts.takeScreenShot(driver,className, screenShotName+"5");
-		   test.log(LogStatus.INFO, "Edited profile below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"5"+".png"));
+		   test.log(LogStatus.INFO, "Edited profile below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
 	       extent.flush();
                 
 	     Thread.sleep(3000);      
@@ -339,7 +339,7 @@ public class UserTest_Chrome {
 			test.log(LogStatus.PASS, "User firstName is successfully edited");
 			
 			   ts.takeScreenShot(driver,className, screenShotName+"6");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"6"+".png"));
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		       extent.flush();
 			
 
@@ -348,7 +348,7 @@ public class UserTest_Chrome {
 			test.log(LogStatus.FAIL, "User firstName IS NOT successfully edited");
 			
 			 	ts.takeScreenShot(driver,className, screenShotName+"7");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"7"+".png"));
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 		       extent.flush();
 
 		}
@@ -409,7 +409,7 @@ public class UserTest_Chrome {
 			
 			TakeScreenShot ts=new TakeScreenShot();
 			   ts.takeScreenShot(driver,className, screenShotName+"8");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"8"+".png"));
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
 		       extent.flush(); 
 	            
 			test.log(LogStatus.INFO, "Accessing UserProfilePage Again");
@@ -430,7 +430,7 @@ public class UserTest_Chrome {
 					+ " Not Available in the System to Delete");
 			TakeScreenShot ts=new TakeScreenShot();
 			   ts.takeScreenShot(driver,className, screenShotName+"9");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
 		       extent.flush(); 
 		}
 		
@@ -454,7 +454,7 @@ public class UserTest_Chrome {
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
 				   ts.takeScreenShot(driver,className, screenShotName+"10");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"10"+".png"));
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 			       extent.flush();   
 		    	
 			}
@@ -466,7 +466,7 @@ public class UserTest_Chrome {
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
 				   ts.takeScreenShot(driver,className, screenShotName+"11");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"11"+".png"));
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 			       extent.flush(); 
 		       
 			}

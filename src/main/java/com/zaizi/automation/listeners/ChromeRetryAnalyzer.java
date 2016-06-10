@@ -1,9 +1,10 @@
 package com.zaizi.automation.listeners;
 
-import org.openqa.selenium.WebDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
+
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -15,8 +16,14 @@ public class ChromeRetryAnalyzer implements IRetryAnalyzer  {
 private int count = 0; 
 private int maxCount = 2; // set your count to re-run test
 
-private static WebDriver driver;
 public static String className = ChromeRetryAnalyzer.class.getSimpleName();
+/**
+ * 
+ * Defining log4j
+ */
+
+public static final Logger LOGGER = LogManager
+		.getLogger(ChromeRetryAnalyzer.class.getName());
 
 ExtentReports extent = ExtentManagerRetry.getReporter(TestCaseProperties.REPORT_TEST_PATH_RETRY+className+".html");
 
@@ -41,7 +48,8 @@ public boolean retry(ITestResult result) {
         if(count < maxCount) {                     
              
                 
-            	System.out.println("Retrying test " + result.getName() + " with status "
+            	
+            	LOGGER.info("Retrying test " + result.getName() + " with status "
                         + getResultStatusName(result.getStatus()) + " for the " + (count+1) + " time(s).");
                 
                 test.log(LogStatus.FAIL, "Retrying test " + result.getName() + " with status "

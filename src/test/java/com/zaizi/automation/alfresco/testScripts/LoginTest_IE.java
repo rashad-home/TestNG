@@ -167,8 +167,8 @@ static ExtentReports extent;
             test.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"1");
+     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
             
@@ -187,8 +187,8 @@ static ExtentReports extent;
         	test.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"2");
+     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -228,8 +228,8 @@ static ExtentReports extent;
  			test.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
@@ -238,8 +238,8 @@ static ExtentReports extent;
  			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -254,8 +254,8 @@ static ExtentReports extent;
   			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"4");
+     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -307,8 +307,8 @@ static ExtentReports extent;
        lp.loginAsUser(userName, password);
        
        TakeScreenShot ts=new TakeScreenShot();
-	   ts.takeScreenShot(driver,className, screenShotName+"5");
-	   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"5"+".png"));
+	   ts.takeScreenShotIE(driver,className, screenShotName+"5");
+	   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        extent.flush();
  	  
         Element.waitForLoad(driver);
@@ -329,8 +329,8 @@ static ExtentReports extent;
     			test.log(LogStatus.PASS,"<font color=green>Successfully login As "+userName+"<font>");
     			
     			  
-    			ts.takeScreenShot(driver,className, screenShotName+"6");
-    			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"6"+".png"));
+    			ts.takeScreenShotIE(driver,className, screenShotName+"6");
+    			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
     		       extent.flush();
 		        
     		       Thread.sleep(3000);
@@ -349,8 +349,8 @@ static ExtentReports extent;
 	        	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"Displayed \"failed to Login\" Prompt message");	    			
     			test.log(LogStatus.FAIL, "<font color=red> Displayed \"failed to Login\" Prompt message <font>");
     			
-    			ts.takeScreenShot(driver,className, screenShotName+"7");
- 			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"7"+".png"));
+    			ts.takeScreenShotIE(driver,className, screenShotName+"7");
+ 			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
  		       extent.flush();
 	        }	        
         }
@@ -368,8 +368,8 @@ static ExtentReports extent;
     			test.log(LogStatus.INFO,"Display message as\"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");
     			test.log(LogStatus.INFO,"Message Display as  "+"<font color=green>" +element.getText()+"<font>");
     			
-    			ts.takeScreenShot(driver,className, screenShotName+"8");
-  			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"8"+".png"));
+    			ts.takeScreenShotIE(driver,className, screenShotName+"8");
+  			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
   		       extent.flush();
     			
         	}
@@ -382,8 +382,8 @@ static ExtentReports extent;
     			test.log(LogStatus.INFO,"Expected Result: \"Your authentication details have not been recognized or Alfresco may not be available at this time.\" ");  				    			
     			test.log(LogStatus.INFO,"Current Result: Message Display as  "+"<font color=red>" +element.getText()+"<font>");
     			
-    			ts.takeScreenShot(driver,className, screenShotName+"9");
-   			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+    			ts.takeScreenShotIE(driver,className, screenShotName+"9");
+   			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
    		       extent.flush();
         	}
         	
@@ -446,8 +446,8 @@ static ExtentReports extent;
 			test.log(LogStatus.INFO, "<font color=blue>User "+userName+" is exist <font>");
 			
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShot(driver,className, screenShotName+"10");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"10"+".png"));
+			   ts.takeScreenShotIE(driver,className, screenShotName+"10");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 		       extent.flush(); 
 	            
 			test.log(LogStatus.INFO, "Accessing UserProfilePage Again");
@@ -467,8 +467,8 @@ static ExtentReports extent;
 			test.log(LogStatus.INFO, "User : " + firstName
 					+ " Not Available in the System to Delete");
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShot(driver,className, screenShotName+"11");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"11"+".png"));
+			   ts.takeScreenShotIE(driver,className, screenShotName+"11");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 		       extent.flush(); 
 		}
 		
@@ -491,8 +491,8 @@ static ExtentReports extent;
 		    	test.log(LogStatus.FAIL, "<font color=red>User "+firstName+" IS NOT DELETED<font>");
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShot(driver,className, screenShotName+"12");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"12"+".png"));
+				   ts.takeScreenShotIE(driver,className, screenShotName+"12");
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 			       extent.flush();   
 		    	
 			}
@@ -503,8 +503,8 @@ static ExtentReports extent;
 		        test.log(LogStatus.PASS, "<font color=green>User "+firstName+" IS SUCCESSFULLY DELETED<font>");
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShot(driver,className, screenShotName+"13");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"13"+".png"));
+				   ts.takeScreenShotIE(driver,className, screenShotName+"13");
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
 			       extent.flush(); 
 		       
 			}

@@ -1,2 +1,2 @@
 # TestNG
-TestNG Alfresco Basic Functionality
+TestNG_Framework

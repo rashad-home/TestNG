@@ -160,8 +160,8 @@ public class UserTest_IE {
             test.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"1");
+     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
             
@@ -180,8 +180,8 @@ public class UserTest_IE {
         	test.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"2");
+     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -220,8 +220,8 @@ public class UserTest_IE {
  			test.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
@@ -230,8 +230,8 @@ public class UserTest_IE {
  			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -246,8 +246,8 @@ public class UserTest_IE {
   			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"4");
+     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -304,8 +304,8 @@ public class UserTest_IE {
 		editUser.editUserFirstName(newFirstName);
 		
 		   TakeScreenShot ts=new TakeScreenShot();
-		   ts.takeScreenShot(driver,className, screenShotName+"5");
-		   test.log(LogStatus.INFO, "Edited profile below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"5"+".png"));
+		   ts.takeScreenShotIE(driver,className, screenShotName+"5");
+		   test.log(LogStatus.INFO, "Edited profile below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
 	       extent.flush();
                 
 	     Thread.sleep(3000);      
@@ -338,8 +338,8 @@ public class UserTest_IE {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"User firstName is successfully edited");
 			test.log(LogStatus.PASS, "User firstName is successfully edited");
 			
-			   ts.takeScreenShot(driver,className, screenShotName+"6");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"6"+".png"));
+			   ts.takeScreenShotIE(driver,className, screenShotName+"6");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		       extent.flush();
 			
 
@@ -347,8 +347,8 @@ public class UserTest_IE {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,"User firstName IS NOT successfully edited");
 			test.log(LogStatus.FAIL, "User firstName IS NOT successfully edited");
 			
-			 	ts.takeScreenShot(driver,className, screenShotName+"7");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"7"+".png"));
+			 	ts.takeScreenShotIE(driver,className, screenShotName+"7");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 		       extent.flush();
 
 		}
@@ -408,8 +408,8 @@ public class UserTest_IE {
 			test.log(LogStatus.INFO, "<font color=blue>User "+userName+" is exist <font>");
 			
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShot(driver,className, screenShotName+"8");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"8"+".png"));
+			   ts.takeScreenShotIE(driver,className, screenShotName+"8");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
 		       extent.flush(); 
 	            
 			test.log(LogStatus.INFO, "Accessing UserProfilePage Again");
@@ -429,8 +429,8 @@ public class UserTest_IE {
 			test.log(LogStatus.INFO, "User : " + newFirstName
 					+ " Not Available in the System to Delete");
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShot(driver,className, screenShotName+"9");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+			   ts.takeScreenShotIE(driver,className, screenShotName+"9");
+			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
 		       extent.flush(); 
 		}
 		
@@ -453,8 +453,8 @@ public class UserTest_IE {
 		    	test.log(LogStatus.FAIL, "<font color=red>User "+newFirstName+" IS NOT DELETED<font>");
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShot(driver,className, screenShotName+"10");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"10"+".png"));
+				   ts.takeScreenShotIE(driver,className, screenShotName+"10");
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 			       extent.flush();   
 		    	
 			}
@@ -465,8 +465,8 @@ public class UserTest_IE {
 		        test.log(LogStatus.PASS, "<font color=green>User "+newFirstName+" IS SUCCESSFULLY DELETED<font>");
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShot(driver,className, screenShotName+"11");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"11"+".png"));
+				   ts.takeScreenShotIE(driver,className, screenShotName+"11");
+				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 			       extent.flush(); 
 		       
 			}

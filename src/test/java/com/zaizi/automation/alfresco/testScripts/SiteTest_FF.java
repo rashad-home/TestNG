@@ -159,8 +159,8 @@ public class SiteTest_FF {
             test.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"1"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
+     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();             
             
@@ -178,8 +178,8 @@ public class SiteTest_FF {
         	test.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"2"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
+     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -218,8 +218,8 @@ public class SiteTest_FF {
  			test.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
@@ -228,8 +228,8 @@ public class SiteTest_FF {
  			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"3"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -244,8 +244,8 @@ public class SiteTest_FF {
   			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"4"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
+     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -311,8 +311,8 @@ public class SiteTest_FF {
              createObjects.createPrivateSite(siteName, siteId,expectedResult);
 			
             TakeScreenShot ts=new TakeScreenShot();
-       	   	ts.takeScreenShot(driver,className, screenShotName+"5");
-       	   	test.log(LogStatus.INFO, "Site created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"5"+".png"));
+       	   	ts.takeScreenShotFF(driver,className, screenShotName+"5");
+       	   	test.log(LogStatus.INFO, "Site created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
             Thread.sleep(5000);
@@ -395,8 +395,8 @@ public class SiteTest_FF {
 				test.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				   
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"6");
-		     	   	test.log(LogStatus.INFO, "Site is not visible to site creator : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"6"+".png"));
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"6");
+		     	   	test.log(LogStatus.INFO, "Site is not visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();   
 				
@@ -406,8 +406,8 @@ public class SiteTest_FF {
 				LOGGER.info(siteName+ " SITE IS VISIBLE TO "+siteCreatorName);
 				test.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
-				ts.takeScreenShot(driver,className, screenShotName+"7");
-	     	   	test.log(LogStatus.INFO, "Site is visible to site creator : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"7"+".png"));
+				ts.takeScreenShotFF(driver,className, screenShotName+"7");
+	     	   	test.log(LogStatus.INFO, "Site is visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 							
@@ -446,8 +446,8 @@ public class SiteTest_FF {
                     LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                     test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
-                    ts.takeScreenShot(driver,className, screenShotName+"8");
-    	     	   	test.log(LogStatus.PASS, "User is alredy created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"8"+".png"));
+                    ts.takeScreenShotFF(driver,className, screenShotName+"8");
+    	     	   	test.log(LogStatus.PASS, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
     	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     	            extent.flush();  
                     
@@ -460,8 +460,8 @@ public class SiteTest_FF {
                         LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         test.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
-        	     	   	test.log(LogStatus.FAIL, "Site is not visible to site creator : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
+        	     	   	test.log(LogStatus.FAIL, "Site is not visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush(); 
                         
@@ -471,8 +471,8 @@ public class SiteTest_FF {
                         LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                         test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
-        	     	   	test.log(LogStatus.PASS, "Site is visible to site creator : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"9"+".png"));
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
+        	     	   	test.log(LogStatus.PASS, "Site is visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush();
                         
@@ -505,8 +505,8 @@ public class SiteTest_FF {
 			test.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"10");
-     	   	test.log(LogStatus.INFO, "Public site created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"10"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"10");
+     	   	test.log(LogStatus.INFO, "Public site created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		    	
@@ -528,8 +528,8 @@ public class SiteTest_FF {
 	        	test.log(LogStatus.INFO, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"11");
-	     	   	test.log(LogStatus.INFO, "Public Site already created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"11"+".png"));
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"11");
+	     	   	test.log(LogStatus.INFO, "Public Site already created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
                         
@@ -554,8 +554,8 @@ public class SiteTest_FF {
 	        	test.log(LogStatus.INFO, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"12");
-	     	   	test.log(LogStatus.INFO, "Public Site not created : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"12"+".png"));
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"12");
+	     	   	test.log(LogStatus.INFO, "Public Site not created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();
     	    }
@@ -587,8 +587,8 @@ public class SiteTest_FF {
 			test.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"13");
-     	   	test.log(LogStatus.INFO, "Site is not visible in search : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"13"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"13");
+     	   	test.log(LogStatus.INFO, "Site is not visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 			
@@ -601,8 +601,8 @@ public class SiteTest_FF {
                test.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                TakeScreenShot ts=new TakeScreenShot();
-        	   	ts.takeScreenShot(driver,className, screenShotName+"14");
-        	   	test.log(LogStatus.PASS, "Site is visible in search : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"14"+".png"));
+        	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
+        	   	test.log(LogStatus.PASS, "Site is visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
         	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                extent.flush(); 
                             
@@ -613,8 +613,8 @@ public class SiteTest_FF {
                             test.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                    	   	ts.takeScreenShot(driver,className, screenShotName+"14");
-                    	   	test.log(LogStatus.FAIL, "Site is not visible in search : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"14"+".png"));
+                    	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
+                    	   	test.log(LogStatus.FAIL, "Site is not visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
                     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
 				
@@ -703,8 +703,8 @@ public class SiteTest_FF {
 					test.log(LogStatus.FAIL, "Site " + siteName + " was found,Site name was NOT Changed Successfully");
 					
 					TakeScreenShot ts=new TakeScreenShot();
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"15");
-		     	   	test.log(LogStatus.FAIL, "Site rename is unsucessfull : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"15"+".png"));
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"15");
+		     	   	test.log(LogStatus.FAIL, "Site rename is unsucessfull : " +test.addScreenCapture("./"+className+"/"+screenShotName+"15"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush(); 
 				}
@@ -714,8 +714,8 @@ public class SiteTest_FF {
 					test.log(LogStatus.PASS, "Site " + siteName + " is NOT FOUND,Site name was Changed Successfully FROM \""+siteName+"\"TO \""+newSiteName+"\"");
 					
 					TakeScreenShot ts=new TakeScreenShot();
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"16");
-		     	   	test.log(LogStatus.PASS, "Site was edited successfull : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"16"+".png"));
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"16");
+		     	   	test.log(LogStatus.PASS, "Site was edited successfull : " +test.addScreenCapture("./"+className+"/"+screenShotName+"16"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();
 				
@@ -812,11 +812,11 @@ public class SiteTest_FF {
 		Thread.sleep(2000);
 		
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShot(driver,className, screenShotName+"17");
- 	   	test.log(LogStatus.INFO, "Search Site : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"17"+".png"));
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"17");
+ 	   	test.log(LogStatus.INFO, "Search Site : " +test.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
-		//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
+		//Element.takeScreenShotFF(driver, className, screenShotName+"deleteConfirmation");
 		
 		//CheckBox checkbox=new CheckBox(driver, By.xpath("//div[@class='name'][text()='"+item+"']/ancestor::td[1]/preceding-sibling::td[2]//input"));
 		//checkbox.click();
@@ -830,8 +830,8 @@ public class SiteTest_FF {
 			test.log(LogStatus.PASS, newSiteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"18");
-     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"18"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"18");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
@@ -841,8 +841,8 @@ public class SiteTest_FF {
 			test.log(LogStatus.PASS, newSiteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
-     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"A18"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"A18");
+     	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
@@ -863,8 +863,8 @@ public class SiteTest_FF {
 			test.log(LogStatus.FAIL, newSiteName+" SITE IS NOT DELETED");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"19");
-     	   	test.log(LogStatus.FAIL, "Site is not deleted : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"19"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"19");
+     	   	test.log(LogStatus.FAIL, "Site is not deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
@@ -873,8 +873,8 @@ public class SiteTest_FF {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,newSiteName+" SITE IS DELETED SUCCESSFULLY");
 			test.log(LogStatus.PASS, newSiteName+"SITE IS DELETED SUCCESSFULLY");
 			
-			ts.takeScreenShot(driver,className, screenShotName+"20");
-     	   	test.log(LogStatus.PASS, "Site is not deleted : " +test.addScreenCapture(TestCaseProperties.SCREENSHOTPATH+className+"/"+screenShotName+"20"+".png"));
+			ts.takeScreenShotFF(driver,className, screenShotName+"20");
+     	   	test.log(LogStatus.PASS, "Site is not deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
@@ -906,7 +906,8 @@ public class SiteTest_FF {
                                     };
     }else if (method.getName().equals("createSite")) {
             result = new Object[][] { 
-                        { "UKFF", false, "ukffURL","COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED","Administrator","FFSiteTest"}
+                        { "UKFF", false, "ukffURL","COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED","Administrator","FFSiteTest"},
+                        { "UKPrivateFF", true, "ukPrivateffURL","COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED","Administrator","FFSiteTest1"}
                                     };
     }else if (method.getName().equals("editSite")) {
             result = new Object[][] { 

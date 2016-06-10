@@ -220,6 +220,18 @@ public class TestCaseProperties {
 	
 	public static final String SCREENSHOTPATH = getPropertyValue("ScreenShotPath");
 	
+	/**
+	 * Defining to screenShotPath
+	 */
+	
+	public static final String SCREENSHOTPATH_FF = getPropertyValue("ScreenShotPath_FF");
+	
+	/**
+	 * Defining to screenShotPath
+	 */
+	
+	public static final String SCREENSHOTPATH_IE = getPropertyValue("ScreenShotPath_IE");
+	
 	
 	
 	/**

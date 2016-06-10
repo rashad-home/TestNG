@@ -1,5 +1,7 @@
 package com.zaizi.automation.listeners;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 import com.relevantcodes.extentreports.ExtentReports;
@@ -11,7 +13,13 @@ import com.zaizi.automation.extentReports.ExtentManagerRetry;
 public class IERetryAnalyzer implements IRetryAnalyzer  { 
 private int count = 0; 
 private int maxCount = 1; // set your count to re-run test
+/**
+ * 
+ * Defining log4j
+ */
 
+public static final Logger LOGGER = LogManager
+		.getLogger(IERetryAnalyzer.class.getName());
 
 public static String className = IERetryAnalyzer.class.getSimpleName();
 
@@ -33,8 +41,8 @@ public String getResultStatusName(int status) {
 public boolean retry(ITestResult result) { 
 	ExtentTest test = extent.startTest(result.getName(),"This "+result.getName()+" test method got fail/skip");
 	
-	System.out.println("Retrying test " + result.getName() + " with status "
-            + getResultStatusName(result.getStatus()) + " for the " + (count) + " time(s).");
+	LOGGER.info("Retrying test " + result.getName() + " with status "
+            + getResultStatusName(result.getStatus()) + " for the " + (count+1) + " time(s).");
     
     test.log(LogStatus.FAIL, "Retrying test " + result.getName() + " with status "
             + getResultStatusName(result.getStatus()) + " for the " + (count) + " time(s).");  
