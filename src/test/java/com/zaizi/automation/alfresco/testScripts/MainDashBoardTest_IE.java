@@ -1,9 +1,11 @@
 package com.zaizi.automation.alfresco.testScripts;
 
+
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -14,7 +16,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 
@@ -30,12 +31,11 @@ import com.zaizi.automation.extentReports.ExtentManagerIE;
 import com.zaizi.automation.listeners.IERetryAnalyzer;
 
 
+
 /**
-*
-* @author mrashad@zaizi.com
-*/
-
-
+  *
+  * @author mrashad@zaizi.com
+  */
 
 
 public class MainDashBoardTest_IE {
@@ -49,16 +49,15 @@ public class MainDashBoardTest_IE {
 	public static final Logger LOGGER = LogManager
 			.getLogger(MainDashBoardTest_IE.class.getName());
 
-
-
-
 	
 	/**
 	 * 
 	 * Defining Report
 	 */
 	static ExtentReports extent;
-   
+	static ExtentTest parent;
+	static ExtentTest child1;
+    
 	/**
 	 * 
 	 * Define WebDriver
@@ -95,10 +94,10 @@ public class MainDashBoardTest_IE {
 
 	{
 		
-		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+className+".html");
+		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
+		parent=extent.startTest("<b>Main Dashboard Test in IE</b>","This is main dashboard Test,<b>Add dashlet into main dashboard</b>");
 		System.out.println("Testcase started");
 		
-
 	}
 	
 	@BeforeMethod(alwaysRun=true)
@@ -112,7 +111,8 @@ public class MainDashBoardTest_IE {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Add Dashlet in IE",priority = 1)
+	@Parameters({"addDashletIE","screenShotNameIE"})
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Add Dashlet in IE",priority = 1)
 	public void addDashlet(String dashletTitle, String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -121,92 +121,91 @@ public class MainDashBoardTest_IE {
 		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "a_addDashlet");
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-   	ExtentTest test = extent.startTest("a_addDashlet","Admin for loginTest");
+    	child1 = extent.startTest("a_addDashlet","Admin for loginTest");	
 
-		
 	     LoginPage loginPage = new LoginPage(driver);
 	        loginPage.loginAsAdmin();
 	        Thread.sleep(2000);
 		
 		LOGGER.info("Test case a_addDashlet started executing");
-		test.log(LogStatus.INFO,
+		child1.log(LogStatus.INFO,
 				"Test case a_addDashlet started executing");	
-   	
-   	
-   	Dashboard dashboard = new Dashboard(driver);
-       dashboard.customizeDashboard(dashletTitle);
-       
-       Thread.sleep(2000);
-       
-       Division rssFeedBlog = new Division(
-               driver,
-               By.xpath("//div[@id='page_x002e_component-1-3_x002e_user_x007e_admin_x007e_dashboard_x0023_default-title']"));
-       if (rssFeedBlog.getWebElement().isDisplayed())
-       {
-       	LOGGER.info( "Dashlet added");			
-			test.log(LogStatus.PASS, "<font color=green>"
+    	
+    	
+    	Dashboard dashboard = new Dashboard(driver);
+        dashboard.customizeDashboard(dashletTitle);
+        
+        Division rssFeedBlog = new Division(
+                driver,
+                By.xpath("//div[@id='page_x002e_component-1-3_x002e_user_x007e_admin_x007e_dashboard_x0023_default-title']"));
+        if (rssFeedBlog.getWebElement().isDisplayed())
+        {
+        	LOGGER.info( "Dashlet added");			
+			child1.log(LogStatus.PASS, "<font color=green>"
 					+ "Dashlet is added" + "<font>");
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-    	   	ts.takeScreenShotIE(driver,className, screenShotName+"250");
-    	   	test.log(LogStatus.PASS, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"250"+".png"));
-    	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-           extent.flush();  
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"250");
+     	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"250"+".png"));
+     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+            extent.flush();  
 			
-       }
-       else
-       {
-       	LOGGER.info(" Dashlet is not added");
-			test.log(LogStatus.FAIL, "<font color=green>"
+        }
+        else
+        {
+        	LOGGER.info(" Dashlet is not added");
+			child1.log(LogStatus.FAIL, "<font color=green>"
 					+ "Dashlet is not added" + "<font>");
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-    	   	ts.takeScreenShotIE(driver,className, screenShotName+"251");
-    	   	test.log(LogStatus.FAIL, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"251"+".png"));
-    	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-           extent.flush();  
-			
-       }
-       
-       
-       
-   }
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"251");
+     	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"251"+".png"));
+     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+            extent.flush();
+           
+        }
+        
+        extent.flush();
+        extent.endTest(child1); 
+        
+    }
 		
-	
-	
-	
-	
-		@DataProvider(name = "getData")
-		public Object[][] provideData(Method method) {
-		Object[][] result = null;
 
-		if (method.getName().equals("addDashlet")) {
-				result = new Object[][] {
-							{"RSS Feed - Display the contents of an RSS feed given a URL configuration parameter.", "IELoginTest15"} 
-										};
-					}
-							return result;
-				
-			}
 		
-		
-	   
 		@AfterMethod
-		public void close() throws MalformedURLException{
+		   public void aftermethod(Method method,ITestResult result) throws Exception{
+			
+			if(method.getName().equals("addDashlet")) {			
+				
+				if (result.getStatus() == ITestResult.FAILURE) {
+			        child1.log(LogStatus.FAIL,"addDashlet Test failed because "+ result.getThrowable());
+			        extent.flush();
+			    } else if (result.getStatus() == ITestResult.SKIP) {
+			    	child1.log(LogStatus.SKIP, "addDashlet Test skipped because " + result.getThrowable());
+			        extent.flush();
+			    } else {
+			    	child1.log(LogStatus.PASS, "addDashlet Test got executed successfully");
+			        extent.flush();
+			    }
+				}
+				
 			
 			driver.quit(); 
 			
-		}
+		   }
 
 		@AfterTest(alwaysRun=true)
 		public void extent() {
 			
 			LOGGER.info("Test case closed");
+			parent
+			  .appendChild(child1);
+			extent.endTest(parent);
 			extent.close();	
 			driver.quit();
-			//driver.close();
+			
 
 		} 
 	

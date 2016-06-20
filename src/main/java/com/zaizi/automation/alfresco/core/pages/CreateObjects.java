@@ -343,6 +343,54 @@ public class CreateObjects {
         
         }
         
+        public void uploadDocumentIE(String documentName,String className,String screenShotName) throws InterruptedException, IOException
+        {
+                //Navigate to the Document Library
+                LOGGER.info("Navigate To DocumentLibrary");
+		
+                NavigateToPage navigate=new NavigateToPage(driver);
+		navigate.goToDocLib();
+		Thread.sleep(3000); 
+                
+                LOGGER.info("Click \"Upload Document\"");
+		
+                Button uploadButton = new Button(driver, By.id("template_x002e_documentlist_v2_x002e_documentlibrary_x0023_default-fileUpload-button-button"));
+		//Element.takescreenshot(driver, className, screenShotName);
+                uploadButton.click();
+			
+                LOGGER.info("Select the file \""+documentName+"\"");
+		
+		
+		
+		
+		/*Button selectfile = new Button(driver, By.xpath("//span[@id='template_x002e_dnd-upload_x002e_documentlibrary_x0023_default-file-selection-button-overlay']//span"));
+		selectfile.click();*/
+
+		
+		/*WebElement El = driver.findElement(By.xpath("//span//input[@class='dnd-file-selection-button']"));
+		((RemoteWebElement) El ).setFileDetector(new LocalFileDetector()); 
+		El.sendKeys("/Users/mketheeswaran/Documents/FileA.rtf");
+		TestCaseProperties.closeDriver(driver);*/
+		
+		WebElement El = driver.findElement(By
+				.xpath("//span//input[@class='ie10-dnd-file-selection-button']"));
+		((RemoteWebElement) El).setFileDetector(new LocalFileDetector());
+		El.sendKeys(TestCaseProperties.UPLOAD_DOC_PATH + documentName + "/");
+		Element.waitForLoad(driver);
+		
+		
+		/*WebElement browseButton1 = driver.findElement(By.xpath("//span//input[@class='dnd-file-selection-button']"));
+        
+        LocalFileDetector detector = new LocalFileDetector();      
+        String path = TestCaseProperties.UPLOAD_DOC_PATH+documentName+"/";      
+        File f = detector.getLocalFile(path);
+        ((RemoteWebElement)browseButton1).setFileDetector(detector);
+        browseButton1.sendKeys(f.getAbsolutePath());       
+        Element.waitForLoad(driver);
+        Thread.sleep(1000);*/
+        
+        
+        }
         /**
     	 * Verify uploadDocument
     	 * 

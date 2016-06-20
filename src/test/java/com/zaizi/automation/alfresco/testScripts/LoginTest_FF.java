@@ -10,11 +10,12 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -53,7 +54,12 @@ public class LoginTest_FF  {
 	 * 
 	 * Defining Report
 	 */
-static ExtentReports extent;
+	static ExtentReports extent;
+	static ExtentTest parent;
+	static ExtentTest child1;
+	static ExtentTest child2;
+	static ExtentTest child3;
+
     
 	/**
 	 * 
@@ -68,12 +74,13 @@ static ExtentReports extent;
 	 * 
 	 * Define className
 	 */
-	
 
 	public static String className = LoginTest_FF.class
 			.getSimpleName();
 
 	
+		
+		
 	
 	/**
 	 * 
@@ -92,8 +99,10 @@ static ExtentReports extent;
 
 	{
 		
-		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+className+".html");
+		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
+		parent=extent.startTest("<b>loginTest in Firefox</b>","This is loginTest,Create new user & <b>Check whether particular user can login</b>,Once test is excute,Delete the user");
 		LOGGER.info("Testcases Started");
+		
 		
 	}
 	
@@ -105,8 +114,11 @@ static ExtentReports extent;
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
 				//Get LoginScreen_URl from TestcaseProperties Values
-				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
+				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);
+				
+				
 	}
+	
 	/**
 	 * 
 	 * @Test createUser	 
@@ -115,65 +127,62 @@ static ExtentReports extent;
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	
-
-	/*@Parameters({"firstNameFF", "lastNameFF","emailFF","fullNameFF","screenShotNameFF" })*/
-	@Test(dataProvider="getData",retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
-	public void createUser(String firstName,String lastName,String email,String fullName,String screenShotName) throws InterruptedException, IOException
+	@Parameters({"firstNameFF", "lastNameFF","emailFF","userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
+	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
 
-		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+TestCaseProperties.TEST_USER_NAME);
-
+		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+userName);
+		//parent=extent.startTest("Login in FF");
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		ExtentTest test = extent.startTest("Create new User","Create new user : \" "+TestCaseProperties.TEST_USER_NAME+" \"");
+		 child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
 		
-
 		LOGGER.info("Test case createUser started executing");
-		test.log(LogStatus.INFO,
+		child1.log(LogStatus.INFO,
 				"Test case createUser started executing");		
 
 		LOGGER.info("Accessing the Login Page");
-        test.log(LogStatus.INFO, "Accessing the Login Page");        
+        child1.log(LogStatus.INFO, "Accessing the Login Page");        
                	 		         
         LOGGER.info("Login as \"Admin\"");
-        test.log(LogStatus.INFO, "Login as \"Admin\""); 
+        child1.log(LogStatus.INFO, "Login as \"Admin\""); 
         extent.flush();
         
    	    LoginPage loginPage=new LoginPage(driver);   	            
    	    loginPage.loginAsAdmin();
    	         
-   	    LOGGER.info("Create new user : \" "+TestCaseProperties.TEST_USER_NAME+" \"");
-        test.log(LogStatus.INFO, "Create new user : \" "+TestCaseProperties.TEST_USER_NAME+" \""); 
+   	    LOGGER.info("Create new user : \" "+userName+" \"");
+        child1.log(LogStatus.INFO, "Create new user : \" "+userName+" \""); 
         
-        Element.waitForLoad(driver);
    	    LOGGER.info("Accessing the AdminTool Page");
-        test.log(LogStatus.INFO, "Accessing the AdminTool Page");         
-        test.log(LogStatus.INFO, "Navigate \"Users\" in AdminTools");
-        test.log(LogStatus.INFO, "Click \"New User\"");
-        test.log(LogStatus.INFO, "Fill the userfields");
-        test.log(LogStatus.INFO, "Click \"Create User\"");
+        child1.log(LogStatus.INFO, "Accessing the AdminTool Page");         
+        child1.log(LogStatus.INFO, "Navigate \"Users\" in AdminTools");
+        child1.log(LogStatus.INFO, "Click \"New User\"");
+        child1.log(LogStatus.INFO, "Fill the userfields");
+        child1.log(LogStatus.INFO, "Click \"Create User\"");
         extent.flush();
         
+        Element.waitForLoad(driver);
 		AdminConsolePage createUser=new AdminConsolePage(driver);		
-		createUser.createUser(firstName, lastName, email,TestCaseProperties.TEST_USER_NAME,TestCaseProperties.TEST_PASSWORD,TestCaseProperties.TEST_PASSWORD);			
-		Thread.sleep(3200);
-		
+		createUser.createUser(firstName, lastName, email,userName,password,password);			
+		Element.waitForLoad(driver);
+		Thread.sleep(5000);
 		 //If Any Message prompt as "Failure",User is alredy exist
         if(Element.isElementPresent(driver, By.xpath("//div[@id='prompt_h'][text()='Failure']"))) 
         {   
-        	
+        	Thread.sleep(5000);
             Span notification = new Span(driver, By.xpath("//div[@id='prompt']/descendant::div[@class='bd']"));
             notification.getText();
             
             LOGGER.info("Message display as : "+notification.getText());
-            test.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
+            child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
+     	   	child1.log(LogStatus.INFO, "User is alredy created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();             
+            extent.flush();   
             
             Thread.sleep(3000);
             Button okaybtn=new Button(driver,By.xpath("//Button[text()='OK']"));
@@ -187,36 +196,38 @@ static ExtentReports extent;
         {   
         	
         	LOGGER.info("User is Successfully Created");
-        	test.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
+        	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
+     	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
         } 
         
         Thread.sleep(3000);
-		loginPage.logout();	
+        LoginPage loginPage1=new LoginPage(driver);  
+		loginPage1.logout();	
 		
-		Element.waitForLoad(driver); 	
+		Element.waitForLoad(driver);    
+		Thread.sleep(3000);
         LOGGER.info("CHECK WHETHER USER IS CREATED OR NOT");
-		test.log(LogStatus.INFO, "CHECK WHETHER USER IS CREATED OR NOT");  
+		child1.log(LogStatus.INFO, "CHECK WHETHER USER IS CREATED OR NOT");  
 		
        
 		LOGGER.info("Accessing the Login Page");
-        test.log(LogStatus.INFO, "Accessing the Login Page");
+        child1.log(LogStatus.INFO, "Accessing the Login Page");
 
-        LOGGER.info("Login as created user"+TestCaseProperties.TEST_USER_NAME);
-        test.log(LogStatus.INFO, "Login as created user"+TestCaseProperties.TEST_USER_NAME);
+        LOGGER.info("Login as created user"+userName);
+        child1.log(LogStatus.INFO, "Login as created user"+userName);
         
-        LoginPage loginPage1 = new LoginPage(driver);
-        loginPage1.loginAsTestUser();
+        LoginPage loginPage2 = new LoginPage(driver);
+        loginPage2.loginAsUser(userName, password);
            
-        
+        Thread.sleep(5000);
         LOGGER.info("Verify the HEADER_USER_MENU_NAME");
- 		test.log(LogStatus.INFO, "Verify the HEADER_USER_MENU_NAME");
+ 		child1.log(LogStatus.INFO, "Verify the HEADER_USER_MENU_NAME");
         
  		if(!(Element.isElementPresent(driver,By.xpath("//div[@class='error']"))))
         {
@@ -226,21 +237,21 @@ static ExtentReports extent;
  			
  			Thread.sleep(2000);
  			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"User is Sucessfully Created");
- 			test.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
+ 			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
+     	   	child1.log(LogStatus.PASS, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
  		} else {
  			LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"User is NOT Sucessfully Created");
- 			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
+ 			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
+     	   	child1.log(LogStatus.FAIL, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -252,23 +263,25 @@ static ExtentReports extent;
         
         	
         	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"User is NOT Sucessfully Created");
-  			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
+  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
+     	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
+ 		
  		Thread.sleep(3000);
-        LoginPage loginPage2 = new LoginPage(driver);
-        loginPage2.logout();
+        LoginPage loginPage3 = new LoginPage(driver);
+        loginPage3.logout();
         Element.waitForLoad(driver);
         
         LOGGER.info("Test case createUser executed");
-		test.log(LogStatus.INFO, "Test case createUser executed");
-		extent.flush();
-        extent.endTest(test);        
+		child1.log(LogStatus.INFO, "Test case createUser executed");
+		extent.flush();		
+		extent.endTest(child1);
+		
        
 		
 
@@ -282,33 +295,33 @@ static ExtentReports extent;
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	/*@Parameters({"fullNameFF","screenShotNameFF" })*/
-	@Test(dataProvider="getData",retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2)
-    public void loginANDlogout(String fullName,String screenShotName) throws InterruptedException, IOException
+	@Parameters({"userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2)
+    public void loginAndLogout(String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
     {
-		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Login as "+TestCaseProperties.TEST_USER_NAME);
-
-		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		 ExtentTest test = extent.startTest("login & logout","Verify whether CREATED USER can able to login & logout");
+		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Login as "+userName);
 		
+		//Extent Report Start Configuration(testCaseName,Definition of testCase)
+		 child2 = extent.startTest("login & logout","Verify whether CREATED USER can able to login & logout");		
+
 		LOGGER.info("Test case login & logout started executing");
-		test.log(LogStatus.INFO,
+		child2.log(LogStatus.INFO,
 				"Test case login & logout started executing");
 		
 		LOGGER.info("Accessing the Login Page ");
-        test.log(LogStatus.INFO, "Accessing the Login Page ");
+        child2.log(LogStatus.INFO, "Accessing the Login Page ");
         
-        LOGGER.info("Enter userName : "+TestCaseProperties.TEST_USER_NAME);
-        test.log(LogStatus.INFO, "Enter userName : "+TestCaseProperties.TEST_USER_NAME);
-        test.log(LogStatus.INFO, "Enter password : "+TestCaseProperties.TEST_PASSWORD);
+        LOGGER.info("Enter userName : "+userName);
+        child2.log(LogStatus.INFO, "Enter userName : "+userName);
+        child2.log(LogStatus.INFO, "Enter password : "+password);
         
-	   Element.waitForLoad(driver);
+	  
        LoginPage lp=new LoginPage(driver);
-       lp.loginAsTestUser();
+       lp.loginAsUser(userName, password);
        
        TakeScreenShot ts=new TakeScreenShot();
 	   ts.takeScreenShotFF(driver,className, screenShotName+"5");
-	   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
+	   child2.log(LogStatus.INFO, "Login Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        extent.flush();
  	  
         Element.waitForLoad(driver);
@@ -325,21 +338,21 @@ static ExtentReports extent;
 	        {
 	        	
 	        	
-	        	LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Successfully login As "+TestCaseProperties.TEST_USER_NAME);	    			
-    			test.log(LogStatus.PASS,"<font color=green>Successfully login As "+TestCaseProperties.TEST_USER_NAME+"<font>");
+	        	LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Successfully login As "+userName);	    			
+    			child2.log(LogStatus.PASS,"<font color=green>Successfully login As "+userName+"<font>");
     			
     			  
     			ts.takeScreenShotFF(driver,className, screenShotName+"6");
-    			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
+    			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
     		       extent.flush();
 		        
-    		       Thread.sleep(5000);
+    		       Thread.sleep(3000);
     		       
 		        LoginPage logout=new LoginPage(driver);
 		        logout.logout();
 		        
-		        LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Successfully LOGOUT from user \""+TestCaseProperties.TEST_USER_NAME+" \"");	    			
-    			test.log(LogStatus.PASS,"<font color=green>Successfully LOGOUT from user \""+TestCaseProperties.TEST_USER_NAME+" \"<font>");    			
+		        LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Successfully LOGOUT from user \""+userName+" \"");	    			
+    			child2.log(LogStatus.PASS,"<font color=green>Successfully LOGOUT from user \""+userName+" \"<font>");    			
 		        
 		        			       
 	        }
@@ -347,10 +360,10 @@ static ExtentReports extent;
 	        {
 	        	
 	        	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"Displayed \"failed to Login\" Prompt message");	    			
-    			test.log(LogStatus.FAIL, "<font color=red> Displayed \"failed to Login\" Prompt message <font>");
+    			child2.log(LogStatus.FAIL, "<font color=red> Displayed \"failed to Login\" Prompt message <font>");
     			
     			ts.takeScreenShotFF(driver,className, screenShotName+"7");
- 			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
+ 			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
  		       extent.flush();
 	        }	        
         }
@@ -365,11 +378,11 @@ static ExtentReports extent;
         		LOGGER.info("Expected FAIL Result: Display message as  \"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");
         		LOGGER.info("Current FAIL  Result: Message Display as  "+element.getText());
         		
-    			test.log(LogStatus.INFO,"Display message as\"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");
-    			test.log(LogStatus.INFO,"Message Display as  "+"<font color=green>" +element.getText()+"<font>");
+    			child2.log(LogStatus.INFO,"Display message as\"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");
+    			child2.log(LogStatus.INFO,"Message Display as  "+"<font color=green>" +element.getText()+"<font>");
     			
     			ts.takeScreenShotFF(driver,className, screenShotName+"8");
-  			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
+  			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
   		       extent.flush();
     			
         	}
@@ -379,21 +392,21 @@ static ExtentReports extent;
         		LOGGER.info("Expected Result:\"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");	
         		LOGGER.info("Current Result: Message Display as  " +element.getText());
         		
-    			test.log(LogStatus.INFO,"Expected Result: \"Your authentication details have not been recognized or Alfresco may not be available at this time.\" ");  				    			
-    			test.log(LogStatus.INFO,"Current Result: Message Display as  "+"<font color=red>" +element.getText()+"<font>");
+    			child2.log(LogStatus.INFO,"Expected Result: \"Your authentication details have not been recognized or Alfresco may not be available at this time.\" ");  				    			
+    			child2.log(LogStatus.INFO,"Current Result: Message Display as  "+"<font color=red>" +element.getText()+"<font>");
     			
     			ts.takeScreenShotFF(driver,className, screenShotName+"9");
-   			   test.log(LogStatus.INFO, "Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
+   			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
    		       extent.flush();
         	}
         	
         }
 		
 		LOGGER.info("Test case login & logout executed");
-		test.log(LogStatus.INFO, "Test case login & logout executed");
-        extent.flush();
-        extent.endTest(test); 
-	 
+		child2.log(LogStatus.INFO, "Test case login & logout executed");
+        extent.flush();     
+        extent.endTest(child2);
+        
 		
 	   
 		
@@ -405,93 +418,94 @@ static ExtentReports extent;
      * @throws InterruptedException
 	 * @throws IOException 
      */
-	/*@Parameters({"firstNameFF", "lastNameFF","screenShotNameFF" })*/
-	@Test(dataProvider="getData",retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
-    public void deleteUser(String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
+	@Parameters({"userNameFF","firstNameFF", "lastNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
+    public void deleteUser(String userName,String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
-    	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+TestCaseProperties.TEST_USER_NAME+ " \"");
-
+    	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");
+    	
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		 ExtentTest test = extent.startTest("Delete User","Delete User called \" "+TestCaseProperties.TEST_USER_NAME+" \"");
-	
+    	child3 = extent.startTest("Delete User","Delete User called \" "+userName+" \"");
+
+		
 		LOGGER.info("Test case Delete User started executing");
-		test.log(LogStatus.INFO,
+		child3.log(LogStatus.INFO,
 				"Test case Delete User started executing");		
 
 		LOGGER.info("Accessing the Login Page Again");
-        test.log(LogStatus.INFO, "Accessing the Login Page Again");
+        child3.log(LogStatus.INFO, "Accessing the Login Page Again");
         
 		LOGGER.info("Login as admin");
-		test.log(LogStatus.INFO, "Login as admin");
+		child3.log(LogStatus.INFO, "Login as admin");
 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginAsAdmin();
 		
 		LOGGER.info("CHECK WHETHER USER EXIST TO DELETE");
-		test.log(LogStatus.INFO, "CHECK WHETHER USER EXIST TO DELETE");
+		child3.log(LogStatus.INFO, "CHECK WHETHER USER EXIST TO DELETE");
 		
-		test.log(LogStatus.INFO, "Accessing HomePage");
-		test.log(LogStatus.INFO, "Accessing Admintool page \"Users\"");
-		test.log(LogStatus.INFO, "Accessing UserProfilePage");
-		test.log(LogStatus.INFO, "Search User");
-		test.log(LogStatus.INFO, "Enter the username "+TestCaseProperties.TEST_USER_NAME);	
-		test.log(LogStatus.INFO, "Click \"Search\" Button");
+		child3.log(LogStatus.INFO, "Accessing HomePage");
+		child3.log(LogStatus.INFO, "Accessing Admintool page \"Users\"");
+		child3.log(LogStatus.INFO, "Accessing UserProfilePage");
+		child3.log(LogStatus.INFO, "Search User");
+		child3.log(LogStatus.INFO, "Enter the username "+userName);	
+		child3.log(LogStatus.INFO, "Click \"Search\" Button");
 		
 	    extent.flush();
 		AdminConsolePage adminConsolePage4 = new AdminConsolePage(driver);		
-		if (adminConsolePage4.checkTestUserPresence()) {
+		if (adminConsolePage4.checkUserPresence(userName)) {
 			
-			LOGGER.info("User "+TestCaseProperties.TEST_USER_NAME+" is exist");
-			test.log(LogStatus.INFO, "<font color=blue>User "+TestCaseProperties.TEST_USER_NAME+" is exist <font>");
+			LOGGER.info("User "+userName+" is exist");
+			child3.log(LogStatus.INFO, "<font color=blue>User "+userName+" is exist <font>");
 			
 			TakeScreenShot ts=new TakeScreenShot();
 			   ts.takeScreenShotFF(driver,className, screenShotName+"10");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
+			   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 		       extent.flush(); 
 	            
-			test.log(LogStatus.INFO, "Accessing UserProfilePage Again");
-			test.log(LogStatus.INFO, "Enter the username "+TestCaseProperties.TEST_USER_NAME+" to search");
-			test.log(LogStatus.INFO, "Click \"search\" button");
-			test.log(LogStatus.INFO, "Click user to go inside the userprofile");		
-			test.log(LogStatus.INFO, "Click \"Delete User\" Button");
-			test.log(LogStatus.INFO, "Click \"Delete Confirmation\" Button");
+			child3.log(LogStatus.INFO, "Accessing UserProfilePage Again");
+			child3.log(LogStatus.INFO, "Enter the username "+userName+" to search");
+			child3.log(LogStatus.INFO, "Click \"search\" button");
+			child3.log(LogStatus.INFO, "Click user to go inside the userprofile");		
+			child3.log(LogStatus.INFO, "Click \"Delete User\" Button");
+			child3.log(LogStatus.INFO, "Click \"Delete Confirmation\" Button");
 			
 			AdminConsolePage deleteUser=new AdminConsolePage(driver);                
-			deleteUser.deleteTestUser(firstName,lastName,TestCaseProperties.TEST_USER_NAME);
+			deleteUser.deleteTestUser(firstName,lastName,userName);
 			extent.flush(); 
 			
 		}
 		else
 		{
-			test.log(LogStatus.INFO, "User : " + firstName
+			child3.log(LogStatus.INFO, "User : " + firstName
 					+ " Not Available in the System to Delete");
 			TakeScreenShot ts=new TakeScreenShot();
 			   ts.takeScreenShotFF(driver,className, screenShotName+"11");
-			   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
+			   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 		       extent.flush(); 
 		}
 		
 		
         LOGGER.info("CHECK WHETHER USER IS DELETED OR NOT");
-		test.log(LogStatus.INFO, "CHECK WHETHER USER IS DELETED OR NOT");
+		child3.log(LogStatus.INFO, "CHECK WHETHER USER IS DELETED OR NOT");
            
-		test.log(LogStatus.INFO, "Accessing HomePage");
-		test.log(LogStatus.INFO, "Accessing Admintool page \"Users\"");
-		test.log(LogStatus.INFO, "Accessing UserProfilePage");
-		test.log(LogStatus.INFO, "Search User");
-		test.log(LogStatus.INFO, "Enter the username "+TestCaseProperties.TEST_USER_NAME);	
-		test.log(LogStatus.INFO, "Click \"Search\" Button");
+		child3.log(LogStatus.INFO, "Accessing HomePage");
+		child3.log(LogStatus.INFO, "Accessing Admintool page \"Users\"");
+		child3.log(LogStatus.INFO, "Accessing UserProfilePage");
+		child3.log(LogStatus.INFO, "Search User");
+		child3.log(LogStatus.INFO, "Enter the username "+userName);	
+		child3.log(LogStatus.INFO, "Click \"Search\" Button");
 		extent.flush();
 		
 		AdminConsolePage adminConsolePage3 = new AdminConsolePage(driver);
-		if(adminConsolePage3.checkTestUserPresence())
+		if(adminConsolePage3.checkUserPresence(userName))
 			{
 				LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"User "+firstName+" IS NOT DELETED");
-		    	test.log(LogStatus.FAIL, "<font color=red>User "+firstName+" IS NOT DELETED<font>");
+		    	child3.log(LogStatus.FAIL, "<font color=red>User "+firstName+" IS NOT DELETED<font>");
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
 				   ts.takeScreenShotFF(driver,className, screenShotName+"12");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
+				   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 			       extent.flush();   
 		    	
 			}
@@ -499,11 +513,11 @@ static ExtentReports extent;
 			else
 			{
 				LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"User "+firstName+" IS DELETED SUCCESSFULLY DELETED");
-		        test.log(LogStatus.PASS, "<font color=green>User "+firstName+" IS SUCCESSFULLY DELETED<font>");
+		        child3.log(LogStatus.PASS, "<font color=green>User "+firstName+" IS SUCCESSFULLY DELETED<font>");
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
 				   ts.takeScreenShotFF(driver,className, screenShotName+"13");
-				   test.log(LogStatus.INFO, "Login Snapshot below: " +test.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
+				   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
 			       extent.flush(); 
 		       
 			}
@@ -511,50 +525,79 @@ static ExtentReports extent;
 		loginPage.logout();
 		
 		LOGGER.info("Test case deleteUser executed");
-		test.log(LogStatus.INFO, "Test case deleteUser executed");                       
-                extent.flush();
-                extent.endTest(test);
+		child3.log(LogStatus.INFO, "Test case deleteUser executed");                       
+                extent.flush();            
+                extent.endTest(child3);               
+            
 		
 		
     }
 
-	@DataProvider(name = "getData")
-    public Object[][] provideData(Method method) {
-    Object[][] result = null;
-
-    if (method.getName().equals("createUser")) {
-            result = new Object[][] {
-                        { "test", "test" ,"test@gmail.com", "test test", "FFLoginTest"} 
-                                    };
-    }else if (method.getName().equals("loginANDlogout")) {
-            result = new Object[][] { 
-                        { "test test","FFLoginTest"}
-                                    };
-    }else if (method.getName().equals("deleteUser")) {
-            result = new Object[][] { 
-                        { "test", "test","FFLoginTest"}
-                                    };
-    }
-                        return result;
-        }
 	
-   
 	@AfterMethod
-	   public void clod() throws MalformedURLException{
+	   public void aftermethod(Method method,ITestResult result) throws MalformedURLException{
+		
+		if(method.getName().equals("createUser")) {			
+			
+			if (result.getStatus() == ITestResult.FAILURE) {
+		        child1.log(LogStatus.FAIL,"createUser Test failed because " + result.getThrowable());
+		        extent.flush();
+		    } else if (result.getStatus() == ITestResult.SKIP) {
+		    	child1.log(LogStatus.SKIP, "createUser Test skipped because" + result.getThrowable());
+		        extent.flush();
+		    } else {
+		    	child1.log(LogStatus.PASS, "createUser Test got executed successfully");
+		        extent.flush();
+		    }
+			}
+			else if(method.getName().equals("loginAndLogout")) {			
+				
+				if (result.getStatus() == ITestResult.FAILURE) {
+			        child2.log(LogStatus.FAIL,"loginAndLogout Test failed because" + result.getThrowable());
+			        extent.flush();
+			    } else if (result.getStatus() == ITestResult.SKIP) {
+			    	child2.log(LogStatus.SKIP, "loginAndLogout Test skipped because" + result.getThrowable());
+			        extent.flush();
+			    } else {
+			    	child2.log(LogStatus.PASS, "loginAndLogout Test got executed successfully");
+			        extent.flush();
+			    }
+				}
+			else if(method.getName().equals("deleteUser")) {			
+				
+				if (result.getStatus() == ITestResult.FAILURE) {
+			        child3.log(LogStatus.FAIL,"deleteUser Test failed because "+ result.getThrowable());
+			        extent.flush();
+			    } else if (result.getStatus() == ITestResult.SKIP) {
+			    	child3.log(LogStatus.SKIP, "deleteUser Test skipped because " + result.getThrowable());
+			        extent.flush();
+			    } else {
+			    	child3.log(LogStatus.PASS, "deleteUser Test got executed successfully");
+			        extent.flush();
+			    }
+				}
 		
 		driver.quit(); 
 		
 	   }
-
+   
+	
 	@AfterTest(alwaysRun=true)
 	public void extent() {
 		
-		LOGGER.info("Test case closed");
+		LOGGER.info("Test case closed");		
+		
+		parent
+		  .appendChild(child1)
+		  .appendChild(child2)
+		   .appendChild(child3);
+		extent.endTest(parent);
 		extent.close();	
 		driver.quit();
-		//driver.close();
+		
 
 	} 
+
 }
 	
 

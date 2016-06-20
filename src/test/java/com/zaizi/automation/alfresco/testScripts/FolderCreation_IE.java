@@ -10,11 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -52,7 +53,12 @@ public class FolderCreation_IE {
 	 * Defining Report
 	 */
 	static ExtentReports extent;
-    
+	static ExtentTest parent;
+	static ExtentTest child1;
+	static ExtentTest child2;
+	static ExtentTest child3;
+	static ExtentTest child4;
+	static ExtentTest child5;
 	/**
 	 * 
 	 * Define WebDriver
@@ -89,15 +95,17 @@ public class FolderCreation_IE {
 
 	{
 		
-		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+className+".html");
+		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
+		parent=extent.startTest("<b>Folder Creation Test in IE</b>","This is Folder Creation Test,<b>Create the Site,Create the folder,Delete the folder,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
+
 	}
 	
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("IE", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -105,8 +113,8 @@ public class FolderCreation_IE {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	/*@Parameters({"firstNameIE", "lastNameIE","emailIE","userNameIE","PasswordIE","fullNameIE","screenShotNameIE" })*/
-	@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Create user in IE",priority = 1)
+	@Parameters({"firstNameIE", "lastNameIE","emailIE","userNameIE","PasswordIE","fullNameIE","screenShotNameIE" })
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create user in IE",priority = 1)
 	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -114,32 +122,31 @@ public class FolderCreation_IE {
 		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in IE "+userName);
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		ExtentTest test = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
-		
+		child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
+
 		LOGGER.info("Test case createUser started executing");
-		test.log(LogStatus.INFO,
+		child1.log(LogStatus.INFO,
 				"Test case createUser started executing");		
 
 		LOGGER.info("Accessing the Login Page");
-        test.log(LogStatus.INFO, "Accessing the Login Page");        
+        child1.log(LogStatus.INFO, "Accessing the Login Page");        
                	 		         
         LOGGER.info("Login as \"Admin\"");
-        test.log(LogStatus.INFO, "Login as \"Admin\""); 
+        child1.log(LogStatus.INFO, "Login as \"Admin\""); 
         extent.flush();
         
    	    LoginPage loginPage=new LoginPage(driver);   	            
    	    loginPage.loginAsAdmin();
-   	    Thread.sleep(5000);
-   	    
+   	         
    	    LOGGER.info("Create new user : \" "+userName+" \"");
-        test.log(LogStatus.INFO, "Create new user : \" "+userName+" \""); 
+        child1.log(LogStatus.INFO, "Create new user : \" "+userName+" \""); 
         
    	    LOGGER.info("Accessing the AdminTool Page");
-        test.log(LogStatus.INFO, "Accessing the AdminTool Page");         
-        test.log(LogStatus.INFO, "Navigate \"Users\" in AdminTools");
-        test.log(LogStatus.INFO, "Click \"New User\"");
-        test.log(LogStatus.INFO, "Fill the userfields");
-        test.log(LogStatus.INFO, "Click \"Create User\"");
+        child1.log(LogStatus.INFO, "Accessing the AdminTool Page");         
+        child1.log(LogStatus.INFO, "Navigate \"Users\" in AdminTools");
+        child1.log(LogStatus.INFO, "Click \"New User\"");
+        child1.log(LogStatus.INFO, "Fill the userfields");
+        child1.log(LogStatus.INFO, "Click \"Create User\"");
         extent.flush();
         
         Element.waitForLoad(driver);
@@ -155,11 +162,11 @@ public class FolderCreation_IE {
             notification.getText();
             
             LOGGER.info("Message display as : "+notification.getText());
-            test.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
+            child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"1");
-     	   	test.log(LogStatus.INFO, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
+     	   	child1.log(LogStatus.INFO, "User is alredy created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();             
             
@@ -174,11 +181,11 @@ public class FolderCreation_IE {
         {   
         	
         	LOGGER.info("User is Successfully Created");
-        	test.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
+        	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"2");
-     	   	test.log(LogStatus.INFO, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
+     	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
         	
@@ -190,21 +197,21 @@ public class FolderCreation_IE {
 		Element.waitForLoad(driver);    
 		Thread.sleep(3000);
         LOGGER.info("CHECK WHETHER USER IS CREATED OR NOT");
-		test.log(LogStatus.INFO, "CHECK WHETHER USER IS CREATED OR NOT");  
+		child1.log(LogStatus.INFO, "CHECK WHETHER USER IS CREATED OR NOT");  
 		
        
 		LOGGER.info("Accessing the Login Page");
-        test.log(LogStatus.INFO, "Accessing the Login Page");
+        child1.log(LogStatus.INFO, "Accessing the Login Page");
 
         LOGGER.info("Login as created user"+userName);
-        test.log(LogStatus.INFO, "Login as created user"+userName);
+        child1.log(LogStatus.INFO, "Login as created user"+userName);
         
         LoginPage loginPage2 = new LoginPage(driver);
         loginPage2.loginAsUser(userName, password);
            
         Thread.sleep(5000);
         LOGGER.info("Verify the HEADER_USER_MENU_NAME");
- 		test.log(LogStatus.INFO, "Verify the HEADER_USER_MENU_NAME");
+ 		child1.log(LogStatus.INFO, "Verify the HEADER_USER_MENU_NAME");
         
  		if(!(Element.isElementPresent(driver,By.xpath("//div[@class='error']"))))
         {
@@ -214,21 +221,21 @@ public class FolderCreation_IE {
  			
  			Thread.sleep(2000);
  			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"User is Sucessfully Created");
- 			test.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
+ 			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.PASS, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
+     	   	child1.log(LogStatus.PASS, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
 
  		} else {
  			LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"User is NOT Sucessfully Created");
- 			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
+ 			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"3");
-     	   	test.log(LogStatus.FAIL, "User is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
+     	   	child1.log(LogStatus.FAIL, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
            
@@ -240,11 +247,11 @@ public class FolderCreation_IE {
         
         	
         	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"User is NOT Sucessfully Created");
-  			test.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
+  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"4");
-     	   	test.log(LogStatus.FAIL, "User is NOT created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
+     	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
  		}
@@ -254,9 +261,9 @@ public class FolderCreation_IE {
         Element.waitForLoad(driver);
         
         LOGGER.info("Test case createUser executed");
-		test.log(LogStatus.INFO, "Test case createUser executed");
+		child1.log(LogStatus.INFO, "Test case createUser executed");
 		extent.flush();
-        extent.endTest(test);        
+        extent.endTest(child1);        
        
 		
 
@@ -270,50 +277,48 @@ public class FolderCreation_IE {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	/*@Parameters({"siteIE", "isPrivateIE","siteIdIE","expectedResultIE","siteCreatorNameIE","screenShotNameIE" })*/
-	@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Create site in IE",priority = 2)
+	@Parameters({"siteIE", "isPrivateIE","siteIdIE","expectedResultIE","siteCreatorNameIE","screenShotNameIE" })
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create site in IE",priority = 2)
 	public void createSite(String siteName,Boolean isPrivate,String siteId,String expectedResult,String siteCreatorName,String screenShotName) throws InterruptedException, IOException
 
 	{
 		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create Site "+siteName);
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		 ExtentTest test = extent.startTest("Create Site","Create site called \" "+siteName +" \",Is it private Site "+isPrivate);      
+		 child2 = extent.startTest("Create Site","Create site called \" "+siteName +" \",Is it private Site "+isPrivate);      	
 
 		LOGGER.info("Test case Create Site started executing");
-		test.log(LogStatus.INFO,
+		child2.log(LogStatus.INFO,
 				"Test case Create Site started executing");		
 
 		LOGGER.info("Accessing the Login Page");
-        test.log(LogStatus.INFO, "Accessing the Login Page");
+        child2.log(LogStatus.INFO, "Accessing the Login Page");
         
 		LOGGER.info("Login as admin");
-		test.log(LogStatus.INFO, "Login as admin");
+		child2.log(LogStatus.INFO, "Login as admin");
 		extent.flush(); 
 		 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginAsAdmin();
-		 Thread.sleep(5000);
-		 
+		
 		CreateObjects createObjects = new CreateObjects(driver);
 		
 		if (isPrivate)
         {	
             LOGGER.info("CREATE PRIVATE SITE");
-             test.log(LogStatus.INFO, "CREATE PRIVATE SITE");
+             child2.log(LogStatus.INFO, "CREATE PRIVATE SITE");
                 
-             test.log(LogStatus.INFO,"Click \"Create Site\" ");
-             test.log(LogStatus.INFO,"Enter "+siteName+" in \"site Name Field\" ");
-             test.log(LogStatus.INFO,"Enter "+siteId+" in \"site URL Field\" ");	
-             test.log(LogStatus.INFO,"Check \"private\" Option");
-             test.log(LogStatus.INFO,"Click \"OK\" Button "); 
-             extent.flush(); 
-             Thread.sleep(5000);
+             child2.log(LogStatus.INFO,"Click \"Create Site\" ");
+             child2.log(LogStatus.INFO,"Enter "+siteName+" in \"site Name Field\" ");
+             child2.log(LogStatus.INFO,"Enter "+siteId+" in \"site URL Field\" ");	
+             child2.log(LogStatus.INFO,"Check \"private\" Option");
+             child2.log(LogStatus.INFO,"Click \"OK\" Button "); 
+             extent.flush();        
              createObjects.createPrivateSite(siteName, siteId,expectedResult);
 			
             TakeScreenShot ts=new TakeScreenShot();
        	   	ts.takeScreenShotIE(driver,className, screenShotName+"5");
-       	   	test.log(LogStatus.INFO, "Site created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
+       	   	child2.log(LogStatus.INFO, "Site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
             Thread.sleep(5000);
@@ -322,7 +327,7 @@ public class FolderCreation_IE {
 		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
-			test.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
+			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
 			 extent.flush(); 
 		}		
 		//If Site IS NOT CREATED
@@ -336,13 +341,13 @@ public class FolderCreation_IE {
     	    if(siteErrorNotification.toUpperCase().equals(expectedResult))
     		{    	    	
     	    	LOGGER.info("Private Site "+siteName +"IS already CREATED ");
-                test.log(LogStatus.INFO, "Private Site "+siteName +"IS already CREATED ");
+                child2.log(LogStatus.INFO, "Private Site "+siteName +"IS already CREATED ");
                 
 	    	    LOGGER.info("Expected Results : " + expectedResult);
-	        	test.log(LogStatus.INFO, "Expected Results : " + expectedResult);
+	        	child2.log(LogStatus.INFO, "Expected Results : " + expectedResult);
 	        	
 	        	LOGGER.info("Current Test Results : "+siteErrorNotification);
-	        	test.log(LogStatus.INFO, "Current Test Results : " +"<font color=blue>" +siteErrorNotification+"<font>");	        	
+	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=blue>" +siteErrorNotification+"<font>");	        	
 
                 Button okaybtn=new Button(driver,By.xpath("//button[text()='OK']"));
 		        okaybtn.click(); 
@@ -357,13 +362,13 @@ public class FolderCreation_IE {
     	    else 
     	    {
     	    	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"Private Site "+siteName +"IS NOT CREATED ");
-                test.log(LogStatus.FAIL, "Private Site "+siteName +"IS NOT CREATED ");
+                child2.log(LogStatus.FAIL, "Private Site "+siteName +"IS NOT CREATED ");
 			
 	    	    LOGGER.info("Expected Results : " + expectedResult);
-	            test.log(LogStatus.FAIL, "Expected Results : " + expectedResult);
+	            child2.log(LogStatus.FAIL, "Expected Results : " + expectedResult);
 	        	
 	        	LOGGER.info("Current Test Results : "+siteErrorNotification);
-	        	test.log(LogStatus.FAIL, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
+	        	child2.log(LogStatus.FAIL, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        		
 	        	 extent.flush(); 
     	    }
@@ -372,14 +377,14 @@ public class FolderCreation_IE {
              Element.waitForLoad(driver);
              
              LOGGER.info("CHECK WHETHER PRIVATE SITE CREATED OR NOT");
-             test.log(LogStatus.INFO, "CHECK WHETHER PRIVATE SITE CREATED OR NOT");
+             child2.log(LogStatus.INFO, "CHECK WHETHER PRIVATE SITE CREATED OR NOT");
              
              LOGGER.info("Check whether \" " +siteName+ "\" SITE IS VISIBLE TO "+siteCreatorName);
-             test.log(LogStatus.INFO, "Check whether \" " +siteName+ "\" SITE IS VISIBLE TO "+siteCreatorName);
+             child2.log(LogStatus.INFO, "Check whether \" " +siteName+ "\" SITE IS VISIBLE TO "+siteCreatorName);
              Thread.sleep(5000);
 
              LOGGER.info("Search the sitename in Site finder");
-             test.log(LogStatus.INFO, "Search the sitename in Site finder");
+             child2.log(LogStatus.INFO, "Search the sitename in Site finder");
              
              extent.flush(); 
              
@@ -390,14 +395,14 @@ public class FolderCreation_IE {
 			if(Element.isElementPresent(driver,By.xpath("//Span[text()='No sites found']"))) 
 			{
 				LOGGER.info("Message display as \"No sites found\"");
-				test.log(LogStatus.INFO, "Message display as \"No sites found\"");
+				child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
 				
 				LOGGER.info(siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName);
-				test.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
+				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				   
 		     	   	ts.takeScreenShotIE(driver,className, screenShotName+"6");
-		     	   	test.log(LogStatus.INFO, "Site is not visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
+		     	   	child2.log(LogStatus.INFO, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();   
 				
@@ -405,10 +410,10 @@ public class FolderCreation_IE {
 			else if (Element.isTextPresentInListForSite(driver.findElements(By.xpath("//tbody//tr//td//div//h3//a[contains(., '" + siteName+ "')]")), siteName))
 			{	
 				LOGGER.info(siteName+ " SITE IS VISIBLE TO "+siteCreatorName);
-				test.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
+				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				ts.takeScreenShotIE(driver,className, screenShotName+"7");
-	     	   	test.log(LogStatus.INFO, "Site is visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
+	     	   	child2.log(LogStatus.INFO, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 							
@@ -422,7 +427,7 @@ public class FolderCreation_IE {
                 Element.waitForLoad(driver);
                 
                 LOGGER.info("Login as  \"privateuser\" ");
-                test.log(LogStatus.INFO,"Login as \"privateuser\" ");
+                child2.log(LogStatus.INFO,"Login as \"privateuser\" ");
                 extent.flush(); 
                 
                 loginPage1.loginAsUser("privateuser", "1qaz@WSX");            
@@ -430,7 +435,7 @@ public class FolderCreation_IE {
                 Thread.sleep(5000);
                 
                 LOGGER.info("Check whether \"" +siteName+ "\" SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
-                test.log(LogStatus.INFO, "Check whether \" " +siteName+ "\" SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
+                child2.log(LogStatus.INFO, "Check whether \" " +siteName+ "\" SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                 extent.flush(); 
                 
                 SearchObjects searchSite2 = new SearchObjects(driver);
@@ -442,13 +447,13 @@ public class FolderCreation_IE {
                 {
                     Thread.sleep(5000);
                     LOGGER.info("Message display as \"No sites found\"");
-                    test.log(LogStatus.INFO, "Message display as \"No sites found\"");
+                    child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
                     
                     LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
-                    test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
+                    child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
                     ts.takeScreenShotIE(driver,className, screenShotName+"8");
-    	     	   	test.log(LogStatus.PASS, "User is alredy created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
+    	     	   	child2.log(LogStatus.PASS, "User is alredy created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
     	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     	            extent.flush();  
                     
@@ -459,10 +464,10 @@ public class FolderCreation_IE {
                     if (Element.isTextPresentInList(driver.findElements(By.xpath("//tbody//tr//td//div//h3//a[contains(., '" + siteName+ "')]")), siteName)) {
                         
                         LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
-                        test.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
+                        child2.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
                         ts.takeScreenShotIE(driver,className, screenShotName+"9");
-        	     	   	test.log(LogStatus.FAIL, "Site is not visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
+        	     	   	child2.log(LogStatus.FAIL, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush(); 
                         
@@ -470,10 +475,10 @@ public class FolderCreation_IE {
                     } else {
                     	
                         LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
-                        test.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
+                        child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         
                         ts.takeScreenShotIE(driver,className, screenShotName+"9");
-        	     	   	test.log(LogStatus.PASS, "Site is visible to site creator : " +test.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
+        	     	   	child2.log(LogStatus.PASS, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush();
                         
@@ -485,17 +490,17 @@ public class FolderCreation_IE {
 		else
 		{	
 			LOGGER.info("CREATE PUBLIC SITE");
-            test.log(LogStatus.INFO, "CREATE PUBLIC SITE");
+            child2.log(LogStatus.INFO, "CREATE PUBLIC SITE");
             
-			test.log(LogStatus.INFO, "Click \"Create Site\" ");
-			test.log(LogStatus.INFO, "Enter " + siteName
+			child2.log(LogStatus.INFO, "Click \"Create Site\" ");
+			child2.log(LogStatus.INFO, "Enter " + siteName
 					+ " in \"site Name Field\" ");
-			test.log(LogStatus.INFO, "Enter " + siteId
+			child2.log(LogStatus.INFO, "Enter " + siteId
 					+ " in \"site URL Field\" ");
-			test.log(LogStatus.INFO, "Check \"private\" Option");
-			test.log(LogStatus.INFO, "Click \"OK\" Button ");
+			child2.log(LogStatus.INFO, "Check \"private\" Option");
+			child2.log(LogStatus.INFO, "Click \"OK\" Button ");
 			extent.flush();
-			Thread.sleep(5000);
+			
 			createObjects.createPublicSite(siteName, siteId, expectedResult);
 			Thread.sleep(5000);        
                                                 
@@ -503,11 +508,11 @@ public class FolderCreation_IE {
 		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
-			test.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
+			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"10");
-     	   	test.log(LogStatus.INFO, "Public site created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
+     	   	child2.log(LogStatus.INFO, "Public site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		    	
@@ -523,14 +528,14 @@ public class FolderCreation_IE {
     	    if(siteErrorNotification.toUpperCase().equals(expectedResult))
     		{    	    			    
 	    	    LOGGER.info("Expected Results : " + expectedResult);
-	        	test.log(LogStatus.INFO, "Expected Results : " + expectedResult);
+	        	child2.log(LogStatus.INFO, "Expected Results : " + expectedResult);
 	        	
 	        	LOGGER.info("Current Test Results : "+siteErrorNotification);
-	        	test.log(LogStatus.INFO, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
+	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"11");
-	     	   	test.log(LogStatus.INFO, "Public Site already created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
+	     	   	child2.log(LogStatus.INFO, "Public Site already created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
                         
@@ -546,35 +551,35 @@ public class FolderCreation_IE {
     	    else 
     	    {
     	    	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"Private Site "+siteName +"IS NOT CREATED ");
-                test.log(LogStatus.FAIL, "Private Site "+siteName +"IS NOT CREATED ");
+                child2.log(LogStatus.FAIL, "Private Site "+siteName +"IS NOT CREATED ");
 			
 	    	    LOGGER.info("Expected Results : " + expectedResult);
-	            test.log(LogStatus.INFO, "Expected Results : " + expectedResult);
+	            child2.log(LogStatus.INFO, "Expected Results : " + expectedResult);
 	        	
 	        	LOGGER.info("Current Test Results : "+siteErrorNotification);
-	        	test.log(LogStatus.INFO, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
+	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
 	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"12");
-	     	   	test.log(LogStatus.INFO, "Public Site not created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
+	     	   	child2.log(LogStatus.INFO, "Public Site not created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();
     	    }
 		}
                 LOGGER.info("CHECK WHETHER "+siteName+" IS CREATED OR NOT");
-                test.log(LogStatus.INFO,"CHECK WHETHER "+siteName+" IS CREATED OR NOT");
+                child2.log(LogStatus.INFO,"CHECK WHETHER "+siteName+" IS CREATED OR NOT");
                 
                 LOGGER.info("CHECK WHETHER "+siteName+" IS DISPLAY IN SITES LIST");
-                test.log(LogStatus.INFO,"CHECK WHETHER "+siteName+" IS DISPLAY IN SITES LIST");
+                child2.log(LogStatus.INFO,"CHECK WHETHER "+siteName+" IS DISPLAY IN SITES LIST");
                 
                 LOGGER.info("Click \"Sites\"");
-                test.log(LogStatus.INFO, "Click \"Sites\"");
+                child2.log(LogStatus.INFO, "Click \"Sites\"");
                 
                 LOGGER.info("Click \"Site Finder\"");
-                test.log(LogStatus.INFO, "Click \"Site Finder\"");
+                child2.log(LogStatus.INFO, "Click \"Site Finder\"");
                 
                 LOGGER.info("Search sitename");
-                test.log(LogStatus.INFO, "Search sitename");
+                child2.log(LogStatus.INFO, "Search sitename");
                 
                 extent.flush();
                 
@@ -584,11 +589,11 @@ public class FolderCreation_IE {
 		if(Element.isElementPresent(driver,By.xpath("//Span[text()='No sites found']"))) 
 		{
 			LOGGER.info("Message display as \"No sites found\"");
-			test.log(LogStatus.INFO, "Message display as \"No sites found\"");
+			child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"13");
-     	   	test.log(LogStatus.INFO, "Site is not visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
+     	   	child2.log(LogStatus.INFO, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 			
@@ -598,11 +603,11 @@ public class FolderCreation_IE {
 			if (Element.isTextPresentInListForSite(driver.findElements(By.xpath("//tbody//tr//td//div//h3//a[contains(., '" + siteName+ "')]")), siteName)) {
 				
                LOGGER.info("Site is Display in \"Site Search\"");
-               test.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
+               child2.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                TakeScreenShot ts=new TakeScreenShot();
         	   	ts.takeScreenShotIE(driver,className, screenShotName+"14");
-        	   	test.log(LogStatus.PASS, "Site is visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
+        	   	child2.log(LogStatus.PASS, "Site is visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
         	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                extent.flush(); 
                             
@@ -610,11 +615,11 @@ public class FolderCreation_IE {
 			} else {
 				
                             LOGGER.info("Site IS NOT Display in \"Site Search\"");
-                            test.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
+                            child2.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
                     	   	ts.takeScreenShotIE(driver,className, screenShotName+"14");
-                    	   	test.log(LogStatus.FAIL, "Site is not visible in search : " +test.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
+                    	   	child2.log(LogStatus.FAIL, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
                     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
 				
@@ -626,9 +631,9 @@ public class FolderCreation_IE {
 		LoginPage loginpage1=new LoginPage(driver);
 		loginpage1.logout();
 		LOGGER.info("Test case create Site executed");
-		test.log(LogStatus.INFO, "Test case create Site executed");                      
+		child2.log(LogStatus.INFO, "Test case create Site executed");                      
         extent.flush();
-        extent.endTest(test);   
+        extent.endTest(child2);   
 
 	}
 	
@@ -640,56 +645,56 @@ public class FolderCreation_IE {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	/*@Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })*/
-	@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Folder creation in IE",priority = 3)
+	@Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Folder creation in IE",priority = 3)
 	public void folderCreation(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 	{
-		ExtentTest test = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
+		child3 = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
 		
         LOGGER.info("Test case Folder Creation started execution"); 
-        test.log(LogStatus.INFO,"Test case Folder Creation started execution");                
+        child3.log(LogStatus.INFO,"Test case Folder Creation started execution");                
 			
 		LoginPage loginPage = new LoginPage(driver);
 		LOGGER.info("Accessing the Login Page");
-		test.log(LogStatus.INFO, "Accessing the Login Page");
+		child3.log(LogStatus.INFO, "Accessing the Login Page");
 		
 		//Login as the Admin
 		LOGGER.info("Login As Admin");
-		test.log(LogStatus.INFO, "Login As Admin");
+		child3.log(LogStatus.INFO, "Login As Admin");
 		 extent.flush(); 
 		 
         loginPage.loginAsAdmin();
-        Thread.sleep(5000);
+		Thread.sleep(3000);
 		
 		SearchObjects search = new SearchObjects(driver);
 		
 		//Search for the Site
         LOGGER.info("Click \"Search Finder\"");
-		test.log(LogStatus.INFO, "Click \"Search Finder\"");
+		child3.log(LogStatus.INFO, "Click \"Search Finder\"");
                 
         LOGGER.info("Search Site \""+siteName+"\"");
-		test.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
+		child3.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
 		search.searchSite(siteName);
 				
 		//Clicks on the Site Link
         LOGGER.info("Navigate to the " +siteName);
-		test.log(LogStatus.INFO, "Navigate to the " +siteName);
+		child3.log(LogStatus.INFO, "Navigate to the " +siteName);
 		Link siteLink=new Link(driver, By.xpath("//h3[@class='sitename']/a[text()='"+siteName+"']"));
 		siteLink.click();
                 
-         //Element.takeScreenShotIE(driver, className, screenShotName+"site1name");
+         //Element.takescreenshot(driver, className, screenShotName+"site1name");
 		Thread.sleep(3000);             
 		
 		//Create Folder
         LOGGER.info("Created the Folder : " +folderName);
-		test.log(LogStatus.INFO, "Created the Folder :  " +folderName);
+		child3.log(LogStatus.INFO, "Created the Folder :  " +folderName);
                 
-		test.log(LogStatus.INFO, "Navigate To DocumentLibrary");
-		test.log(LogStatus.INFO, "Click \"Create\" Button");
-		test.log(LogStatus.INFO, "Click \"Folder\"");
-		test.log(LogStatus.INFO, "Enter the Name of the Folder");
-		test.log(LogStatus.INFO, "Enter the title of the Folder");
-		test.log(LogStatus.INFO, "Click \"Save\" Button");
+		child3.log(LogStatus.INFO, "Navigate To DocumentLibrary");
+		child3.log(LogStatus.INFO, "Click \"Create\" Button");
+		child3.log(LogStatus.INFO, "Click \"Folder\"");
+		child3.log(LogStatus.INFO, "Enter the Name of the Folder");
+		child3.log(LogStatus.INFO, "Enter the title of the Folder");
+		child3.log(LogStatus.INFO, "Click \"Save\" Button");
 		extent.flush(); 
 		 
         CreateObjects create=new CreateObjects(driver);
@@ -698,7 +703,7 @@ public class FolderCreation_IE {
 		
 		TakeScreenShot ts=new TakeScreenShot();
  	   	ts.takeScreenShotIE(driver,className, screenShotName+"15");
- 	   	test.log(LogStatus.INFO, "Create Folder : " +test.addScreenCapture("./"+className+"/"+screenShotName+"15"+".png"));
+ 	   	child3.log(LogStatus.INFO, "Create Folder : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"15"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
              
@@ -707,13 +712,13 @@ public class FolderCreation_IE {
 		//--- Folder Validation	
              
        LOGGER.info("CHECK WHETHER FOLDER IS CREATED SUCESSFULLY");
-       test.log(LogStatus.INFO, "CHECK WHETHER FOLDER IS CREATED SUCESSFULLY");
+       child3.log(LogStatus.INFO, "CHECK WHETHER FOLDER IS CREATED SUCESSFULLY");
        
        LOGGER.info("Accessing the LoginPage");
-       test.log(LogStatus.INFO, "Accessing the LoginPage");
+       child3.log(LogStatus.INFO, "Accessing the LoginPage");
        
        LOGGER.info("Login as Admin");
-       test.log(LogStatus.INFO, "Login as Admin");
+       child3.log(LogStatus.INFO, "Login as Admin");
        extent.flush(); 
        
        LoginPage loginPage1=new LoginPage(driver);
@@ -721,16 +726,16 @@ public class FolderCreation_IE {
                 
 		//Search for the Site
         LOGGER.info("Click \"Search Finder\"");
-		test.log(LogStatus.INFO, "Click \"Search Finder\"");
+		child3.log(LogStatus.INFO, "Click \"Search Finder\"");
                 
         LOGGER.info("Search Site \""+siteName+"\"");
-		test.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
+		child3.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
 		 extent.flush(); 
 		search.searchSite(siteName);
 				
 		//Clicks on the Site Link
         LOGGER.info("Navigate to the " +siteName);
-		test.log(LogStatus.INFO, "Navigate to the " +siteName);
+		child3.log(LogStatus.INFO, "Navigate to the " +siteName);
                 
 		Link siteLink1=new Link(driver, By.xpath("//h3[@class='sitename']/a[text()='"+siteName+"']"));
 		siteLink1.click();		
@@ -738,7 +743,7 @@ public class FolderCreation_IE {
                 
 		//Navigate to the Document Library
         LOGGER.info("Navigate To DocumentLibrary");
-		test.log(LogStatus.INFO, "Navigate To DocumentLibrary");
+		child3.log(LogStatus.INFO, "Navigate To DocumentLibrary");
 		extent.flush(); 
         NavigateToPage navigate=new NavigateToPage(driver);
 		navigate.goToDocLib();
@@ -750,18 +755,18 @@ public class FolderCreation_IE {
 		{
 		//Expected Result
 			LOGGER.info("Expected Results :Folder " + folderName +"should visible");
-        	test.log(LogStatus.INFO, "Expected Results :Folder " + folderName+"should visible");
+        	child3.log(LogStatus.INFO, "Expected Results :Folder " + folderName+"should visible");
         	
         	//Current Result
         	LOGGER.info("Current Test Results : Folder " +currentResult.getWebElement().getText()+" is visible");
-        	test.log(LogStatus.INFO, "Current Test Results :Folder " + currentResult.getWebElement().getText()+" is visible");
+        	child3.log(LogStatus.INFO, "Current Test Results :Folder " + currentResult.getWebElement().getText()+" is visible");
         	
             LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"The Admin has created the " +folderName+ " successfully.");
-        	test.log(LogStatus.PASS, "The Admin has created the " +folderName+ " successfully.");
+        	child3.log(LogStatus.PASS, "The Admin has created the " +folderName+ " successfully.");
         	
         	
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"16");
-     	   	test.log(LogStatus.PASS, "Folder is created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"16"+".png"));
+     	   	child3.log(LogStatus.PASS, "Folder is created : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"16"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
@@ -769,18 +774,18 @@ public class FolderCreation_IE {
 		{
 		//Expected Result
 			LOGGER.info("Expected Results :Folder " + folderName +"should visible");
-        	test.log(LogStatus.INFO, "Expected Results :Folder " + folderName+"should visible");
+        	child3.log(LogStatus.INFO, "Expected Results :Folder " + folderName+"should visible");
         	
         	//Current Result
         	LOGGER.info("Current Test Results : Folder " +currentResult.getWebElement().getText()+" is visible");
-        	test.log(LogStatus.INFO, "Current Test Results :Folder " + currentResult.getWebElement().getText()+" is visible");
+        	child3.log(LogStatus.INFO, "Current Test Results :Folder " + currentResult.getWebElement().getText()+" is visible");
         	
             LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"The Admin has NOT created the  " +folderName+ " successfully.");
-        	test.log(LogStatus.FAIL, "The Admin has NOT created the " +folderName+ " successfully.");
+        	child3.log(LogStatus.FAIL, "The Admin has NOT created the " +folderName+ " successfully.");
                 
         	
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"17");
-     	   	test.log(LogStatus.FAIL, "Folder is not created : " +test.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
+     	   	child3.log(LogStatus.FAIL, "Folder is not created : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
             
@@ -790,10 +795,10 @@ public class FolderCreation_IE {
 		lp.logout();
 		
 				LOGGER.info("Test case Folder Creation executed"); 
-                test.log(LogStatus.INFO,"Test case Folder Creation executed");
+                child3.log(LogStatus.INFO,"Test case Folder Creation executed");
                 
                  extent.flush();
-                 extent.endTest(test);        
+                 extent.endTest(child3);        
                
 
 	}
@@ -806,46 +811,44 @@ public class FolderCreation_IE {
 	 * @throws Exception InterruptedException, IOException
 	 */
     
-/*@Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })*/
-@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Folder in IE",priority = 4)
+@Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })
+@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Folder in IE",priority = 4)
 public void deleteFolder(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 
 {
-    ExtentTest test = extent.startTest("Delete Folder", "Delete Folder and Validation as Admin in the Private Site");
-	
-      
+    child4 = extent.startTest("Delete Folder", "Delete Folder and Validation as Admin in the Private Site");	
+       
             LOGGER.info("Test case Delete Folder started execution"); 
-            test.log(LogStatus.INFO,"Test case Delete Folder started execution");
+            child4.log(LogStatus.INFO,"Test case Delete Folder started execution");
             
-	
-	
+		
 	LoginPage loginPage = new LoginPage(driver);
 	LOGGER.info("Accessing the Login Page");
-	test.log(LogStatus.INFO, "Accessing the Login Page");
+	child4.log(LogStatus.INFO, "Accessing the Login Page");
 	
 	//Login as the Admin
 	LOGGER.info("Login As Admin");
-	test.log(LogStatus.INFO, "Login As Admin");
+	child4.log(LogStatus.INFO, "Login As Admin");
 	 extent.flush();
 	 
     loginPage.loginAsAdmin();
-    Thread.sleep(5000);
+	Thread.sleep(3000);
 	
 	SearchObjects search = new SearchObjects(driver);
 	
 	//Search for the Site
     LOGGER.info("Click \"Search Finder\"");
-	test.log(LogStatus.INFO, "Click \"Search Finder\"");
+	child4.log(LogStatus.INFO, "Click \"Search Finder\"");
             
     LOGGER.info("Search Site \""+siteName+"\"");
-	test.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
+	child4.log(LogStatus.INFO, "Search Site \""+siteName+"\"");
 	 extent.flush();
 	 
 	search.searchSite(siteName);
 			
 	//Clicks on the Site Link
     LOGGER.info("Navigate to the " +siteName);
-	test.log(LogStatus.INFO, "Navigate to the " +siteName);
+	child4.log(LogStatus.INFO, "Navigate to the " +siteName);
 	 extent.flush();
 	 
 	Link siteLink=new Link(driver, By.xpath("//h3[@class='sitename']/a[text()='"+siteName+"']"));
@@ -856,22 +859,22 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
 	
 	//Delete Folder
     LOGGER.info("Delete the Folder : " +folderName);
-	test.log(LogStatus.INFO, "Delete the Folder :  " +folderName);
+	child4.log(LogStatus.INFO, "Delete the Folder :  " +folderName);
             
-	test.log(LogStatus.INFO, "Navigate To DocumentLibrary");
-	test.log(LogStatus.INFO, "Select Folder");
-	test.log(LogStatus.INFO, "Click \"Selected Items\"");
-	test.log(LogStatus.INFO, "Click \"Delete\" Button");
-	test.log(LogStatus.INFO, "Click \"Delete Confirmation\" Button");
-	test.log(LogStatus.INFO, "Login as Admin to delete Folder in TrashCan");
-	test.log(LogStatus.INFO, "Click \"My Profile\"");
-	test.log(LogStatus.INFO, "Place FolderName");
-	test.log(LogStatus.INFO, "Click \"Search\" Button");
-	test.log(LogStatus.INFO, "Check the patucular FolderName");
-	test.log(LogStatus.INFO, "Click \"Selected Item\" Button");
-	test.log(LogStatus.INFO, "Click \"Delete\" Button");
-	test.log(LogStatus.INFO, "Click \"OK\" Button");
-	test.log(LogStatus.INFO, "Click \"OK confirmation\" Button");
+	child4.log(LogStatus.INFO, "Navigate To DocumentLibrary");
+	child4.log(LogStatus.INFO, "Select Folder");
+	child4.log(LogStatus.INFO, "Click \"Selected Items\"");
+	child4.log(LogStatus.INFO, "Click \"Delete\" Button");
+	child4.log(LogStatus.INFO, "Click \"Delete Confirmation\" Button");
+	child4.log(LogStatus.INFO, "Login as Admin to delete Folder in TrashCan");
+	child4.log(LogStatus.INFO, "Click \"My Profile\"");
+	child4.log(LogStatus.INFO, "Place FolderName");
+	child4.log(LogStatus.INFO, "Click \"Search\" Button");
+	child4.log(LogStatus.INFO, "Check the patucular FolderName");
+	child4.log(LogStatus.INFO, "Click \"Selected Item\" Button");
+	child4.log(LogStatus.INFO, "Click \"Delete\" Button");
+	child4.log(LogStatus.INFO, "Click \"OK\" Button");
+	child4.log(LogStatus.INFO, "Click \"OK confirmation\" Button");
 	 extent.flush();
 	 
     RemoveObjects delete=new RemoveObjects(driver);
@@ -880,7 +883,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
             
 	TakeScreenShot ts=new TakeScreenShot();
 	   	ts.takeScreenShotIE(driver,className, screenShotName+"18");
-	   	test.log(LogStatus.INFO, "Delete Folder : " +test.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
+	   	child4.log(LogStatus.INFO, "Delete Folder : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     extent.flush(); 
     
@@ -890,11 +893,11 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
            
             
             LOGGER.info("Accessing the Login Page Again");
-    		test.log(LogStatus.INFO, "Accessing the Login Page Again");
+    		child4.log(LogStatus.INFO, "Accessing the Login Page Again");
     		
     		//Login as the Admin
     		LOGGER.info("Login As Admin");
-    		test.log(LogStatus.INFO, "Login As Admin");
+    		child4.log(LogStatus.INFO, "Login As Admin");
     		 extent.flush();
     		 
             LoginPage loginPage1=new LoginPage(driver);
@@ -903,17 +906,17 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
             NavigateToPage navigateTo = new NavigateToPage(driver);
     		
     		LOGGER.info("CHECK WHETHER FOLDER\" "+folderName+" \"IS DELETED OR NOT");
-    		test.log(LogStatus.INFO,"CHECK WHETHER FOLDER\" "+folderName+" \"IS DELETED OR NOT");
+    		child4.log(LogStatus.INFO,"CHECK WHETHER FOLDER\" "+folderName+" \"IS DELETED OR NOT");
     		navigateTo.goToHome();
                     
             LOGGER.error("Click \"My Profile\" Again");
-    		test.log(LogStatus.INFO, "Click \"My Profile\" Again");
+    		child4.log(LogStatus.INFO, "Click \"My Profile\" Again");
     		 extent.flush();
     		 
     		navigateTo.goToUserTrashCan();	
     		
     		LOGGER.info("Place folderUrl");
-    		test.log(LogStatus.INFO, "Place folderUrl");
+    		child4.log(LogStatus.INFO, "Place folderUrl");
     		 extent.flush();
     		 
     		TextField textField = new TextField(
@@ -923,7 +926,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     		textField.enterText(folderName);
     		
     		LOGGER.info("Click \"Search\" Button");
-    		test.log(LogStatus.INFO, "Click \"Search\" Button");
+    		child4.log(LogStatus.INFO, "Click \"Search\" Button");
     		 extent.flush();
     		 
     		Button searchButton = new Button(driver,By.xpath("//button[text()='Search']"));
@@ -932,33 +935,33 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     		
     	
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"19");
-     	   	test.log(LogStatus.INFO, "Search the Folder : " +test.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
+     	   	child4.log(LogStatus.INFO, "Search the Folder : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 
     		LOGGER.info("Check the patucular folderUrl");
-    		test.log(LogStatus.INFO, "Check the patucular folderUrl");
+    		child4.log(LogStatus.INFO, "Check the patucular folderUrl");
     		 extent.flush();
     		 
-    		if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
-    		{
-    			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,folderName+" Folder IS DELETED SUCCESSFULLY");
-    			test.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
-    			
-    			
-	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"20");
-	     	   	test.log(LogStatus.PASS, "Folder is deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
-	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-	            extent.flush(); 
-    		}
-    		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+folderName+"']")))
+    		 if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
      		{
      			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,folderName+" Folder IS DELETED SUCCESSFULLY");
-     			test.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
+     			child4.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
+     			
+     			
+ 	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"20");
+ 	     	   	child4.log(LogStatus.PASS, "Folder is deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
+ 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
+ 	            extent.flush(); 
+     		}
+     		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+folderName+"']")))
+     		{
+     			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,folderName+" Folder IS DELETED SUCCESSFULLY");
+     			child4.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
      			
      			
      	 	   	ts.takeScreenShotIE(driver,className, screenShotName+"A20");
-     	 	   	test.log(LogStatus.PASS, "Folder is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A20"+".png"));
+     	 	   	child4.log(LogStatus.PASS, "Folder is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"A20"+".png"));
      	 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
      	        extent.flush(); 
      		}
@@ -976,22 +979,22 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     		{	
     			Thread.sleep(2000);
     			LOGGER.info(folderName+ "Folder IS NOT DELETED");
-    			test.log(LogStatus.FAIL, folderName+" Folder IS NOT DELETED");
+    			child4.log(LogStatus.FAIL, folderName+" Folder IS NOT DELETED");
     			
     			
 	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"21");
-	     	   	test.log(LogStatus.FAIL, "Folder is not deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"21"+".png"));
+	     	   	child4.log(LogStatus.FAIL, "Folder is not deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"21"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
     		}
     		else
     		{
     			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,folderName+" Folder IS DELETED SUCCESSFULLY");
-    			test.log(LogStatus.PASS, folderName+"Folder IS DELETED SUCCESSFULLY");
+    			child4.log(LogStatus.PASS, folderName+"Folder IS DELETED SUCCESSFULLY");
     			
     			
 	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"22");
-	     	   	test.log(LogStatus.PASS, "Folder is deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"22"+".png"));
+	     	   	child4.log(LogStatus.PASS, "Folder is deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"22"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
     		}
@@ -1002,54 +1005,52 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     		Thread.sleep(3000);
 	loginPage1.logout();
 	LOGGER.info("Test case Delete Folder executed"); 
-            test.log(LogStatus.INFO,"Test case Delete Folder executed");
+            child4.log(LogStatus.INFO,"Test case Delete Folder executed");
             extent.flush();
-             extent.endTest(test);        
+             extent.endTest(child4);        
             
     }
 
-/*@Parameters({"siteIE","siteIdIE","screenShotNameIE" })*/
-@Test(dataProvider="getData",retryAnalyzer=IERetryAnalyzer.class,testName = "Create site in IE",priority = 5)
+@Parameters({"siteIE","siteIdIE","screenShotNameIE" })
+@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 5)
 public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 {
 	 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete site called \" "+siteName +" \" ");
 
 	//Extent Report Start Configuration(testCaseName,Definition of testCase)
-	 ExtentTest test = extent.startTest("Delete Site","Delete site called \" "+siteName +" \" ");
-  
-	
+	child5 = extent.startTest("Delete Site","Delete site called \" "+siteName +" \" ");
+	 
 	LOGGER.info("Test case Delete Site started executing");
-	test.log(LogStatus.INFO,
+	child5.log(LogStatus.INFO,
 			"Test case Delete Site started executing");		
 
 	LOGGER.info("Accessing the Login Page");
-            test.log(LogStatus.INFO, "Accessing the Login Page");
+            child5.log(LogStatus.INFO, "Accessing the Login Page");
     
 	LOGGER.info("Login as admin");
-	test.log(LogStatus.INFO, "Login as admin");
+	child5.log(LogStatus.INFO, "Login as admin");
 	 extent.flush(); 
 	 
 	LoginPage loginPage = new LoginPage(driver);
 	loginPage.loginAsAdmin();
-	 Thread.sleep(5000);
-	 
+	
 	LOGGER.info("Check the site,if site exist Delete the site");
-	test.log(LogStatus.INFO, "Check the site,if site exist Delete the Site");
+	child5.log(LogStatus.INFO, "Check the site,if site exist Delete the Site");
 	
 	 
-            test.log(LogStatus.INFO, "Search the site");
-            test.log(LogStatus.INFO, "Click \"Delete\" Button,next to site\""+siteName+"\"");
-            test.log(LogStatus.INFO, "Click \"Delete\" Button,for delete confirmation");
-	        test.log(LogStatus.INFO, "Login as Admin to delete Site in TrashCan");
-            test.log(LogStatus.INFO, "Click \"My Profile\"");
-            test.log(LogStatus.INFO, "Place siteUrl");
-            test.log(LogStatus.INFO, "Click \"Search\" Button");
-            test.log(LogStatus.INFO, "Check the patucular siteUrl");
-            test.log(LogStatus.INFO, "Click \"Selected Item\" Button");
-            test.log(LogStatus.INFO, "Click \"Delete\" Button");
-            test.log(LogStatus.INFO, "Click \"OK\" Button");
-            test.log(LogStatus.INFO, "Click \"OK confirmation\" Button");
+            child5.log(LogStatus.INFO, "Search the site");
+            child5.log(LogStatus.INFO, "Click \"Delete\" Button,next to site\""+siteName+"\"");
+            child5.log(LogStatus.INFO, "Click \"Delete\" Button,for delete confirmation");
+	        child5.log(LogStatus.INFO, "Login as Admin to delete Site in TrashCan");
+            child5.log(LogStatus.INFO, "Click \"My Profile\"");
+            child5.log(LogStatus.INFO, "Place siteUrl");
+            child5.log(LogStatus.INFO, "Click \"Search\" Button");
+            child5.log(LogStatus.INFO, "Check the patucular siteUrl");
+            child5.log(LogStatus.INFO, "Click \"Selected Item\" Button");
+            child5.log(LogStatus.INFO, "Click \"Delete\" Button");
+            child5.log(LogStatus.INFO, "Click \"OK\" Button");
+            child5.log(LogStatus.INFO, "Click \"OK confirmation\" Button");
             
             extent.flush();
             
@@ -1057,7 +1058,7 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	       deleteSite.deleteSite(siteName,siteId);		
             
             LOGGER.info("CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
-            test.log(LogStatus.INFO,"CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
+            child5.log(LogStatus.INFO,"CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
             
             extent.flush();
             
@@ -1065,15 +1066,15 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	navigateTo.goToHome();
             
             LOGGER.error("Click \"My Profile\" Again");
-	test.log(LogStatus.INFO, "Click \"My Profile\" Again");
+	child5.log(LogStatus.INFO, "Click \"My Profile\" Again");
             
 	 extent.flush();
 	 
-            test.log(LogStatus.INFO, "Accessing trashcan Page");
+            child5.log(LogStatus.INFO, "Accessing trashcan Page");
 	navigateTo.goToUserTrashCan();	
 	
 	LOGGER.info("Place siteUrl");
-	test.log(LogStatus.INFO, "Place siteUrl");
+	child5.log(LogStatus.INFO, "Place siteUrl");
 	
 	 extent.flush();
 	 
@@ -1084,7 +1085,7 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	textField.enterText(siteId);
 	
 	LOGGER.info("Click \"Search\" Button");
-	test.log(LogStatus.INFO, "Click \"Search\" Button");
+	child5.log(LogStatus.INFO, "Click \"Search\" Button");
 	Button searchButton = new Button(driver,By.xpath("//button[text()='Search']"));
 	searchButton.click();
 	
@@ -1092,36 +1093,36 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	
 	TakeScreenShot ts=new TakeScreenShot();
 	   	ts.takeScreenShotIE(driver,className, screenShotName+"23");
-	   	test.log(LogStatus.INFO, "Search Site : " +test.addScreenCapture("./"+className+"/"+screenShotName+"23"+".png"));
+	   	child5.log(LogStatus.INFO, "Search Site : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"23"+".png"));
 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     extent.flush(); 
-	//Element.takeScreenShotIE(driver, className, screenShotName+"deleteConfirmation");
+	//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
 	
 	//CheckBox checkbox=new CheckBox(driver, By.xpath("//div[@class='name'][text()='"+item+"']/ancestor::td[1]/preceding-sibling::td[2]//input"));
 	//checkbox.click();
 
 	LOGGER.info("Check the patucular siteUrl");
-	test.log(LogStatus.INFO, "Check the patucular siteUrl");
+	child5.log(LogStatus.INFO, "Check the patucular siteUrl");
 	
 	if(Element.isElementPresent(driver, By.xpath("//tbody[@class='yui-dt-message']//tr//td//div[text()='No items exist']")))
 	{
 		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-		test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+		child5.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 		
 		
  	   	ts.takeScreenShotIE(driver,className, screenShotName+"24");
- 	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"24"+".png"));
+ 	   	child5.log(LogStatus.PASS, "Site is Deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"24"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
 	else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
 	{
 		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-		test.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+		child5.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 		
 		
  	   	ts.takeScreenShotIE(driver,className, screenShotName+"A24");
- 	   	test.log(LogStatus.PASS, "Site is Deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"A24"+".png"));
+ 	   	child5.log(LogStatus.PASS, "Site is Deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"A24"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
@@ -1139,21 +1140,21 @@ for (int i = 0; i < myList.size(); i++) {
 	{	
 		Thread.sleep(2000);
 		LOGGER.error(TestCaseProperties.TEXT_TEST_PASS,siteName+ "SITE IS NOT DELETED");
-		test.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
+		child5.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 		
 		
  	   	ts.takeScreenShotIE(driver,className, screenShotName+"25");
- 	   	test.log(LogStatus.FAIL, "Site is not deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"25"+".png"));
+ 	   	child5.log(LogStatus.FAIL, "Site is not deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"25"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
 	else
 	{
 		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-		test.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
+		child5.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 		
 		ts.takeScreenShotIE(driver,className, screenShotName+"26");
- 	   	test.log(LogStatus.PASS, "Site is not deleted : " +test.addScreenCapture("./"+className+"/"+screenShotName+"26"+".png"));
+ 	   	child5.log(LogStatus.PASS, "Site is not deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"26"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
@@ -1165,9 +1166,9 @@ for (int i = 0; i < myList.size(); i++) {
 	loginpage1.logout();
 	
 	LOGGER.info("Test case Delete Site executed");
-	test.log(LogStatus.INFO, "Test case Delete Site executed");
+	child5.log(LogStatus.INFO, "Test case Delete Site executed");
 	 extent.flush();
-     extent.endTest(test);        
+     extent.endTest(child5);        
            
 
             		
@@ -1175,36 +1176,75 @@ for (int i = 0; i < myList.size(); i++) {
 }
 
 
-@DataProvider(name = "getData")
-public Object[][] provideData(Method method) {
-Object[][] result = null;
-
-if (method.getName().equals("createUser")) {
-        result = new Object[][] {
-                    { "privateuser", "privateuser" , "privateuser@gmail.com","privateuser" ,"1qaz@WSX" , "privateuser privateuser", "IEFolderCreation"} 
-                                };
-}else if (method.getName().equals("createSite")) {
-        result = new Object[][] { 
-                    { "UKFOLDERIE", false, "ukfolderIEURL","COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED","Administrator","IEFolderCreation"}
-                                };
-}else if (method.getName().equals("folderCreation")) {
-        result = new Object[][] { 
-                    { "UKFOLDERIE", "FolderIE", "FolderIETitle","IEFolderCreation"}
-                                };
-}else if (method.getName().equals("deleteFolder")) {
-    result = new Object[][] { 
-            { "UKFOLDERIE", "FolderIE", "FolderIETitle","IEFolderCreation"}
-                        };
-}else if (method.getName().equals("deleteSite")) {
-    result = new Object[][] { 
-            { "UKFOLDERIE", "ukfolderIEURL", "IEFolderCreation"}
-                        };
-}
-                    return result;
-    }
 
 @AfterMethod
-public void clod() throws MalformedURLException{
+public void aftermethod(Method method,ITestResult result) throws Exception{
+	
+	if(method.getName().equals("createUser")) {			
+		
+		if (result.getStatus() == ITestResult.FAILURE) {
+	        child1.log(LogStatus.FAIL,"createUser Test failed because "+ result.getThrowable());
+	        extent.flush();
+	    } else if (result.getStatus() == ITestResult.SKIP) {
+	    	child1.log(LogStatus.SKIP, "createUser Test skipped because " + result.getThrowable());
+	        extent.flush();
+	    } else {
+	    	child1.log(LogStatus.PASS, "createUser Test got executed successfully");
+	        extent.flush();
+	    }
+		}
+		else if(method.getName().equals("createSite")) {			
+		
+		if (result.getStatus() == ITestResult.FAILURE) {
+	        child2.log(LogStatus.FAIL,"createSite Test failed because "+ result.getThrowable());
+	        extent.flush();
+	    } else if (result.getStatus() == ITestResult.SKIP) {
+	    	child2.log(LogStatus.SKIP, "createSite Test skipped because " + result.getThrowable());
+	        extent.flush();
+	    } else {
+	    	child2.log(LogStatus.PASS, "createSite Test got executed successfully");
+	        extent.flush();
+	    }
+		}
+		else if(method.getName().equals("folderCreation")) {			
+			
+			if (result.getStatus() == ITestResult.FAILURE) {
+		        child3.log(LogStatus.FAIL,"folderCreation Test failed because "+ result.getThrowable());
+		        extent.flush();
+		    } else if (result.getStatus() == ITestResult.SKIP) {
+		    	child3.log(LogStatus.SKIP, "folderCreation Test skipped because " + result.getThrowable());
+		        extent.flush();
+		    } else {
+		    	child3.log(LogStatus.PASS, "folderCreation Test got executed successfully");
+		        extent.flush();
+		    }
+			}
+		else if(method.getName().equals("deleteFolder")) {			
+			
+			if (result.getStatus() == ITestResult.FAILURE) {
+		        child4.log(LogStatus.FAIL,"deleteFolder Test failed because "+ result.getThrowable());
+		        extent.flush();
+		    } else if (result.getStatus() == ITestResult.SKIP) {
+		    	child4.log(LogStatus.SKIP, "deleteFolder Test skipped because " + result.getThrowable());
+		        extent.flush();
+		    } else {
+		    	child4.log(LogStatus.PASS, "deleteFolder Test got executed successfully");
+		        extent.flush();
+		    }
+			}
+		else if(method.getName().equals("deleteSite")) {			
+			
+			if (result.getStatus() == ITestResult.FAILURE) {
+		        child5.log(LogStatus.FAIL,"deleteSite Test failed because "+ result.getThrowable());
+		        extent.flush();
+		    } else if (result.getStatus() == ITestResult.SKIP) {
+		    	child5.log(LogStatus.SKIP, "deleteSite Test skipped because " + result.getThrowable());
+		        extent.flush();
+		    } else {
+		    	child5.log(LogStatus.PASS, "deleteSite Test got executed successfully");
+		        extent.flush();
+		    }
+			}
 	
 	driver.quit(); 
 	
@@ -1214,10 +1254,16 @@ public void clod() throws MalformedURLException{
 public void extent() {
 	
 	LOGGER.info("Test case closed");
+	parent
+	  .appendChild(child1)
+	  .appendChild(child2)
+	  .appendChild(child3)
+	  .appendChild(child4)
+	  .appendChild(child5);
+	extent.endTest(parent);
 	extent.close();	
 	driver.quit();
-	//driver.close();
+	
 
 } 
-
 }

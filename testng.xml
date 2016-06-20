@@ -2,12 +2,12 @@
 
 <suite name="Alfresco Login" verbose="1" parallel="classes" thread-count="9">
  <listeners>
-		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<!-- <listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
 		<listener class-name="com.zaizi.automation.listeners.TestListener" />
     </listeners>
 
-	<test name="Test-Login Alfresco">	
+	<!-- <test name="Test-Login Alfresco">	
 				
 		<classes>
 			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_FF"/>
@@ -15,7 +15,7 @@
 			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_IE"/>
 			
 		</classes>
-	</test>
+	</test> -->
 	<!-- <test name="Test-Site creation Alfresco">	
 				
 		<classes>
@@ -104,6 +104,452 @@
 			
 		</classes>
 	</test> -->
+		
+
+	<test name="Test-Login Alfresco">	
+		<parameter name="firstNameFF" value="test" />
+		<parameter name="lastNameFF" value="test" />
+		<parameter name="emailFF" value="test@gmail.com" />
+		<parameter name="userNameFF" value="testFF" />
+		<parameter name="PasswordFF" value="user@123" />
+		<parameter name="fullNameFF" value="test test" />
+		<parameter name="screenShotNameFF" value="FFLoginTest" />	
+		
+		<parameter name="firstNameChrome" value="test" />
+		<parameter name="lastNameChrome" value="test" />
+		<parameter name="emailChrome" value="test@gmail.com" />
+		<parameter name="userNameChrome" value="testChrome" />
+		<parameter name="PasswordChrome" value="user@123" />
+		<parameter name="fullNameChrome" value="test test" />
+		<parameter name="screenShotNameChrome" value="ChromeLoginTest" />
+		
+		<parameter name="firstNameIE" value="test" />
+		<parameter name="lastNameIE" value="test" />
+		<parameter name="emailIE" value="test@gmail.com" />
+		<parameter name="userNameIE" value="testIE" />
+		<parameter name="PasswordIE" value="user@123" />
+		<parameter name="fullNameIE" value="test test" />
+		<parameter name="screenShotNameIE" value="IELoginTest" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.LoginTest_IE"/>
+			
+		</classes>
+	</test>
+	
+	<test name="Test-Site creation [Public] Alfresco">	
+		<parameter name="firstNameFF" value="privateuser" />
+		<parameter name="lastNameFF" value="privateuser" />
+		<parameter name="emailFF" value="privateuser@gmail.com" />
+		<parameter name="userNameFF" value="privateuser" />
+		<parameter name="PasswordFF" value="1qaz@WSX" />
+		<parameter name="fullNameFF" value="privateuser privateuser" />
+		<parameter name="siteFF" value="UKFF" />
+		<parameter name="isPrivateFF" value="false" />
+		<parameter name="siteIdFF" value="ukFFURL" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameFF" value="Administrator" />
+		<parameter name="newSiteNameFF" value="UKFF2" />		
+		<parameter name="screenShotNameFF" value="FFSiteTest" />	
+		
+		<parameter name="firstNameChrome" value="privateuser" />
+		<parameter name="lastNameChrome" value="privateuser" />
+		<parameter name="emailChrome" value="privateuser@gmail.com" />
+		<parameter name="userNameChrome" value="privateuser" />
+		<parameter name="PasswordChrome" value="1qaz@WSX" />
+		<parameter name="fullNameChrome" value="privateuser privateuser" />
+		<parameter name="siteChrome" value="UKCHROME" />
+		<parameter name="isPrivateChrome" value="false" />
+		<parameter name="siteIdChrome" value="ukchromeURL" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameChrome" value="Administrator" />
+		<parameter name="newSiteNameChrome" value="UKCHROME2" />		
+		<parameter name="screenShotNameChrome" value="ChromeSiteTest" />
+		
+		<parameter name="firstNameIE" value="privateuser" />
+		<parameter name="lastNameIE" value="privateuser" />
+		<parameter name="emailIE" value="privateuser@gmail.com" />
+		<parameter name="userNameIE" value="privateuser" />
+		<parameter name="PasswordIE" value="1qaz@WSX" />
+		<parameter name="fullNameIE" value="privateuser privateuser" />
+		<parameter name="siteIE" value="UKIE" />
+		<parameter name="isPrivateIE" value="false" />
+		<parameter name="siteIdIE" value="ukIEURL" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameIE" value="Administrator" />
+		<parameter name="newSiteNameIE" value="UKIE2" />		
+		<parameter name="screenShotNameIE" value="IESiteTest" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_IE"/>
+			
+		</classes>
+	</test>	
+	
+	<test name="Test-Site creation [PRIVATE] Alfresco">	
+		<parameter name="firstNameFF" value="privateuser" />
+		<parameter name="lastNameFF" value="privateuser" />
+		<parameter name="emailFF" value="privateuser@gmail.com" />
+		<parameter name="userNameFF" value="privateuser" />
+		<parameter name="PasswordFF" value="1qaz@WSX" />
+		<parameter name="fullNameFF" value="privateuser privateuser" />
+		<parameter name="siteFF" value="UKPrivateFF" />
+		<parameter name="isPrivateFF" value="true" />
+		<parameter name="siteIdFF" value="ukPrivateFFURL" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameFF" value="Administrator" />
+		<parameter name="newSiteNameFF" value="UKPrivateFF2" />		
+		<parameter name="screenShotNameFF" value="FFSiteTestPrivate" />	
+		
+		<parameter name="firstNameChrome" value="privateuser" />
+		<parameter name="lastNameChrome" value="privateuser" />
+		<parameter name="emailChrome" value="privateuser@gmail.com" />
+		<parameter name="userNameChrome" value="privateuser" />
+		<parameter name="PasswordChrome" value="1qaz@WSX" />
+		<parameter name="fullNameChrome" value="privateuser privateuser" />
+		<parameter name="siteChrome" value="UKPrivateCHROME" />
+		<parameter name="isPrivateChrome" value="true" />
+		<parameter name="siteIdChrome" value="ukPrivatechromeURL" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameChrome" value="Administrator" />
+		<parameter name="newSiteNameChrome" value="UKPrivateCHROME2" />		
+		<parameter name="screenShotNameChrome" value="ChromeSiteTestPrivate" />
+		
+		<parameter name="firstNameIE" value="privateuser" />
+		<parameter name="lastNameIE" value="privateuser" />
+		<parameter name="emailIE" value="privateuser@gmail.com" />
+		<parameter name="userNameIE" value="privateuser" />
+		<parameter name="PasswordIE" value="1qaz@WSX" />
+		<parameter name="fullNameIE" value="privateuser privateuser" />
+		<parameter name="siteIE" value="UKPrivateIE" />
+		<parameter name="isPrivateIE" value="false" />
+		<parameter name="siteIdIE" value="ukPrivateIEURL" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameIE" value="Administrator" />
+		<parameter name="newSiteNameIE" value="UKPrivateIE2" />		
+		<parameter name="screenShotNameIE" value="IESiteTestPrivate" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteTest_IE"/>
+			
+		</classes>
+	</test>	
+	<test name="Test-User test Alfresco">	
+		<parameter name="firstNameFF" value="test" />
+		<parameter name="lastNameFF" value="test" />
+		<parameter name="emailFF" value="test@gmail.com" />
+		<parameter name="userNameFF" value="testFF" />
+		<parameter name="PasswordFF" value="user@123" />
+		<parameter name="fullNameFF" value="test test" />
+		<parameter name="newFirstNameFF" value="testMF" />		
+		<parameter name="screenShotNameFF" value="FFUserTest" />
+		
+		<parameter name="firstNameChrome" value="test" />
+		<parameter name="lastNameChrome" value="test" />
+		<parameter name="emailChrome" value="test@gmail.com" />
+		<parameter name="userNameChrome" value="testChrome" />
+		<parameter name="PasswordChrome" value="user@123" />
+		<parameter name="fullNameChrome" value="test test" />
+		<parameter name="newFirstNameChrome" value="testM" />		
+		<parameter name="screenShotNameChrome" value="ChromeUserTest" />
+		
+		<parameter name="firstNameIE" value="test" />
+		<parameter name="lastNameIE" value="test" />
+		<parameter name="emailIE" value="test@gmail.com" />
+		<parameter name="userNameIE" value="testIE" />
+		<parameter name="PasswordIE" value="user@123" />
+		<parameter name="fullNameIE" value="test test" />
+		<parameter name="newFirstNameIE" value="testMIE" />		
+		<parameter name="screenShotNameIE" value="IEUserTest" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserTest_IE"/>
+			
+		</classes>
+	</test>
+	
+	<test name="Test-UserGroup test Alfresco">	
+		<parameter name="groupNameFF" value="GroupFF" />
+		<parameter name="groupIdFF" value="GroupFFID" />
+		<parameter name="newGroupNameFF" value="newGroupFF" />				
+		<parameter name="screenShotNameFF" value="FFGroupUserTest" />	
+		
+		<parameter name="groupNameChrome" value="GroupChrome" />
+		<parameter name="groupIdChrome" value="GroupChromeID" />
+		<parameter name="newGroupNameChrome" value="newGroupChrome" />				
+		<parameter name="screenShotNameChrome" value="ChromeGroupUserTest" />
+		
+		<parameter name="groupNameIE" value="GroupIE" />
+		<parameter name="groupIdIE" value="GroupIEID" />
+		<parameter name="newGroupNameIE" value="newGroupIE" />				
+		<parameter name="screenShotNameIE" value="IEGroupUserTest" />		
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.UserGroupTest_IE"/>
+			
+		</classes>
+	</test>
+	
+	<test name="Test-Folder creation Alfresco">	
+		<parameter name="firstNameFF" value="privateuser" />
+		<parameter name="lastNameFF" value="privateuser" />
+		<parameter name="emailFF" value="privateuser@gmail.com" />
+		<parameter name="userNameFF" value="privateuser" />
+		<parameter name="PasswordFF" value="1qaz@WSX" />
+		<parameter name="fullNameFF" value="privateuser privateuser" />
+		<parameter name="siteFF" value="UKFFFolder" />
+		<parameter name="isPrivateFF" value="false" />
+		<parameter name="siteIdFF" value="ukFFFolderURL" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameFF" value="Administrator" />
+		<parameter name="folderNameFF" value="FolderFF" />
+		<parameter name="folderTitleFF" value="FolderTitleFF" />			
+		<parameter name="screenShotNameFF" value="FFFolderCreation" />	
+		
+		<parameter name="firstNameChrome" value="privateuser" />
+		<parameter name="lastNameChrome" value="privateuser" />
+		<parameter name="emailChrome" value="privateuser@gmail.com" />
+		<parameter name="userNameChrome" value="privateuser" />
+		<parameter name="PasswordChrome" value="1qaz@WSX" />
+		<parameter name="fullNameChrome" value="privateuser privateuser" />
+		<parameter name="siteChrome" value="UKChromeFolder" />
+		<parameter name="isPrivateChrome" value="false" />
+		<parameter name="siteIdChrome" value="ukChromeFolderURL" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameChrome" value="Administrator" />
+		<parameter name="folderNameChrome" value="FolderChrome" />
+		<parameter name="folderTitleChrome" value="FolderTitleChrome" />			
+		<parameter name="screenShotNameChrome" value="ChromeFolderCreation" />
+		
+		<parameter name="firstNameIE" value="privateuser" />
+		<parameter name="lastNameIE" value="privateuser" />
+		<parameter name="emailIE" value="privateuser@gmail.com" />
+		<parameter name="userNameIE" value="privateuser" />
+		<parameter name="PasswordIE" value="1qaz@WSX" />
+		<parameter name="fullNameIE" value="privateuser privateuser" />
+		<parameter name="siteIE" value="UKIEFolder" />
+		<parameter name="isPrivateIE" value="false" />
+		<parameter name="siteIdIE" value="ukIEFolderURL" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameIE" value="Administrator" />
+		<parameter name="folderNameIE" value="FolderIE" />
+		<parameter name="folderTitleIE" value="FolderTitleIE" />			
+		<parameter name="screenShotNameIE" value="IEFolderCreation" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.FolderCreation_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.FolderCreation_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.FolderCreation_IE"/>
+			
+		</classes>
+	</test>
+	
+	<test name="Test-Document Library Test Alfresco">	
+		<parameter name="firstNameFF" value="privateuser" />
+		<parameter name="lastNameFF" value="privateuser" />
+		<parameter name="emailFF" value="privateuser@gmail.com" />
+		<parameter name="userNameFF" value="privateuser" />
+		<parameter name="PasswordFF" value="1qaz@WSX" />
+		<parameter name="fullNameFF" value="privateuser privateuser" />
+		<parameter name="siteFF" value="DOCFF" />
+		<parameter name="isPrivateFF" value="false" />
+		<parameter name="siteIdFF" value="docFFURL" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameFF" value="Administrator" />
+		<parameter name="documentNameFF" value="FileB.rtf" />
+		<parameter name="roleNameFF" value="Site Contributor" />			
+		<parameter name="screenShotNameFF" value="FFDocumentLibTest" />	
+		
+		<parameter name="firstNameChrome" value="privateuser" />
+		<parameter name="lastNameChrome" value="privateuser" />
+		<parameter name="emailChrome" value="privateuser@gmail.com" />
+		<parameter name="userNameChrome" value="privateuser" />
+		<parameter name="PasswordChrome" value="1qaz@WSX" />
+		<parameter name="fullNameChrome" value="privateuser privateuser" />
+		<parameter name="siteChrome" value="DOCChrome" />
+		<parameter name="isPrivateChrome" value="false" />
+		<parameter name="siteIdChrome" value="docChromeURL" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameChrome" value="Administrator" />
+		<parameter name="documentNameChrome" value="FileA.rtf" />
+		<parameter name="roleNameChrome" value="Site Contributor" />			
+		<parameter name="screenShotNameChrome" value="ChromeDocumentLibTest" />
+		
+		<parameter name="firstNameIE" value="privateuser" />
+		<parameter name="lastNameIE" value="privateuser" />
+		<parameter name="emailIE" value="privateuser@gmail.com" />
+		<parameter name="userNameIE" value="privateuser" />
+		<parameter name="PasswordIE" value="1qaz@WSX" />
+		<parameter name="fullNameIE" value="privateuser privateuser" />
+		<parameter name="siteIE" value="DOCIE" />
+		<parameter name="isPrivateIE" value="false" />
+		<parameter name="siteIdIE" value="docIEURL" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="siteCreatorNameIE" value="Administrator" />
+		<parameter name="documentNameIE" value="FileC.rtf" />
+		<parameter name="roleNameIE" value="Site Contributor" />			
+		<parameter name="screenShotNameIE" value="IEDocumentLibTest" />		
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.DocumentLibraryTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.DocumentLibraryTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.DocumentLibraryTest_IE"/>
+			
+		</classes>
+	</test> 
+		
+	<!-- <test name="Test-External User invitation Alfresco">	
+		<parameter name="firstNameFF" value="testFF1" />
+		<parameter name="lastNameFF" value="testFF1" />
+		<parameter name="emailFF" value="testngzaizi@gmail.com" />
+		<parameter name="userNameFF" value="testFF1" />
+		<parameter name="PasswordFF" value="testngzaizi123" />
+		<parameter name="siteFF" value="FFTest" />
+		<parameter name="siteIdFF" value="FFTest" />
+		<parameter name="roleNameFF" value="Collaborator" />			
+		<parameter name="siteCreatorNameFF" value="test@gmail.com" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="isPrivateFF" value="false" />		
+		<parameter name="screenShotNameFF" value="FFExternalUserInvitationTest" />	
+		
+		<parameter name="firstNameChrome" value="testChrome1" />
+		<parameter name="lastNameChrome" value="testChrome1" />
+		<parameter name="emailChrome" value="testngzaizi@gmail.com" />
+		<parameter name="userNameChrome" value="testChrome1" />
+		<parameter name="PasswordChrome" value="testngzaizi123" />
+		<parameter name="siteChrome" value="ChromeTest" />
+		<parameter name="siteIdChrome" value="ChromeTest" />
+		<parameter name="roleNameChrome" value="Collaborator" />			
+		<parameter name="siteCreatorNameChrome" value="test@gmail.com" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="isPrivateChrome" value="false" />		
+		<parameter name="screenShotNameChrome" value="ChromeExternalUserInvitationTest" />
+		
+		<parameter name="firstNameIE" value="testIE1" />
+		<parameter name="lastNameIE" value="testIE1" />
+		<parameter name="emailIE" value="testngzaizi@gmail.com" />
+		<parameter name="userNameIE" value="testIE1" />
+		<parameter name="PasswordIE" value="testngzaizi123" />
+		<parameter name="siteIE" value="IETest" />
+		<parameter name="siteIdIE" value="IETest" />
+		<parameter name="roleNameIE" value="Collaborator" />			
+		<parameter name="siteCreatorNameIE" value="test@gmail.com" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="isPrivateIE" value="false" />		
+		<parameter name="screenShotNameIE" value="IEExternalUserInvitationTest" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.External_User_Invitation_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.External_User_Invitation_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.External_User_Invitation_IE"/>
+			
+		</classes>
+	</test>
+ -->	
+	<test name="Test-Internal User invitation Alfresco">	
+		<parameter name="firstNameFF" value="testFF2" />
+		<parameter name="lastNameFF" value="testFF2" />
+		<parameter name="emailFF" value="testFF2@gmail.com" />
+		<parameter name="userNameFF" value="testFF2" />
+		<parameter name="PasswordFF" value="User@123" />
+		<parameter name="fullNameFF" value="testFF2 testFF2" />
+		<parameter name="siteFF" value="FFFFTest" />
+		<parameter name="siteIdFF" value="FFFFTest" />
+		<parameter name="roleNameFF" value="Collaborator" />			
+		<parameter name="siteCreatorNameFF" value="test@gmail.com" />
+		<parameter name="expectedResultFF" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="expectedInvitationresultFF" value="1 INVITES SENT OUT, 0 FAILURES" />		
+		<parameter name="isPrivateFF" value="false" />		
+		<parameter name="screenShotNameFF" value="FFInternalUserInvitationTest" />	
+		
+		<parameter name="firstNameChrome" value="testChrome2" />
+		<parameter name="lastNameChrome" value="testChrome2" />
+		<parameter name="emailChrome" value="testChrome2@gmail.com" />
+		<parameter name="userNameChrome" value="testChrome2" />
+		<parameter name="PasswordChrome" value="User@123" />
+		<parameter name="fullNameChrome" value="testChrome2 testChrome2" />
+		<parameter name="siteChrome" value="ChromeChromeTest" />
+		<parameter name="siteIdChrome" value="ChromeChromeTest" />
+		<parameter name="roleNameChrome" value="Collaborator" />			
+		<parameter name="siteCreatorNameChrome" value="test@gmail.com" />
+		<parameter name="expectedResultChrome" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="expectedInvitationresultChrome" value="1 INVITES SENT OUT, 0 FAILURES" />	
+		<parameter name="isPrivateChrome" value="false" />		
+		<parameter name="screenShotNameChrome" value="ChromeInternalUserInvitationTest" />
+		
+		<parameter name="firstNameIE" value="testIE2" />
+		<parameter name="lastNameIE" value="testIE2" />
+		<parameter name="emailIE" value="testIE2@gmail.com" />
+		<parameter name="userNameIE" value="testIE2" />
+		<parameter name="PasswordIE" value="User@123" />
+		<parameter name="fullNameIE" value="testIE2 testIE2" />
+		<parameter name="siteIE" value="IEIETest" />
+		<parameter name="siteIdIE" value="IEIETest" />
+		<parameter name="roleNameIE" value="Collaborator" />			
+		<parameter name="siteCreatorNameIE" value="test@gmail.com" />
+		<parameter name="expectedResultIE" value="COULD NOT CREATE SITE SINCE THE URL IS ALREADY USED" />
+		<parameter name="expectedInvitationresultIE" value="1 INVITES SENT OUT, 0 FAILURES" />	
+		<parameter name="isPrivateIE" value="false" />		
+		<parameter name="screenShotNameIE" value="IEInternalUserInvitationTest" />	
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.Internal_User_Invitations_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.Internal_User_Invitations_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.Internal_User_Invitations_IE"/>
+			
+		</classes>
+	</test>
+	
+	<test name="Test-Add Dashlet in main dashboard Alfresco">	
+		<parameter name="addDashletFF" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameFF" value="AddDashletTestFF" />
+		
+		<parameter name="addDashletChrome" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameChrome" value="AddDashletTestChrome" />
+		
+		<parameter name="addDashletIE" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameIE" value="AddDashletTestIE" />
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.MainDashBoardTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.MainDashBoardTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.MainDashBoardTest_IE"/>
+			
+		</classes>
+	</test>
+	<test name="Test-Add Dashlet in site dashboard Alfresco">	
+		<parameter name="siteFF" value="FFFFTest" />
+		<parameter name="siteIdFF" value="FFFFTest" />
+		<parameter name="dashletTitleFF" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameFF" value="AddDashletTestFF" />
+		
+		<parameter name="siteChrome" value="ChromeChromeTest" />
+		<parameter name="siteIdChrome" value="ChromeChromeTest" />
+		<parameter name="dashletTitleChrome" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameChrome" value="AddDashletSiteTestChrome" />
+		
+		<parameter name="siteIE" value="IEIETest" />
+		<parameter name="siteIdIE" value="IEIETest" />
+		<parameter name="dashletTitleIE" value="RSS Feed - Display the contents of an RSS feed given a URL configuration parameter." />		
+		<parameter name="screenShotNameIE" value="AddDashletSiteTestIE" />
+				
+		<classes>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteDashBoardTest_FF"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteDashBoardTest_Chrome"/>
+			<class name="com.zaizi.automation.alfresco.testScripts.SiteDashBoardTest_IE"/>
+			
+		</classes>
+	</test>
 	<test name="Email Report">
 		<classes>
 			<class name="com.zaizi.automation.email.sendEmailReport"/>			

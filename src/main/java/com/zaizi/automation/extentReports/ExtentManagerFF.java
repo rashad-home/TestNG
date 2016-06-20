@@ -15,7 +15,7 @@ public class ExtentManagerFF {
     
     public synchronized static ExtentReports getReporter(String filePath) {
         
-           extent = new ExtentReports(filePath, true);
+           extent = new ExtentReports(filePath, false);
             
             extent
                  .addSystemInfo("Environment", "QA");
