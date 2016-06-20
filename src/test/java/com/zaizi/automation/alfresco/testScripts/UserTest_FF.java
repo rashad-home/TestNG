@@ -89,7 +89,7 @@ public class UserTest_FF {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>User Test in Firefox</b>","This is user Test,<b>Create the user,Edit the first Name,Delete the user</b>");
+		parent=extent.startTest("<b>User Test in FF</b>","This is user Test,<b>Create the user,Edit the first Name,Delete the user</b>");
 		LOGGER.info("Testcases Started");
 		
 
@@ -98,7 +98,7 @@ public class UserTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -280,7 +280,7 @@ public class UserTest_FF {
 	 */
 
 	@Parameters({"userNameFF","PasswordFF","newFirstNameFF","lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit User in FF",priority = 2)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit User in FF",priority = 2,dependsOnMethods = "createUser")
 	public void editUser(String userName,String password,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -375,7 +375,7 @@ public class UserTest_FF {
 	 * @throws IOException 
      */
 	@Parameters({"userNameFF","newFirstNameFF", "lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3,dependsOnMethods = "editUser")
     public void deleteUser(String userName,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

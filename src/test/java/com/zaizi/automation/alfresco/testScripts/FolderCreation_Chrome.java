@@ -324,7 +324,7 @@ public class FolderCreation_Chrome {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+        if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -505,7 +505,7 @@ public class FolderCreation_Chrome {
 			Thread.sleep(5000);        
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	   if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -646,7 +646,7 @@ public class FolderCreation_Chrome {
 	 */
 
 	@Parameters({"siteChrome", "folderNameChrome","folderTitleChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Folder creation in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Folder creation in Chrome",priority = 3,dependsOnMethods = "createSite")
 	public void folderCreation(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 	{
 		child3 = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
@@ -812,7 +812,7 @@ public class FolderCreation_Chrome {
 	 */
     
 @Parameters({"siteChrome", "folderNameChrome","folderTitleChrome","screenShotNameChrome" })
-@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete Folder in Chrome",priority = 4)
+@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete Folder in Chrome",priority = 4,dependsOnMethods = "folderCreation")
 public void deleteFolder(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 
 {
@@ -1012,7 +1012,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     }
 
 @Parameters({"siteChrome","siteIdChrome","screenShotNameChrome" })
-@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 5)
+@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 5,dependsOnMethods = "createSite")
 public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 {

@@ -280,7 +280,7 @@ public class UserTest_IE {
 	 */
 
 	@Parameters({"userNameIE","PasswordIE","newFirstNameIE","lastNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit User in IE",priority = 2)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit User in IE",priority = 2,dependsOnMethods = "createUser")
 	public void editUser(String userName,String password,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -375,7 +375,7 @@ public class UserTest_IE {
 	 * @throws IOException 
      */
 	@Parameters({"userNameIE","newFirstNameIE", "lastNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete User in IE",priority = 3)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete User in IE",priority = 3,dependsOnMethods = "editUser")
     public void deleteUser(String userName,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

@@ -280,7 +280,7 @@ public class UserTest_Chrome {
 	 */
 
 	@Parameters({"userNameChrome","PasswordChrome","newFirstNameChrome","lastNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit User in Chrome",priority = 2)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit User in Chrome",priority = 2,dependsOnMethods = "createUser")
 	public void editUser(String userName,String password,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -375,7 +375,7 @@ public class UserTest_Chrome {
 	 * @throws IOException 
      */
 	@Parameters({"userNameChrome","newFirstNameChrome", "lastNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete User in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete User in Chrome",priority = 3,dependsOnMethods = "editUser")
     public void deleteUser(String userName,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

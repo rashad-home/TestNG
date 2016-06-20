@@ -50,6 +50,7 @@ public class UserGroupTest_IE {
 	static ExtentTest child1;
 	static ExtentTest child2;
 	static ExtentTest child3;
+	
 	/**
 	 * 
 	 * Define WebDriver
@@ -267,7 +268,7 @@ public class UserGroupTest_IE {
 	 */
 	
 	@Parameters({"groupNameIE", "newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit Group in IE",priority = 2)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit Group in IE",priority = 2,dependsOnMethods = "createGroup")
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -389,7 +390,7 @@ public class UserGroupTest_IE {
 	 */
 	
 	@Parameters({"newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Remove Group in IE",priority = 3)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Remove Group in IE",priority = 3,dependsOnMethods = "editGroup")
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{

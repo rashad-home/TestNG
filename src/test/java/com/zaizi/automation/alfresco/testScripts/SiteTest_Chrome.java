@@ -324,7 +324,7 @@ public class SiteTest_Chrome {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -505,7 +505,7 @@ public class SiteTest_Chrome {
 			Thread.sleep(5000);         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -640,7 +640,7 @@ public class SiteTest_Chrome {
 	}
 	
 	@Parameters({"siteChrome", "newSiteNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit site in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit site in Chrome",priority = 3,dependsOnMethods = "createSite")
 	public void editSite(String siteName,String newSiteName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -738,7 +738,7 @@ public class SiteTest_Chrome {
 	}
 	
 	@Parameters({"newSiteNameChrome","siteIdChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 4)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 4,dependsOnMethods = "editSite")
 	public void deleteSite(String newSiteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{

@@ -50,6 +50,7 @@ public class UserGroupTest_FF {
 	static ExtentTest child1;
 	static ExtentTest child2;
 	static ExtentTest child3;
+	
 	/**
 	 * 
 	 * Define WebDriver
@@ -87,7 +88,7 @@ public class UserGroupTest_FF {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>User Group Test in Firefox</b>","This is group Test,<b>Create the group,Edit the Group Name,Delete the group</b>");
+		parent=extent.startTest("<b>User Group Test in FF</b>","This is group Test,<b>Create the group,Edit the Group Name,Delete the group</b>");
 		LOGGER.info("Testcases Started");		
 		
 		
@@ -97,7 +98,7 @@ public class UserGroupTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws Exception{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -267,7 +268,7 @@ public class UserGroupTest_FF {
 	 */
 	
 	@Parameters({"groupNameFF", "newGroupNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit Group in FF",priority = 2)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit Group in FF",priority = 2,dependsOnMethods = "createGroup")
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -389,7 +390,7 @@ public class UserGroupTest_FF {
 	 */
 	
 	@Parameters({"newGroupNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Remove Group in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Remove Group in FF",priority = 3,dependsOnMethods = "editGroup")
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{

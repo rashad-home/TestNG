@@ -324,7 +324,7 @@ public class SiteTest_IE {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -505,7 +505,7 @@ public class SiteTest_IE {
 			Thread.sleep(5000);         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -640,7 +640,7 @@ public class SiteTest_IE {
 	}
 	
 	@Parameters({"siteIE", "newSiteNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit site in IE",priority = 3)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit site in IE",priority = 3,dependsOnMethods = "createSite")
 	public void editSite(String siteName,String newSiteName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -738,7 +738,7 @@ public class SiteTest_IE {
 	}
 	
 	@Parameters({"newSiteNameIE","siteIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 4)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 4,dependsOnMethods = "editSite")
 	public void deleteSite(String newSiteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{

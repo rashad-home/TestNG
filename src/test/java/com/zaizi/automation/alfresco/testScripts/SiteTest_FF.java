@@ -95,7 +95,7 @@ public class SiteTest_FF {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>Site Test in Firefox</b>","This is Site Test,<b>Create the Site,Edit the Site Name,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
+		parent=extent.startTest("<b>Site Test in FF</b>","This is Site Test,<b>Create the Site,Edit the Site Name,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
 
@@ -104,7 +104,7 @@ public class SiteTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -324,7 +324,7 @@ public class SiteTest_FF {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -505,7 +505,7 @@ public class SiteTest_FF {
 			Thread.sleep(5000);         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -640,7 +640,7 @@ public class SiteTest_FF {
 	}
 	
 	@Parameters({"siteFF", "newSiteNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit site in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit site in FF",priority = 3,dependsOnMethods = "createSite")
 	public void editSite(String siteName,String newSiteName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -738,7 +738,7 @@ public class SiteTest_FF {
 	}
 	
 	@Parameters({"newSiteNameFF","siteIdFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 4)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 4,dependsOnMethods = "editSite")
 	public void deleteSite(String newSiteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{

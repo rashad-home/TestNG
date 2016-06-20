@@ -114,7 +114,7 @@ public class Internal_User_Invitations_FF  {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>Send invitation to internalUser Test in Firefox</b>","This is internal User invitation Test,<b>Create the user,Create the site,Send invitation to internal user,Delete the user,Delete the site</b>");
+		parent=extent.startTest("<b>Send invitation to internalUser Test in FF</b>","This is internal User invitation Test,<b>Create the user,Create the site,Send invitation to internal user,Delete the user,Delete the site</b>");
 		System.out.println("Testcase started");
 		
 	}
@@ -123,7 +123,7 @@ public class Internal_User_Invitations_FF  {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -355,7 +355,7 @@ public class Internal_User_Invitations_FF  {
 		        System.out.println("Screenshot Taken Successfully!!!!"); 
                         
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -519,7 +519,7 @@ public class Internal_User_Invitations_FF  {
                         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -655,7 +655,7 @@ public class Internal_User_Invitations_FF  {
 	
 	
 	@Parameters({"firstNameFF","userNameFF","siteFF", "siteIdFF","roleNameFF","expectedInvitationresultFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in FF",priority = 3,dependsOnMethods = "createUser")
     public void sendSiteinvitationtoInternaluser(String firstName,String userName, String siteName,String siteId,
 			String roleName,String expectedInvitationresult,String screenShotName) throws InterruptedException, IOException
     {
@@ -783,7 +783,7 @@ public class Internal_User_Invitations_FF  {
 	 */	 
 	
 	@Parameters({"siteFF", "siteIdFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "DeleteSite in FF",priority = 4)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "DeleteSite in FF",priority = 4,dependsOnMethods = "createSite")
     public void deleteSite(String siteName,String siteId,
 			String screenShotName) throws InterruptedException, IOException
     {
@@ -944,7 +944,7 @@ public class Internal_User_Invitations_FF  {
 	
 	
 	@Parameters({"firstNameFF", "userNameFF", "lastNameFF","emailFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 5)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 5,dependsOnMethods = "createUser")
 	public void deleteUser(String firstName,String userName, String lastName,String email,String fullName,String screenShotName) throws InterruptedException, IOException
 
 
@@ -1060,10 +1060,6 @@ public class Internal_User_Invitations_FF  {
 		
 		
     }
-	
-	
-	
-	
 	
    
 	@AfterMethod

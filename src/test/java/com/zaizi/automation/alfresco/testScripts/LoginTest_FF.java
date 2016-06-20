@@ -296,7 +296,7 @@ public class LoginTest_FF  {
 	 */
 
 	@Parameters({"userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2,dependsOnMethods = "createUser")
     public void loginAndLogout(String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
     {
 		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Login as "+userName);
@@ -419,7 +419,7 @@ public class LoginTest_FF  {
 	 * @throws IOException 
      */
 	@Parameters({"userNameFF","firstNameFF", "lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3,dependsOnMethods = "createUser")
     public void deleteUser(String userName,String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

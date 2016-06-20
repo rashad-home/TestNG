@@ -150,7 +150,7 @@ public class LoginTest_Chrome  {
         extent.flush();
         
    	    LoginPage loginPage=new LoginPage(driver);   	            
-   	    //loginPage.loginAsAdmin();
+   	    loginPage.loginAsAdmin();
    	         
    	    LOGGER.info("Create new user : \" "+userName+" \"");
         child1.log(LogStatus.INFO, "Create new user : \" "+userName+" \""); 
@@ -419,7 +419,7 @@ public class LoginTest_Chrome  {
 	 * @throws IOException 
      */
 	@Parameters({"userNameChrome","firstNameChrome", "lastNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete User in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete User in Chrome",dependsOnMethods = "createUser",priority = 3)
     public void deleteUser(String userName,String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

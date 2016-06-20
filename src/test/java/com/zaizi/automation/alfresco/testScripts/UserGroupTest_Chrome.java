@@ -268,7 +268,7 @@ public class UserGroupTest_Chrome {
 	 */
 	
 	@Parameters({"groupNameChrome", "newGroupNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit Group in Chrome",priority = 2)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit Group in Chrome",priority = 2,dependsOnMethods = "createGroup")
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -390,7 +390,7 @@ public class UserGroupTest_Chrome {
 	 */
 	
 	@Parameters({"newGroupNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Remove Group in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Remove Group in Chrome",priority = 3,dependsOnMethods = "editGroup")
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{

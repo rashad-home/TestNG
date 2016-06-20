@@ -355,7 +355,7 @@ public class Internal_User_Invitations_IE  {
 		        System.out.println("Screenshot Taken Successfully!!!!"); 
                         
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -519,7 +519,7 @@ public class Internal_User_Invitations_IE  {
                         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -655,7 +655,7 @@ public class Internal_User_Invitations_IE  {
 	
 	
 	@Parameters({"firstNameIE","userNameIE","siteIE", "siteIdIE","roleNameIE","expectedInvitationresultIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in IE",priority = 3)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in IE",priority = 3,dependsOnMethods = "createUser")
     public void sendSiteinvitationtoInternaluser(String firstName,String userName, String siteName,String siteId,
 			String roleName,String expectedInvitationresult,String screenShotName) throws InterruptedException, IOException
     {
@@ -783,7 +783,7 @@ public class Internal_User_Invitations_IE  {
 	 */	 
 	
 	@Parameters({"siteIE", "siteIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "DeleteSite in IE",priority = 4)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "DeleteSite in IE",priority = 4,dependsOnMethods = "createSite")
     public void deleteSite(String siteName,String siteId,
 			String screenShotName) throws InterruptedException, IOException
     {
@@ -944,7 +944,7 @@ public class Internal_User_Invitations_IE  {
 	
 	
 	@Parameters({"firstNameIE", "userNameIE", "lastNameIE","emailIE","fullNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create user in IE",priority = 5)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create user in IE",priority = 5,dependsOnMethods = "createUser")
 	public void deleteUser(String firstName,String userName, String lastName,String email,String fullName,String screenShotName) throws InterruptedException, IOException
 
 
@@ -1060,10 +1060,6 @@ public class Internal_User_Invitations_IE  {
 		
 		
     }
-	
-	
-	
-	
 	
    
 	@AfterMethod

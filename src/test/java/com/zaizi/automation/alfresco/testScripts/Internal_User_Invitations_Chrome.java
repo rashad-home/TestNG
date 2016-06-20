@@ -355,7 +355,7 @@ public class Internal_User_Invitations_Chrome  {
 		        System.out.println("Screenshot Taken Successfully!!!!"); 
                         
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -519,7 +519,7 @@ public class Internal_User_Invitations_Chrome  {
                         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -655,7 +655,7 @@ public class Internal_User_Invitations_Chrome  {
 	
 	
 	@Parameters({"firstNameChrome","userNameChrome","siteChrome", "siteIdChrome","roleNameChrome","expectedInvitationresultChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in Chrome",priority = 3)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in Chrome",priority = 3,dependsOnMethods = "createUser")
     public void sendSiteinvitationtoInternaluser(String firstName,String userName, String siteName,String siteId,
 			String roleName,String expectedInvitationresult,String screenShotName) throws InterruptedException, IOException
     {
@@ -783,7 +783,7 @@ public class Internal_User_Invitations_Chrome  {
 	 */	 
 	
 	@Parameters({"siteChrome", "siteIdChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "DeleteSite in Chrome",priority = 4)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "DeleteSite in Chrome",priority = 4,dependsOnMethods = "createSite")
     public void deleteSite(String siteName,String siteId,
 			String screenShotName) throws InterruptedException, IOException
     {
@@ -944,7 +944,7 @@ public class Internal_User_Invitations_Chrome  {
 	
 	
 	@Parameters({"firstNameChrome", "userNameChrome", "lastNameChrome","emailChrome","fullNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 5)
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 5,dependsOnMethods = "createUser")
 	public void deleteUser(String firstName,String userName, String lastName,String email,String fullName,String screenShotName) throws InterruptedException, IOException
 
 

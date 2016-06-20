@@ -99,7 +99,7 @@ public class DocumentLibraryTest_FF {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>DocumentLibrary Test in Firefox</b>","This is DocumentLibrary Test,<b>Create the Site,Upload the document,Verify the upload document,Manage permission,Delete Document,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
+		parent=extent.startTest("<b>DocumentLibrary Test in FF</b>","This is DocumentLibrary Test,<b>Create the Site,Upload the document,Verify the upload document,Manage permission,Delete Document,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
 
@@ -108,7 +108,7 @@ public class DocumentLibraryTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -328,7 +328,7 @@ public class DocumentLibraryTest_FF {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+            if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -509,7 +509,7 @@ public class DocumentLibraryTest_FF {
 			Thread.sleep(5000);         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -644,7 +644,7 @@ public class DocumentLibraryTest_FF {
 	}
 	
 	@Parameters({"siteFF", "documentNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 3,dependsOnMethods = "createSite")
 	public void uploadDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -727,7 +727,7 @@ public class DocumentLibraryTest_FF {
 	 */
 	
 	@Parameters({"siteFF", "documentNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 4)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 4,dependsOnMethods = "uploadDocument")
 	public void verifyUploadDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 	{       	
     	
@@ -841,7 +841,7 @@ public class DocumentLibraryTest_FF {
 	 */
     
 	@Parameters({"siteFF", "documentNameFF","userNameFF","fullNameFF","roleNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 5)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Upload Document in FF",priority = 5,dependsOnMethods = "verifyUploadDocument")
 	public void managePermission(String siteName,String documentName,String userName,String fullName,String roleName, String screenShotName) throws InterruptedException, IOException
 	{    
     	 child5 = extent.startTest("Manage Permission", "Manage permisison to Document"); 		
@@ -1002,7 +1002,7 @@ public class DocumentLibraryTest_FF {
 		 */
 	    
 	@Parameters({"siteFF", "documentNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete Document in FF",priority = 6)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete Document in FF",priority = 6,dependsOnMethods = "verifyUploadDocument")
 	public void deleteDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -1201,7 +1201,7 @@ public class DocumentLibraryTest_FF {
 	    }
 	
 	@Parameters({"siteFF","siteIdFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create site in FF",priority = 7)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create site in FF",priority = 7,dependsOnMethods = "createSite")
 	public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{

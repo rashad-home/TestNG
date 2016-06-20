@@ -328,7 +328,7 @@ public class DocumentLibraryTest_IE {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+            if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -509,7 +509,7 @@ public class DocumentLibraryTest_IE {
 			Thread.sleep(5000);         
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+		if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -644,7 +644,7 @@ public class DocumentLibraryTest_IE {
 	}
 	
 	@Parameters({"siteIE", "documentNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 3)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 3,dependsOnMethods = "createSite")
 	public void uploadDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -702,7 +702,7 @@ public class DocumentLibraryTest_IE {
 		extent.flush();
                 
                 CreateObjects upload=new CreateObjects(driver);
-                upload.uploadDocumentIE(documentName, className, screenShotName);
+                upload.uploadDocument(documentName, className, screenShotName);
                 
                 TakeScreenShot ts=new TakeScreenShot();
         	   	ts.takeScreenShotIE(driver,className, screenShotName+"15");
@@ -727,7 +727,7 @@ public class DocumentLibraryTest_IE {
 	 */
 	
 	@Parameters({"siteIE", "documentNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 4)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 4,dependsOnMethods = "uploadDocument")
 	public void verifyUploadDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 	{       	
     	
@@ -841,7 +841,7 @@ public class DocumentLibraryTest_IE {
 	 */
     
 	@Parameters({"siteIE", "documentNameIE","userNameIE","fullNameIE","roleNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 5)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Upload Document in IE",priority = 5,dependsOnMethods = "verifyUploadDocument")
 	public void managePermission(String siteName,String documentName,String userName,String fullName,String roleName, String screenShotName) throws InterruptedException, IOException
 	{    
     	 child5 = extent.startTest("Manage Permission", "Manage permisison to Document"); 		
@@ -1002,7 +1002,7 @@ public class DocumentLibraryTest_IE {
 		 */
 	    
 	@Parameters({"siteIE", "documentNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Document in IE",priority = 6)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Document in IE",priority = 6,dependsOnMethods = "verifyUploadDocument")
 	public void deleteDocument(String siteName,String documentName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -1201,7 +1201,7 @@ public class DocumentLibraryTest_IE {
 	    }
 	
 	@Parameters({"siteIE","siteIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create site in IE",priority = 7)
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create site in IE",priority = 7,dependsOnMethods = "createSite")
 	public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{

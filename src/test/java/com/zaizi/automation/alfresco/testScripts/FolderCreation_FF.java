@@ -96,7 +96,7 @@ public class FolderCreation_FF {
 	{
 		
 		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>Folder Creation Test in Firefox</b>","This is Folder Creation Test,<b>Create the Site,Create the folder,Delete the folder,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
+		parent=extent.startTest("<b>Folder Creation Test in FF</b>","This is Folder Creation Test,<b>Create the Site,Create the folder,Delete the folder,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
 
@@ -105,7 +105,7 @@ public class FolderCreation_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("FF", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -324,7 +324,7 @@ public class FolderCreation_FF {
             Thread.sleep(5000);
             
         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+        if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");	
@@ -505,7 +505,7 @@ public class FolderCreation_FF {
 			Thread.sleep(5000);        
                                                 
                         //If Site Created
-		if(Element.isElementPresent(driver, By.xpath("//div[@class='bd']/span[@class='wait']")))
+	   if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
 		{	
 			LOGGER.info("Site "+siteName +" CREATED ");
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
@@ -646,7 +646,7 @@ public class FolderCreation_FF {
 	 */
 
 	@Parameters({"siteFF", "folderNameFF","folderTitleFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Folder creation in FF",priority = 3)
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Folder creation in FF",priority = 3,dependsOnMethods = "createSite")
 	public void folderCreation(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 	{
 		child3 = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
@@ -812,7 +812,7 @@ public class FolderCreation_FF {
 	 */
     
 @Parameters({"siteFF", "folderNameFF","folderTitleFF","screenShotNameFF" })
-@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete Folder in FF",priority = 4)
+@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete Folder in FF",priority = 4,dependsOnMethods = "folderCreation")
 public void deleteFolder(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 
 {
@@ -1012,7 +1012,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     }
 
 @Parameters({"siteFF","siteIdFF","screenShotNameFF" })
-@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 5)
+@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 5,dependsOnMethods = "createSite")
 public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 {
