@@ -1,2 +1,2 @@
 # TestNG
-TestNG_Framework
+TestNG QA framework

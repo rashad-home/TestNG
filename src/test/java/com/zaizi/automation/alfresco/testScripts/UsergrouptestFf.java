@@ -30,7 +30,7 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.extentReports.ExtentManagerFF;
 import com.zaizi.automation.listeners.FFRetryAnalyzer;
 
-public class UserGroupTest_FF {
+public class UsergrouptestFf {
 
 	
 	/**
@@ -39,7 +39,7 @@ public class UserGroupTest_FF {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UserGroupTest_FF.class.getName());
+			.getLogger(UsergrouptestFf.class.getName());
 	
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class UserGroupTest_FF {
 	 * Define className
 	 */
 
-	public static String className = UserGroupTest_FF.class
+	public static String className = UsergrouptestFf.class
 			.getSimpleName();
 
 	
@@ -98,7 +98,7 @@ public class UserGroupTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws Exception{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("FF", "WINDOWS");
+				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -219,8 +219,8 @@ public class UserGroupTest_FF {
 						driver,
 						By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 				searchButton.click();
-				Element.waitForLoad(driver);
-				Thread.sleep(1000);
+				Thread.sleep(5000);
+				
 				 
 				
 				if (Element.isTextPresentInListForGroup(
@@ -268,7 +268,7 @@ public class UserGroupTest_FF {
 	 */
 	
 	@Parameters({"groupNameFF", "newGroupNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit Group in FF",priority = 2,dependsOnMethods = "createGroup")
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit Group in FF",priority = 2)
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -345,8 +345,7 @@ public class UserGroupTest_FF {
 				driver,
 				By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 		searchButton.click();
-		Element.waitForLoad(driver);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		 
 		
 		if (Element.isTextPresentInListForGroup(
@@ -390,7 +389,7 @@ public class UserGroupTest_FF {
 	 */
 	
 	@Parameters({"newGroupNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Remove Group in FF",priority = 3,dependsOnMethods = "editGroup")
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Remove Group in FF",priority = 3)
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -470,8 +469,7 @@ public class UserGroupTest_FF {
 				driver,
 				By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 		searchButton.click();
-		Element.waitForLoad(driver);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		 
 		
 		if (Element.isTextPresentInListForGroup(

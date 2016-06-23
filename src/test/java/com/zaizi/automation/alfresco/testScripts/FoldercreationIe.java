@@ -38,7 +38,7 @@ import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
 import com.zaizi.automation.extentReports.ExtentManagerIE;
 import com.zaizi.automation.listeners.IERetryAnalyzer;
 
-public class FolderCreation_IE {
+public class FoldercreationIe {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class FolderCreation_IE {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(FolderCreation_IE.class.getName());
+			.getLogger(FoldercreationIe.class.getName());
 	
 	/**
 	 * 
@@ -73,7 +73,7 @@ public class FolderCreation_IE {
 	 * Define className
 	 */
 
-	public static String className = FolderCreation_IE.class
+	public static String className = FoldercreationIe.class
 			.getSimpleName();
 
 	
@@ -646,7 +646,7 @@ public class FolderCreation_IE {
 	 */
 
 	@Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Folder creation in IE",priority = 3,dependsOnMethods = "createSite")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Folder creation in IE",priority = 3)
 	public void folderCreation(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 	{
 		child3 = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
@@ -812,7 +812,7 @@ public class FolderCreation_IE {
 	 */
     
 @Parameters({"siteIE", "folderNameIE","folderTitleIE","screenShotNameIE" })
-@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Folder in IE",priority = 4,dependsOnMethods = "folderCreation")
+@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete Folder in IE",priority = 4)
 public void deleteFolder(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 
 {
@@ -1012,7 +1012,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     }
 
 @Parameters({"siteIE","siteIdIE","screenShotNameIE" })
-@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 5,dependsOnMethods = "createSite")
+@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 5)
 public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 {
@@ -1117,12 +1117,12 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	}
 	else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
 	{
-		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-		child5.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+		LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,siteName+" SITE IS NOT DELETED SUCCESSFULLY");
+		child5.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED SUCCESSFULLY");
 		
 		
- 	   	ts.takeScreenShotIE(driver,className, screenShotName+"A24");
- 	   	child5.log(LogStatus.PASS, "Site is Deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"A24"+".png"));
+ 	   	ts.takeScreenShotIE(driver,className, screenShotName+"A18");
+ 	   	child5.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}

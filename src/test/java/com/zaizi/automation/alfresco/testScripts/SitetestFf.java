@@ -35,10 +35,10 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
 import com.zaizi.automation.alfresco.core.pages.SearchObjects;
 import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
-import com.zaizi.automation.extentReports.ExtentManagerChrome;
-import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerFF;
+import com.zaizi.automation.listeners.FFRetryAnalyzer;
 
-public class SiteTest_Chrome {
+public class SitetestFf{
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class SiteTest_Chrome {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(SiteTest_Chrome.class.getName());
+			.getLogger(SitetestFf.class.getName());
 	
 	/**
 	 * 
@@ -72,7 +72,7 @@ public class SiteTest_Chrome {
 	 * Define className
 	 */
 
-	public static String className = SiteTest_Chrome.class
+	public static String className = SitetestFf.class
 			.getSimpleName();
 
 	
@@ -94,8 +94,8 @@ public class SiteTest_Chrome {
 
 	{
 		
-		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
-		parent=extent.startTest("<b>Site Test in Chrome</b>","This is Site Test,<b>Create the Site,Edit the Site Name,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
+		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
+		parent=extent.startTest("<b>Site Test in FF</b>","This is Site Test,<b>Create the Site,Edit the Site Name,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
 
@@ -104,7 +104,7 @@ public class SiteTest_Chrome {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
+				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -112,13 +112,13 @@ public class SiteTest_Chrome {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	@Parameters({"firstNameChrome", "lastNameChrome","emailChrome","userNameChrome","PasswordChrome","fullNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 1)
+	@Parameters({"firstNameFF", "lastNameFF","emailFF","userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
 	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
 
-		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in Chrome "+userName);
+		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+userName);
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
 		child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");		
@@ -165,7 +165,7 @@ public class SiteTest_Chrome {
             child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
      	   	child1.log(LogStatus.INFO, "User is alredy created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();             
@@ -184,7 +184,7 @@ public class SiteTest_Chrome {
         	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
      	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
@@ -224,7 +224,7 @@ public class SiteTest_Chrome {
  			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.PASS, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
@@ -234,7 +234,7 @@ public class SiteTest_Chrome {
  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.FAIL, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -250,7 +250,7 @@ public class SiteTest_Chrome {
   			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
      	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
@@ -277,8 +277,8 @@ public class SiteTest_Chrome {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"siteChrome", "isPrivateChrome","siteIdChrome","expectedResultChrome","siteCreatorNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create site in Chrome",priority = 2)
+	@Parameters({"siteFF", "isPrivateFF","siteIdFF","expectedResultFF","siteCreatorNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create site in FF",priority = 2)
 	public void createSite(String siteName,Boolean isPrivate,String siteId,String expectedResult,String siteCreatorName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -317,7 +317,7 @@ public class SiteTest_Chrome {
              createObjects.createPrivateSite(siteName, siteId,expectedResult);
 			
             TakeScreenShot ts=new TakeScreenShot();
-       	   	ts.takeScreenShot(driver,className, screenShotName+"5");
+       	   	ts.takeScreenShotFF(driver,className, screenShotName+"5");
        	   	child2.log(LogStatus.INFO, "Site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -401,7 +401,7 @@ public class SiteTest_Chrome {
 				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				   
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"6");
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"6");
 		     	   	child2.log(LogStatus.INFO, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();   
@@ -412,7 +412,7 @@ public class SiteTest_Chrome {
 				LOGGER.info(siteName+ " SITE IS VISIBLE TO "+siteCreatorName);
 				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
-				ts.takeScreenShot(driver,className, screenShotName+"7");
+				ts.takeScreenShotFF(driver,className, screenShotName+"7");
 	     	   	child2.log(LogStatus.INFO, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -452,7 +452,7 @@ public class SiteTest_Chrome {
                     LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                     child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
-                    ts.takeScreenShot(driver,className, screenShotName+"8");
+                    ts.takeScreenShotFF(driver,className, screenShotName+"8");
     	     	   	child2.log(LogStatus.PASS, "User is alredy created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
     	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     	            extent.flush();  
@@ -466,7 +466,7 @@ public class SiteTest_Chrome {
                         LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         child2.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
         	     	   	child2.log(LogStatus.FAIL, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush(); 
@@ -477,7 +477,7 @@ public class SiteTest_Chrome {
                         LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                         child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
         	     	   	child2.log(LogStatus.PASS, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush();
@@ -511,7 +511,7 @@ public class SiteTest_Chrome {
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"10");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"10");
      	   	child2.log(LogStatus.INFO, "Public site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -534,7 +534,7 @@ public class SiteTest_Chrome {
 	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"11");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"11");
 	     	   	child2.log(LogStatus.INFO, "Public Site already created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
@@ -560,7 +560,7 @@ public class SiteTest_Chrome {
 	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"12");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"12");
 	     	   	child2.log(LogStatus.INFO, "Public Site not created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();
@@ -593,7 +593,7 @@ public class SiteTest_Chrome {
 			child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"13");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"13");
      	   	child2.log(LogStatus.INFO, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -607,7 +607,7 @@ public class SiteTest_Chrome {
                child2.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                TakeScreenShot ts=new TakeScreenShot();
-        	   	ts.takeScreenShot(driver,className, screenShotName+"14");
+        	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
         	   	child2.log(LogStatus.PASS, "Site is visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
         	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                extent.flush(); 
@@ -619,7 +619,7 @@ public class SiteTest_Chrome {
                             child2.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                    	   	ts.takeScreenShot(driver,className, screenShotName+"14");
+                    	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
                     	   	child2.log(LogStatus.FAIL, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
                     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
@@ -639,8 +639,8 @@ public class SiteTest_Chrome {
 	
 	}
 	
-	@Parameters({"siteChrome", "newSiteNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit site in Chrome",priority = 3,dependsOnMethods = "createSite")
+	@Parameters({"siteFF", "newSiteNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit site in FF",priority = 3)
 	public void editSite(String siteName,String newSiteName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -709,7 +709,7 @@ public class SiteTest_Chrome {
 					child3.log(LogStatus.FAIL, "Site " + siteName + " was found,Site name was NOT Changed Successfully");
 					
 					TakeScreenShot ts=new TakeScreenShot();
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"15");
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"15");
 		     	   	child3.log(LogStatus.FAIL, "Site rename is unsucessfull : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"15"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush(); 
@@ -720,7 +720,7 @@ public class SiteTest_Chrome {
 					child3.log(LogStatus.PASS, "Site " + siteName + " is NOT FOUND,Site name was Changed Successfully FROM \""+siteName+"\"TO \""+newSiteName+"\"");
 					
 					TakeScreenShot ts=new TakeScreenShot();
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"16");
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"16");
 		     	   	child3.log(LogStatus.PASS, "Site was edited successfull : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"16"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();
@@ -737,8 +737,8 @@ public class SiteTest_Chrome {
 
 	}
 	
-	@Parameters({"newSiteNameChrome","siteIdChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 4,dependsOnMethods = "editSite")
+	@Parameters({"newSiteNameFF","siteIdFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 4)
 	public void deleteSite(String newSiteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -818,7 +818,7 @@ public class SiteTest_Chrome {
 		Thread.sleep(2000);
 		
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShot(driver,className, screenShotName+"17");
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"17");
  	   	child4.log(LogStatus.INFO, "Search Site : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
@@ -836,22 +836,22 @@ public class SiteTest_Chrome {
 			child4.log(LogStatus.PASS, newSiteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"18");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"18");
      	   	child4.log(LogStatus.PASS, "Site is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
 		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
 		{
-			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,newSiteName+" SITE IS DELETED SUCCESSFULLY");
-			child4.log(LogStatus.PASS, newSiteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,newSiteName+" SITE IS NOT DELETED SUCCESSFULLY");
+			child4.log(LogStatus.FAIL, newSiteName+" SITE IS NOT DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
-     	   	child4.log(LogStatus.PASS, "Site is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"A18");
+     	   	child4.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
-		}
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteId
 					+ "')]//td//div"));
@@ -869,7 +869,7 @@ public class SiteTest_Chrome {
 			child4.log(LogStatus.FAIL, newSiteName+" SITE IS NOT DELETED");
 			
 			
-     	   	ts.takeScreenShot(driver,className, screenShotName+"19");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"19");
      	   	child4.log(LogStatus.FAIL, "Site is not deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -879,7 +879,7 @@ public class SiteTest_Chrome {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,newSiteName+" SITE IS DELETED SUCCESSFULLY");
 			child4.log(LogStatus.PASS, newSiteName+"SITE IS DELETED SUCCESSFULLY");
 			
-			ts.takeScreenShot(driver,className, screenShotName+"20");
+			ts.takeScreenShotFF(driver,className, screenShotName+"20");
      	   	child4.log(LogStatus.PASS, "Site is not deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 

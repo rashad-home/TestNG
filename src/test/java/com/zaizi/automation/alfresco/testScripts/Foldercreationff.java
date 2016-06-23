@@ -35,10 +35,10 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
 import com.zaizi.automation.alfresco.core.pages.SearchObjects;
 import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
-import com.zaizi.automation.extentReports.ExtentManagerChrome;
-import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerFF;
+import com.zaizi.automation.listeners.FFRetryAnalyzer;
 
-public class FolderCreation_Chrome {
+public class Foldercreationff {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class FolderCreation_Chrome {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(FolderCreation_Chrome.class.getName());
+			.getLogger(Foldercreationff.class.getName());
 	
 	/**
 	 * 
@@ -73,7 +73,7 @@ public class FolderCreation_Chrome {
 	 * Define className
 	 */
 
-	public static String className = FolderCreation_Chrome.class
+	public static String className = Foldercreationff.class
 			.getSimpleName();
 
 	
@@ -95,8 +95,8 @@ public class FolderCreation_Chrome {
 
 	{
 		
-		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
-		parent=extent.startTest("<b>Folder Creation Test in Chrome</b>","This is Folder Creation Test,<b>Create the Site,Create the folder,Delete the folder,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
+		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
+		parent=extent.startTest("<b>Folder Creation Test in FF</b>","This is Folder Creation Test,<b>Create the Site,Create the folder,Delete the folder,Delete the Site</b> & prerequsite is create \"privateUser\" user inorder to check private site is created or not");
 		LOGGER.info("Testcases Started");
 		
 
@@ -105,7 +105,7 @@ public class FolderCreation_Chrome {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
+				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -113,13 +113,13 @@ public class FolderCreation_Chrome {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	@Parameters({"firstNameChrome", "lastNameChrome","emailChrome","userNameChrome","PasswordChrome","fullNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 1)
+	@Parameters({"firstNameFF", "lastNameFF","emailFF","userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
 	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
 
-		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in Chrome "+userName);
+		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+userName);
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
 		child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
@@ -165,7 +165,7 @@ public class FolderCreation_Chrome {
             child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
      	   	child1.log(LogStatus.INFO, "User is alredy created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();             
@@ -184,7 +184,7 @@ public class FolderCreation_Chrome {
         	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
      	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
@@ -224,7 +224,7 @@ public class FolderCreation_Chrome {
  			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.PASS, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
@@ -234,7 +234,7 @@ public class FolderCreation_Chrome {
  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.FAIL, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -250,7 +250,7 @@ public class FolderCreation_Chrome {
   			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
      	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
@@ -277,8 +277,8 @@ public class FolderCreation_Chrome {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"siteChrome", "isPrivateChrome","siteIdChrome","expectedResultChrome","siteCreatorNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create site in Chrome",priority = 2)
+	@Parameters({"siteFF", "isPrivateFF","siteIdFF","expectedResultFF","siteCreatorNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create site in FF",priority = 2)
 	public void createSite(String siteName,Boolean isPrivate,String siteId,String expectedResult,String siteCreatorName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -317,7 +317,7 @@ public class FolderCreation_Chrome {
              createObjects.createPrivateSite(siteName, siteId,expectedResult);
 			
             TakeScreenShot ts=new TakeScreenShot();
-       	   	ts.takeScreenShot(driver,className, screenShotName+"5");
+       	   	ts.takeScreenShotFF(driver,className, screenShotName+"5");
        	   	child2.log(LogStatus.INFO, "Site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -401,7 +401,7 @@ public class FolderCreation_Chrome {
 				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				   
-		     	   	ts.takeScreenShot(driver,className, screenShotName+"6");
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"6");
 		     	   	child2.log(LogStatus.INFO, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();   
@@ -412,7 +412,7 @@ public class FolderCreation_Chrome {
 				LOGGER.info(siteName+ " SITE IS VISIBLE TO "+siteCreatorName);
 				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
-				ts.takeScreenShot(driver,className, screenShotName+"7");
+				ts.takeScreenShotFF(driver,className, screenShotName+"7");
 	     	   	child2.log(LogStatus.INFO, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -452,7 +452,7 @@ public class FolderCreation_Chrome {
                     LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                     child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
-                    ts.takeScreenShot(driver,className, screenShotName+"8");
+                    ts.takeScreenShotFF(driver,className, screenShotName+"8");
     	     	   	child2.log(LogStatus.PASS, "User is alredy created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
     	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     	            extent.flush();  
@@ -466,7 +466,7 @@ public class FolderCreation_Chrome {
                         LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         child2.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
         	     	   	child2.log(LogStatus.FAIL, "Site is not visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush(); 
@@ -477,7 +477,7 @@ public class FolderCreation_Chrome {
                         LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                         child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         
-                        ts.takeScreenShot(driver,className, screenShotName+"9");
+                        ts.takeScreenShotFF(driver,className, screenShotName+"9");
         	     	   	child2.log(LogStatus.PASS, "Site is visible to site creator : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
         	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         	            extent.flush();
@@ -511,7 +511,7 @@ public class FolderCreation_Chrome {
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"10");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"10");
      	   	child2.log(LogStatus.INFO, "Public site created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -534,7 +534,7 @@ public class FolderCreation_Chrome {
 	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"11");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"11");
 	     	   	child2.log(LogStatus.INFO, "Public Site already created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
@@ -560,7 +560,7 @@ public class FolderCreation_Chrome {
 	        	child2.log(LogStatus.INFO, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"12");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"12");
 	     	   	child2.log(LogStatus.INFO, "Public Site not created : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();
@@ -592,7 +592,7 @@ public class FolderCreation_Chrome {
 			child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"13");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"13");
      	   	child2.log(LogStatus.INFO, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -606,7 +606,7 @@ public class FolderCreation_Chrome {
                child2.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                TakeScreenShot ts=new TakeScreenShot();
-        	   	ts.takeScreenShot(driver,className, screenShotName+"14");
+        	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
         	   	child2.log(LogStatus.PASS, "Site is visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
         	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                extent.flush(); 
@@ -618,7 +618,7 @@ public class FolderCreation_Chrome {
                             child2.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                    	   	ts.takeScreenShot(driver,className, screenShotName+"14");
+                    	   	ts.takeScreenShotFF(driver,className, screenShotName+"14");
                     	   	child2.log(LogStatus.FAIL, "Site is not visible in search : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"14"+".png"));
                     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
@@ -645,8 +645,8 @@ public class FolderCreation_Chrome {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"siteChrome", "folderNameChrome","folderTitleChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Folder creation in Chrome",priority = 3,dependsOnMethods = "createSite")
+	@Parameters({"siteFF", "folderNameFF","folderTitleFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Folder creation in FF",priority = 3)
 	public void folderCreation(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 	{
 		child3 = extent.startTest("Folder Creation", "Folder Creation and Validation as Admin in the Private Site");		
@@ -702,7 +702,7 @@ public class FolderCreation_Chrome {
 		Thread.sleep(3000);
 		
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShot(driver,className, screenShotName+"15");
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"15");
  	   	child3.log(LogStatus.INFO, "Create Folder : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"15"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
@@ -765,7 +765,7 @@ public class FolderCreation_Chrome {
         	child3.log(LogStatus.PASS, "The Admin has created the " +folderName+ " successfully.");
         	
         	
-     	   	ts.takeScreenShot(driver,className, screenShotName+"16");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"16");
      	   	child3.log(LogStatus.PASS, "Folder is created : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"16"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -784,7 +784,7 @@ public class FolderCreation_Chrome {
         	child3.log(LogStatus.FAIL, "The Admin has NOT created the " +folderName+ " successfully.");
                 
         	
-     	   	ts.takeScreenShot(driver,className, screenShotName+"17");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"17");
      	   	child3.log(LogStatus.FAIL, "Folder is not created : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -811,8 +811,8 @@ public class FolderCreation_Chrome {
 	 * @throws Exception InterruptedException, IOException
 	 */
     
-@Parameters({"siteChrome", "folderNameChrome","folderTitleChrome","screenShotNameChrome" })
-@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete Folder in Chrome",priority = 4,dependsOnMethods = "folderCreation")
+@Parameters({"siteFF", "folderNameFF","folderTitleFF","screenShotNameFF" })
+@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete Folder in FF",priority = 4)
 public void deleteFolder(String siteName,String folderName,String folderTitle, String screenShotName) throws InterruptedException, IOException
 
 {
@@ -882,7 +882,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
 	Thread.sleep(3000);
             
 	TakeScreenShot ts=new TakeScreenShot();
-	   	ts.takeScreenShot(driver,className, screenShotName+"18");
+	   	ts.takeScreenShotFF(driver,className, screenShotName+"18");
 	   	child4.log(LogStatus.INFO, "Delete Folder : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     extent.flush(); 
@@ -934,7 +934,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     		Thread.sleep(2000);
     		
     	
-     	   	ts.takeScreenShot(driver,className, screenShotName+"19");
+     	   	ts.takeScreenShotFF(driver,className, screenShotName+"19");
      	   	child4.log(LogStatus.INFO, "Search the Folder : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -949,7 +949,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
      			child4.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
      			
      			
- 	     	   	ts.takeScreenShot(driver,className, screenShotName+"20");
+ 	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"20");
  	     	   	child4.log(LogStatus.PASS, "Folder is deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
  	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
  	            extent.flush(); 
@@ -960,7 +960,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
      			child4.log(LogStatus.PASS, folderName+" Folder IS DELETED SUCCESSFULLY");
      			
      			
-     	 	   	ts.takeScreenShot(driver,className, screenShotName+"A20");
+     	 	   	ts.takeScreenShotFF(driver,className, screenShotName+"A20");
      	 	   	child4.log(LogStatus.PASS, "Folder is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"A20"+".png"));
      	 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
      	        extent.flush(); 
@@ -982,7 +982,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     			child4.log(LogStatus.FAIL, folderName+" Folder IS NOT DELETED");
     			
     			
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"21");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"21");
 	     	   	child4.log(LogStatus.FAIL, "Folder is not deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"21"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
@@ -993,7 +993,7 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
     			child4.log(LogStatus.PASS, folderName+"Folder IS DELETED SUCCESSFULLY");
     			
     			
-	     	   	ts.takeScreenShot(driver,className, screenShotName+"22");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"22");
 	     	   	child4.log(LogStatus.PASS, "Folder is deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"22"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
@@ -1011,8 +1011,8 @@ public void deleteFolder(String siteName,String folderName,String folderTitle, S
             
     }
 
-@Parameters({"siteChrome","siteIdChrome","screenShotNameChrome" })
-@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete site in Chrome",priority = 5,dependsOnMethods = "createSite")
+@Parameters({"siteFF","siteIdFF","screenShotNameFF" })
+@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete site in FF",priority = 5)
 public void deleteSite(String siteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 {
@@ -1092,7 +1092,7 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 	Thread.sleep(2000);
 	
 	TakeScreenShot ts=new TakeScreenShot();
-	   	ts.takeScreenShot(driver,className, screenShotName+"23");
+	   	ts.takeScreenShotFF(driver,className, screenShotName+"23");
 	   	child5.log(LogStatus.INFO, "Search Site : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"23"+".png"));
 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
     extent.flush(); 
@@ -1110,19 +1110,19 @@ public void deleteSite(String siteName,String siteId,String screenShotName) thro
 		child5.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 		
 		
- 	   	ts.takeScreenShot(driver,className, screenShotName+"24");
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"24");
  	   	child5.log(LogStatus.PASS, "Site is Deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"24"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
 	else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
 	{
-		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-		child5.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+		LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,siteName+" SITE IS NOT DELETED SUCCESSFULLY");
+		child5.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED SUCCESSFULLY");
 		
 		
- 	   	ts.takeScreenShot(driver,className, screenShotName+"A24");
- 	   	child5.log(LogStatus.PASS, "Site is Deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"A24"+".png"));
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"A18");
+ 	   	child5.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
 	}
@@ -1143,7 +1143,7 @@ for (int i = 0; i < myList.size(); i++) {
 		child5.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 		
 		
- 	   	ts.takeScreenShot(driver,className, screenShotName+"25");
+ 	   	ts.takeScreenShotFF(driver,className, screenShotName+"25");
  	   	child5.log(LogStatus.FAIL, "Site is not deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"25"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 
@@ -1153,7 +1153,7 @@ for (int i = 0; i < myList.size(); i++) {
 		LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
 		child5.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 		
-		ts.takeScreenShot(driver,className, screenShotName+"26");
+		ts.takeScreenShotFF(driver,className, screenShotName+"26");
  	   	child5.log(LogStatus.PASS, "Site is not deleted : " +child5.addScreenCapture("./"+className+"/"+screenShotName+"26"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush(); 

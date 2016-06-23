@@ -81,35 +81,34 @@ public class CreateObjects {
 		Link createSiteLink = new Link(driver,By.id("HEADER_SITES_MENU_CREATE_SITE_text"));
 		//Element.takescreenshot(driver, className, screenShot+"createSite");
 		createSiteLink.click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		LOGGER.info("Enter "+siteName+" in \"site Name Field\" ");
         
 		TextField siteNameField = new TextField(driver,	By.id("alfresco-createSite-instance-title"));
 		siteNameField.enterText(siteName);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		LOGGER.info("Enter "+siteURL+" in \"site URL Field\" ");
         
 		TextField siteURLField = new TextField(driver,By.id("alfresco-createSite-instance-shortName"));
 		siteURLField.clearText();
 		siteURLField.enterText(siteURL);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		LOGGER.info("Check \"public\" Option");
         
 		CheckBox publicOption = new CheckBox(driver,By.id("alfresco-createSite-instance-isPublic"));
 		publicOption.click();
-		Thread.sleep(2000);	
+		Thread.sleep(5000);	
 		
 		LOGGER.info("Click \"OK\" Button ");
        
         
 		Button okButton = new Button(driver,By.id("alfresco-createSite-instance-ok-button-button"));
-		Thread.sleep(3000);
-		//Element.takescreenshot(driver, className, screenShot+"filedsfilling");
-		okButton.click();
 		
+		okButton.click();
+		Thread.sleep(5000);
 		
 	
 	}

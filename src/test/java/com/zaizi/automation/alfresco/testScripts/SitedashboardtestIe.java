@@ -31,8 +31,8 @@ import com.zaizi.automation.alfresco.core.pages.Dashboard;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
 import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
-import com.zaizi.automation.extentReports.ExtentManagerFF;
-import com.zaizi.automation.listeners.FFRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerIE;
+import com.zaizi.automation.listeners.IERetryAnalyzer;
 
 
 /**
@@ -40,7 +40,7 @@ import com.zaizi.automation.listeners.FFRetryAnalyzer;
 * @author mrashad@zaizi.com
 */
 
-public class SiteDashBoardTest_FF {
+public class SitedashboardtestIe {
 
 	
 	/**
@@ -49,7 +49,7 @@ public class SiteDashBoardTest_FF {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(SiteDashBoardTest_FF.class.getName());
+			.getLogger(SitedashboardtestIe.class.getName());
 
 
 	
@@ -78,7 +78,7 @@ public class SiteDashBoardTest_FF {
 	 * Define className
 	 */
 
-	public static String className = SiteDashBoardTest_FF.class
+	public static String className = SitedashboardtestIe.class
 			.getSimpleName();
 
 	
@@ -100,8 +100,8 @@ public class SiteDashBoardTest_FF {
 
 	{
 		
-		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>Site Dashboard Test in Firefox</b>","This is site dashboard Test,<b>Create site,Add dashlet into site dashboard,Delete Site</b>");
+		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
+		parent=extent.startTest("<b>Site Dashboard Test in IE</b>","This is site dashboard Test,<b>Create site,Add dashlet into site dashboard,Delete Site</b>");
 		System.out.println("Testcase started");
 		
 	}
@@ -109,7 +109,7 @@ public class SiteDashBoardTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("IE", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -117,8 +117,8 @@ public class SiteDashBoardTest_FF {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	@Parameters({"siteFF","siteIdFF","dashletTitleFF","screenShotNameFF"})
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Add Site Dashlet in FF",priority = 1)
+	@Parameters({"siteIE","siteIdIE","dashletTitleIE","screenShotNameIE"})
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Add Site Dashlet in IE",priority = 1)
 	public void addSiteDashlet(String siteName, String siteURL, String dashletTitle, String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -126,55 +126,33 @@ public class SiteDashBoardTest_FF {
 		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "a_addDashlet");
 
 			//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		child1 = extent.startTest("a_addDashlet","Admin for loginTest");
+		child1 = extent.startTest("AddDashlet","Admin for loginTest");
 
 			
 		     LoginPage loginPage = new LoginPage(driver);
 		        loginPage.loginAsAdmin();
 		        Thread.sleep(2000);
 			
-			LOGGER.info("Test case a_addDashlet started executing");
+			LOGGER.info("Test case AddDashlet started executing");
 			child1.log(LogStatus.INFO,
-					"Test case a_addDashlet started executing");	
+					"Test case AddDashlet started executing");	
 	    	
-	    	
-	    	
-		 
-		 
-	        System.out.println("running addDashlet test case");
 	        
 	        Dashboard dashboard = new Dashboard(driver);
 	        
 	        
 			 LOGGER.info("Create Public Site");
 
-				//Extent Report Start Configuration(testCaseName,Definition of testCase)
-				extent.startTest("a_addDashlet","Create Public Site");
-	        
+				
 	        dashboard.createPublicSite(siteName);
-	        Element.waitForLoad(driver);
 	        Thread.sleep(10000);
 	        
 	        LOGGER.info("Customize site dashlet");
 
-			//Extent Report Start Configuration(testCaseName,Definition of testCase)
-			extent.startTest("a_addDashlet","Customize site dashlet");
-       
-	        
 	        dashboard.customizeSiteDashboard(dashletTitle);
 	        
 	        LOGGER.info("View site dashlet");
 
-			//Extent Report Start Configuration(testCaseName,Definition of testCase)
-			extent.startTest("a_addDashlet","View site dashlet");
-	        
-//			Thread.sleep(10000);
-//			
-//			
-//			Link siteDashlet = new Link(driver, By.xpath("//a[text()='FFTest']//ancestor::h1[@id='HEADER_TITLE']"));
-//			siteDashlet.click();
-			
-	        
 	        Thread.sleep(5000);
 	        
 	       /* Division rssFeedBlog = new Division(
@@ -189,8 +167,8 @@ public class SiteDashBoardTest_FF {
 				
 				
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"250");
-	     	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"105"+".png"));
+	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"250");
+	     	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"250"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
 				
@@ -203,8 +181,8 @@ public class SiteDashBoardTest_FF {
 				
 				
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"251");
-	     	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"105"+".png"));
+	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"251");
+	     	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"251"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
 	            
@@ -217,38 +195,39 @@ public class SiteDashBoardTest_FF {
 	     
 	    }
 	
-	@Parameters({"siteFF","siteIdFF","screenShotNameFF"})
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "DeleteSite in FF",priority = 2)
+	@Parameters({"siteIE","siteIdIE","screenShotNameIE"})
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "DeleteSite in IE",priority = 2)
     public void deleteSite(String siteName,String siteURL,
 			String screenShotName) throws InterruptedException, IOException
     {
 	
-		
 		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete site called \" "+siteName +" \" ");
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-		child2 = extent.startTest("e_deleteSite","Delete site called \" "+siteName +" \" ");
-
-		
-		LOGGER.info("Test case e_deleteSite started executing");
+		 child2 = extent.startTest("Delete Site","Delete site called \" "+siteName +" \" ");
+     
+		LOGGER.info("Test case Delete Site started executing");
 		child2.log(LogStatus.INFO,
-				"Test case e_deleteSite started executing");		
+				"Test case Delete Site started executing");		
 
 		LOGGER.info("Accessing the Login Page");
                 child2.log(LogStatus.INFO, "Accessing the Login Page");
         
 		LOGGER.info("Login as admin");
 		child2.log(LogStatus.INFO, "Login as admin");
-
+		 extent.flush(); 
+		 
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.loginAsAdmin();
 		
-                LOGGER.info("Check the site,if site exist Delet the user");
-		child2.log(LogStatus.INFO, "Check the site,if site exist Delete the user");
+		LOGGER.info("Check the site,if site exist Delete the site");
+		child2.log(LogStatus.INFO, "Check the site,if site exist Delete the Site");
+		
+		 
                 child2.log(LogStatus.INFO, "Search the site");
                 child2.log(LogStatus.INFO, "Click \"Delete\" Button,next to site\""+siteName+"\"");
                 child2.log(LogStatus.INFO, "Click \"Delete\" Button,for delete confirmation");
-		child2.log(LogStatus.INFO, "Login as Admin to delete Site in TrashCan");
+		        child2.log(LogStatus.INFO, "Login as Admin to delete Site in TrashCan");
                 child2.log(LogStatus.INFO, "Click \"My Profile\"");
                 child2.log(LogStatus.INFO, "Place siteUrl");
                 child2.log(LogStatus.INFO, "Click \"Search\" Button");
@@ -257,11 +236,16 @@ public class SiteDashBoardTest_FF {
                 child2.log(LogStatus.INFO, "Click \"Delete\" Button");
                 child2.log(LogStatus.INFO, "Click \"OK\" Button");
                 child2.log(LogStatus.INFO, "Click \"OK confirmation\" Button");
+                
+                extent.flush();
+                
                 RemoveObjects deleteSite=new RemoveObjects(driver);
-		deleteSite.deleteSite(siteName, siteURL);		
+		       deleteSite.deleteSite(siteName,siteURL);		
                 
                 LOGGER.info("CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
-		child2.log(LogStatus.INFO,"CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
+                child2.log(LogStatus.INFO,"CHECK WHETHER SITE\" "+siteName+" \"IS DELETED OR NOT");
+                
+                extent.flush();
                 
                 NavigateToPage navigateTo = new NavigateToPage(driver);		
 		navigateTo.goToHome();
@@ -269,11 +253,16 @@ public class SiteDashBoardTest_FF {
                 LOGGER.error("Click \"My Profile\" Again");
 		child2.log(LogStatus.INFO, "Click \"My Profile\" Again");
                 
+		 extent.flush();
+		 
                 child2.log(LogStatus.INFO, "Accessing trashcan Page");
 		navigateTo.goToUserTrashCan();	
 		
 		LOGGER.info("Place siteUrl");
 		child2.log(LogStatus.INFO, "Place siteUrl");
+		
+		 extent.flush();
+		 
 		TextField textField = new TextField(
 				driver,
 				By.id("template_x002e_user-trashcan_x002e_user-trashcan_x0023_default-search-text"));
@@ -284,13 +273,14 @@ public class SiteDashBoardTest_FF {
 		child2.log(LogStatus.INFO, "Click \"Search\" Button");
 		Button searchButton = new Button(driver,By.xpath("//button[text()='Search']"));
 		searchButton.click();
+		
 		Thread.sleep(2000);
-                
+		
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShotFF(driver,className, screenShotName+"210");
- 	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"210"+".png"));
+ 	   	ts.takeScreenShotIE(driver,className, screenShotName+"17");
+ 	   	child2.log(LogStatus.INFO, "Search Site : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"17"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-        extent.flush();  
+        extent.flush(); 
 		//Element.takescreenshot(driver, className, screenShotName+"deleteConfirmation");
 		
 		//CheckBox checkbox=new CheckBox(driver, By.xpath("//div[@class='name'][text()='"+item+"']/ancestor::td[1]/preceding-sibling::td[2]//input"));
@@ -305,19 +295,19 @@ public class SiteDashBoardTest_FF {
 			child2.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"211");
-     	   	child2.log(LogStatus.PASS, "Site is Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"211"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"18");
+     	   	child2.log(LogStatus.PASS, "Site is Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}
 		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteURL+"']")))
 		{
-			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
-			child2.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,siteName+" SITE IS NOT DELETED SUCCESSFULLY");
+			child2.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"A18");
-     	   	child2.log(LogStatus.PASS, "Site is Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"A18");
+     	   	child2.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
 		}		
@@ -334,36 +324,37 @@ public class SiteDashBoardTest_FF {
 		if (myList.get(i).getText().equals(siteURL)) 
 		{	
 			Thread.sleep(2000);
-			LOGGER.info(siteName+ "SITE IS NOT DELETED");
+			LOGGER.error(TestCaseProperties.TEXT_TEST_PASS,siteName+ "SITE IS NOT DELETED");
 			child2.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
-			TakeScreenShot ts2=new TakeScreenShot();
-     	   	ts2.takeScreenShotFF(driver,className, screenShotName+"212");
-     	   	child2.log(LogStatus.FAIL, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"212"+".png"));
+			
+			
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"19");
+     	   	child2.log(LogStatus.FAIL, "Site is not deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"19"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();  
+            extent.flush(); 
 		}
 		else
 		{
-			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,siteName+" SITE IS DELETED SUCCESSFULLY");
 			child2.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
-			TakeScreenShot ts3=new TakeScreenShot();
-     	   	ts3.takeScreenShotFF(driver,className, screenShotName+"213");
-     	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"213"+".png"));
+			
+			ts.takeScreenShotIE(driver,className, screenShotName+"20");
+     	   	child2.log(LogStatus.PASS, "Site is not deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"20"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
-            extent.flush();  
+            extent.flush(); 
 		}
 		}
 		
 		}
+		Thread.sleep(3000);
+		LoginPage loginpage1=new LoginPage(driver);
+		loginpage1.logout();
 		
-		
-		loginPage.logout();
-		
-		LOGGER.info("Test case e_deleteSite executed");
-		child2.log(LogStatus.INFO, "Test case e_deleteSite executed");
+		LOGGER.info("Test case Delete Site executed");
+		child2.log(LogStatus.INFO, "Test case Delete Site executed");
 		 extent.flush();
-                extent.endTest(child2);        
-               
+         extent.endTest(child2);       
+                
 		
     }
 	

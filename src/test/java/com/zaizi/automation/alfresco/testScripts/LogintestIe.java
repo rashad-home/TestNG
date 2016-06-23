@@ -39,7 +39,7 @@ import com.zaizi.automation.listeners.IERetryAnalyzer;
   * @author mketheeswaran
   */
 
-public class LoginTest_IE  {
+public class LogintestIe  {
 
 	
 	/**
@@ -48,7 +48,7 @@ public class LoginTest_IE  {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(LoginTest_IE.class.getName());
+			.getLogger(LogintestIe.class.getName());
 	
 	/**
 	 * 
@@ -75,7 +75,7 @@ public class LoginTest_IE  {
 	 * Define className
 	 */
 
-	public static String className = LoginTest_IE.class
+	public static String className = LogintestIe.class
 			.getSimpleName();
 
 	
@@ -296,7 +296,7 @@ public class LoginTest_IE  {
 	 */
 
 	@Parameters({"userNameIE","PasswordIE","fullNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Login & Logout in IE",priority = 2,dependsOnMethods = "createUser")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Login & Logout in IE",priority = 2)
     public void loginAndLogout(String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
     {
 		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Login as "+userName);
@@ -419,7 +419,7 @@ public class LoginTest_IE  {
 	 * @throws IOException 
      */
 	@Parameters({"userNameIE","firstNameIE", "lastNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete User in IE",priority = 3,dependsOnMethods = "createUser")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete User in IE",priority = 3)
     public void deleteUser(String userName,String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

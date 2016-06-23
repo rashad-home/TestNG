@@ -30,7 +30,7 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.extentReports.ExtentManagerChrome;
 import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
 
-public class UserGroupTest_Chrome {
+public class UsergrouptestChrome {
 
 	
 	/**
@@ -39,7 +39,7 @@ public class UserGroupTest_Chrome {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UserGroupTest_Chrome.class.getName());
+			.getLogger(UsergrouptestChrome.class.getName());
 	
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class UserGroupTest_Chrome {
 	 * Define className
 	 */
 
-	public static String className = UserGroupTest_Chrome.class
+	public static String className = UsergrouptestChrome.class
 			.getSimpleName();
 
 	
@@ -219,8 +219,8 @@ public class UserGroupTest_Chrome {
 						driver,
 						By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 				searchButton.click();
-				Element.waitForLoad(driver);
-				Thread.sleep(1000);
+				
+				Thread.sleep(5000);
 				 
 				
 				if (Element.isTextPresentInListForGroup(
@@ -268,7 +268,7 @@ public class UserGroupTest_Chrome {
 	 */
 	
 	@Parameters({"groupNameChrome", "newGroupNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit Group in Chrome",priority = 2,dependsOnMethods = "createGroup")
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Edit Group in Chrome",priority = 2)
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -345,8 +345,8 @@ public class UserGroupTest_Chrome {
 				driver,
 				By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 		searchButton.click();
-		Element.waitForLoad(driver);
-		Thread.sleep(1000);
+		
+		Thread.sleep(5000);
 		 
 		
 		if (Element.isTextPresentInListForGroup(
@@ -390,7 +390,7 @@ public class UserGroupTest_Chrome {
 	 */
 	
 	@Parameters({"newGroupNameChrome","screenShotNameChrome" })
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Remove Group in Chrome",priority = 3,dependsOnMethods = "editGroup")
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Remove Group in Chrome",priority = 3)
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{

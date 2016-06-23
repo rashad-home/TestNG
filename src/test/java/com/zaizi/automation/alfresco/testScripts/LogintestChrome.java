@@ -28,8 +28,8 @@ import com.zaizi.automation.alfresco.core.elements.TakeScreenShot;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.AdminConsolePage;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
-import com.zaizi.automation.extentReports.ExtentManagerFF;
-import com.zaizi.automation.listeners.FFRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerChrome;
+import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
 
 
 
@@ -39,7 +39,7 @@ import com.zaizi.automation.listeners.FFRetryAnalyzer;
   * @author mketheeswaran
   */
 
-public class LoginTest_FF  {
+public class LogintestChrome  {
 
 	
 	/**
@@ -48,7 +48,7 @@ public class LoginTest_FF  {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(LoginTest_FF.class.getName());
+			.getLogger(LogintestChrome.class.getName());
 	
 	/**
 	 * 
@@ -75,7 +75,7 @@ public class LoginTest_FF  {
 	 * Define className
 	 */
 
-	public static String className = LoginTest_FF.class
+	public static String className = LogintestChrome.class
 			.getSimpleName();
 
 	
@@ -99,8 +99,8 @@ public class LoginTest_FF  {
 
 	{
 		
-		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>loginTest in Firefox</b>","This is loginTest,Create new user & <b>Check whether particular user can login</b>,Once test is excute,Delete the user");
+		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
+		parent=extent.startTest("<b>loginTest in Chrome</b>","This is loginTest,Create new user & <b>Check whether particular user can login</b>,Once test is excute,Delete the user");
 		LOGGER.info("Testcases Started");
 		
 		
@@ -109,7 +109,7 @@ public class LoginTest_FF  {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -127,14 +127,14 @@ public class LoginTest_FF  {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"firstNameFF", "lastNameFF","emailFF","userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
+	@Parameters({"firstNameChrome", "lastNameChrome","emailChrome","userNameChrome","PasswordChrome","fullNameChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 1)
 	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
 
-		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+userName);
-		//parent=extent.startTest("Login in FF");
+		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in Chrome "+userName);
+		//parent=extent.startTest("Login in Chrome");
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
 		 child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
 		
@@ -179,7 +179,7 @@ public class LoginTest_FF  {
             child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
      	   	child1.log(LogStatus.INFO, "User is alredy created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -199,7 +199,7 @@ public class LoginTest_FF  {
         	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
      	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
@@ -240,7 +240,7 @@ public class LoginTest_FF  {
  			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.PASS, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
@@ -250,7 +250,7 @@ public class LoginTest_FF  {
  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.FAIL, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -266,7 +266,7 @@ public class LoginTest_FF  {
   			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
      	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
@@ -295,8 +295,8 @@ public class LoginTest_FF  {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Login & Logout in FF",priority = 2,dependsOnMethods = "createUser")
+	@Parameters({"userNameChrome","PasswordChrome","fullNameChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Login & Logout in Chrome",priority = 2)
     public void loginAndLogout(String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
     {
 		 LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Login as "+userName);
@@ -320,7 +320,7 @@ public class LoginTest_FF  {
        lp.loginAsUser(userName, password);
        
        TakeScreenShot ts=new TakeScreenShot();
-	   ts.takeScreenShotFF(driver,className, screenShotName+"5");
+	   ts.takeScreenShot(driver,className, screenShotName+"5");
 	   child2.log(LogStatus.INFO, "Login Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
        extent.flush();
  	  
@@ -342,7 +342,7 @@ public class LoginTest_FF  {
     			child2.log(LogStatus.PASS,"<font color=green>Successfully login As "+userName+"<font>");
     			
     			  
-    			ts.takeScreenShotFF(driver,className, screenShotName+"6");
+    			ts.takeScreenShot(driver,className, screenShotName+"6");
     			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
     		       extent.flush();
 		        
@@ -362,7 +362,7 @@ public class LoginTest_FF  {
 	        	LOGGER.error(TestCaseProperties.TEXT_TEST_FAIL,"Displayed \"failed to Login\" Prompt message");	    			
     			child2.log(LogStatus.FAIL, "<font color=red> Displayed \"failed to Login\" Prompt message <font>");
     			
-    			ts.takeScreenShotFF(driver,className, screenShotName+"7");
+    			ts.takeScreenShot(driver,className, screenShotName+"7");
  			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
  		       extent.flush();
 	        }	        
@@ -381,7 +381,7 @@ public class LoginTest_FF  {
     			child2.log(LogStatus.INFO,"Display message as\"Your authentication details have not been recognized or Alfresco may not be available at this time.\"");
     			child2.log(LogStatus.INFO,"Message Display as  "+"<font color=green>" +element.getText()+"<font>");
     			
-    			ts.takeScreenShotFF(driver,className, screenShotName+"8");
+    			ts.takeScreenShot(driver,className, screenShotName+"8");
   			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
   		       extent.flush();
     			
@@ -395,7 +395,7 @@ public class LoginTest_FF  {
     			child2.log(LogStatus.INFO,"Expected Result: \"Your authentication details have not been recognized or Alfresco may not be available at this time.\" ");  				    			
     			child2.log(LogStatus.INFO,"Current Result: Message Display as  "+"<font color=red>" +element.getText()+"<font>");
     			
-    			ts.takeScreenShotFF(driver,className, screenShotName+"9");
+    			ts.takeScreenShot(driver,className, screenShotName+"9");
    			   child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
    		       extent.flush();
         	}
@@ -418,8 +418,8 @@ public class LoginTest_FF  {
      * @throws InterruptedException
 	 * @throws IOException 
      */
-	@Parameters({"userNameFF","firstNameFF", "lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3,dependsOnMethods = "createUser")
+	@Parameters({"userNameChrome","firstNameChrome", "lastNameChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Delete User in Chrome",priority = 3)
     public void deleteUser(String userName,String firstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");
@@ -459,7 +459,7 @@ public class LoginTest_FF  {
 			child3.log(LogStatus.INFO, "<font color=blue>User "+userName+" is exist <font>");
 			
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShotFF(driver,className, screenShotName+"10");
+			   ts.takeScreenShot(driver,className, screenShotName+"10");
 			   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 		       extent.flush(); 
 	            
@@ -480,7 +480,7 @@ public class LoginTest_FF  {
 			child3.log(LogStatus.INFO, "User : " + firstName
 					+ " Not Available in the System to Delete");
 			TakeScreenShot ts=new TakeScreenShot();
-			   ts.takeScreenShotFF(driver,className, screenShotName+"11");
+			   ts.takeScreenShot(driver,className, screenShotName+"11");
 			   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 		       extent.flush(); 
 		}
@@ -504,7 +504,7 @@ public class LoginTest_FF  {
 		    	child3.log(LogStatus.FAIL, "<font color=red>User "+firstName+" IS NOT DELETED<font>");
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShotFF(driver,className, screenShotName+"12");
+				   ts.takeScreenShot(driver,className, screenShotName+"12");
 				   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"12"+".png"));
 			       extent.flush();   
 		    	
@@ -516,7 +516,7 @@ public class LoginTest_FF  {
 		        child3.log(LogStatus.PASS, "<font color=green>User "+firstName+" IS SUCCESSFULLY DELETED<font>");
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
-				   ts.takeScreenShotFF(driver,className, screenShotName+"13");
+				   ts.takeScreenShot(driver,className, screenShotName+"13");
 				   child3.log(LogStatus.INFO, "Login Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"13"+".png"));
 			       extent.flush(); 
 		       

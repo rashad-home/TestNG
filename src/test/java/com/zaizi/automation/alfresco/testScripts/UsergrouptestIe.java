@@ -30,7 +30,7 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.extentReports.ExtentManagerIE;
 import com.zaizi.automation.listeners.IERetryAnalyzer;
 
-public class UserGroupTest_IE {
+public class UsergrouptestIe {
 
 	
 	/**
@@ -39,7 +39,7 @@ public class UserGroupTest_IE {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UserGroupTest_IE.class.getName());
+			.getLogger(UsergrouptestIe.class.getName());
 	
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class UserGroupTest_IE {
 	 * Define className
 	 */
 
-	public static String className = UserGroupTest_IE.class
+	public static String className = UsergrouptestIe.class
 			.getSimpleName();
 
 	
@@ -219,8 +219,7 @@ public class UserGroupTest_IE {
 						driver,
 						By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 				searchButton.click();
-				Element.waitForLoad(driver);
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 				 
 				
 				if (Element.isTextPresentInListForGroup(
@@ -268,7 +267,7 @@ public class UserGroupTest_IE {
 	 */
 	
 	@Parameters({"groupNameIE", "newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit Group in IE",priority = 2,dependsOnMethods = "createGroup")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit Group in IE",priority = 2)
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -345,8 +344,7 @@ public class UserGroupTest_IE {
 				driver,
 				By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 		searchButton.click();
-		Element.waitForLoad(driver);
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		 
 		
 		if (Element.isTextPresentInListForGroup(
@@ -390,7 +388,7 @@ public class UserGroupTest_IE {
 	 */
 	
 	@Parameters({"newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Remove Group in IE",priority = 3,dependsOnMethods = "editGroup")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Remove Group in IE",priority = 3)
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{

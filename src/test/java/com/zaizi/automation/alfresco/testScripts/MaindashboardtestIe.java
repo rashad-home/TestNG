@@ -27,8 +27,8 @@ import com.zaizi.automation.alfresco.core.elements.TakeScreenShot;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.Dashboard;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
-import com.zaizi.automation.extentReports.ExtentManagerChrome;
-import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerIE;
+import com.zaizi.automation.listeners.IERetryAnalyzer;
 
 
 
@@ -38,7 +38,7 @@ import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
   */
 
 
-public class MainDashBoardTest_Chrome {
+public class MaindashboardtestIe {
 
 	
 	/**
@@ -47,7 +47,7 @@ public class MainDashBoardTest_Chrome {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(MainDashBoardTest_Chrome.class.getName());
+			.getLogger(MaindashboardtestIe.class.getName());
 
 	
 	/**
@@ -72,7 +72,7 @@ public class MainDashBoardTest_Chrome {
 	 * Define className
 	 */
 
-	public static String className = MainDashBoardTest_Chrome.class
+	public static String className = MaindashboardtestIe.class
 			.getSimpleName();
 
 	
@@ -94,8 +94,8 @@ public class MainDashBoardTest_Chrome {
 
 	{
 		
-		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
-		parent=extent.startTest("<b>Main Dashboard Test in Chrome</b>","This is main dashboard Test,<b>Add dashlet into main dashboard</b>");
+		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
+		parent=extent.startTest("<b>Main Dashboard Test in IE</b>","This is main dashboard Test,<b>Add dashlet into main dashboard</b>");
 		System.out.println("Testcase started");
 		
 	}
@@ -103,7 +103,7 @@ public class MainDashBoardTest_Chrome {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
+				driver = TestCaseProperties.driverType("IE", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -111,8 +111,8 @@ public class MainDashBoardTest_Chrome {
 				driver.get(TestCaseProperties.LOGIN_SCREEN_URL);	
 	}
 	
-	@Parameters({"addDashletChrome","screenShotNameChrome"})
-	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Add Dashlet in Chrome",priority = 1)
+	@Parameters({"addDashletIE","screenShotNameIE"})
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Add Dashlet in IE",priority = 1)
 	public void addDashlet(String dashletTitle, String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -121,15 +121,15 @@ public class MainDashBoardTest_Chrome {
 		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "a_addDashlet");
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
-    	child1 = extent.startTest("a_addDashlet","Admin for loginTest");	
+    	child1 = extent.startTest("AddDashlet","Admin for loginTest");	
 
 	     LoginPage loginPage = new LoginPage(driver);
 	        loginPage.loginAsAdmin();
 	        Thread.sleep(2000);
 		
-		LOGGER.info("Test case a_addDashlet started executing");
+		LOGGER.info("Test case AddDashlet started executing");
 		child1.log(LogStatus.INFO,
-				"Test case a_addDashlet started executing");	
+				"Test case AddDashlet started executing");	
     	
     	
     	Dashboard dashboard = new Dashboard(driver);
@@ -146,7 +146,7 @@ public class MainDashBoardTest_Chrome {
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"250");
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"250");
      	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"250"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -160,16 +160,15 @@ public class MainDashBoardTest_Chrome {
 			
 			
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShot(driver,className, screenShotName+"251");
+     	   	ts.takeScreenShotIE(driver,className, screenShotName+"251");
      	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"251"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();
-            
-			
+           
         }
         
         extent.flush();
-        extent.endTest(child1);
+        extent.endTest(child1); 
         
     }
 		

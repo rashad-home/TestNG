@@ -32,7 +32,7 @@ import com.zaizi.automation.alfresco.core.pages.UserDashboardPage;
 import com.zaizi.automation.extentReports.ExtentManagerFF;
 import com.zaizi.automation.listeners.FFRetryAnalyzer;
 
-public class UserTest_FF {
+public class UsertestFf {
 
 	/**
 	 * 
@@ -40,7 +40,7 @@ public class UserTest_FF {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UserTest_FF.class.getName());
+			.getLogger(UsertestFf.class.getName());
 	
 	/**
 	 * 
@@ -66,7 +66,7 @@ public class UserTest_FF {
 	 * Define className
 	 */
 
-	public static String className = UserTest_FF.class
+	public static String className = UsertestFf.class
 			.getSimpleName();
 
 	
@@ -98,7 +98,7 @@ public class UserTest_FF {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("FF", "WINDOWS");
+				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -280,7 +280,7 @@ public class UserTest_FF {
 	 */
 
 	@Parameters({"userNameFF","PasswordFF","newFirstNameFF","lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit User in FF",priority = 2,dependsOnMethods = "createUser")
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit User in FF",priority = 2)
 	public void editUser(String userName,String password,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -375,7 +375,7 @@ public class UserTest_FF {
 	 * @throws IOException 
      */
 	@Parameters({"userNameFF","newFirstNameFF", "lastNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3,dependsOnMethods = "editUser")
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Delete User in FF",priority = 3)
     public void deleteUser(String userName,String newFirstName,String lastName,String screenShotName) throws InterruptedException, IOException
     {
     	LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Delete User called \" "+userName+ " \"");

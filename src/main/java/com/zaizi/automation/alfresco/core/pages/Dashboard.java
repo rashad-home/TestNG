@@ -238,16 +238,16 @@ public class Dashboard {
         sitesButton.click();
         Link createSiteLink = new Link(driver, By.xpath("//td[@id='HEADER_SITES_MENU_CREATE_SITE_text']"));
         createSiteLink.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         TextField siteName = new TextField(driver, By.xpath("//input[@id='alfresco-createSite-instance-title']"));
         siteName.enterText(siteNameText);
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         CheckBox publicOption = new CheckBox(driver, By.xpath("//input[@id='alfresco-createSite-instance-isPublic']"));
         publicOption.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         Button okButton = new Button(driver, By.xpath("//button[@id='alfresco-createSite-instance-ok-button-button']"));
         okButton.click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
     }
     
     /**
@@ -279,8 +279,8 @@ public class Dashboard {
                 driver,
                 By.xpath("//span/span/button[@id='template_x002e_customise-dashlets_x002e_customise-site-dashboard_x0023_default-save-button-button']"));
         okButton.click();
-        Thread.sleep(5000);
-        Division wikiDashlet = new Division(driver, By.xpath("//div/div/div[@class='title' and contains(., 'Wiki')]"));
+        Thread.sleep(8000);
+        /*Division wikiDashlet = new Division(driver, By.xpath("//div/div/div[@class='title' and contains(., 'Wiki')]"));
         if (wikiDashlet.getWebElement().isDisplayed())
         {
         	LOGGER.info("Pass");			
@@ -290,7 +290,7 @@ public class Dashboard {
         {
         	LOGGER.info("Fail");
 			
-        }
+        }*/
     }
     
     /**

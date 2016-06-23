@@ -38,7 +38,7 @@ import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
 import com.zaizi.automation.extentReports.ExtentManagerIE;
 import com.zaizi.automation.listeners.IERetryAnalyzer;
 
-public class SiteTest_IE {
+public class SitetestIe {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class SiteTest_IE {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(SiteTest_IE.class.getName());
+			.getLogger(SitetestIe.class.getName());
 	
 	/**
 	 * 
@@ -72,7 +72,7 @@ public class SiteTest_IE {
 	 * Define className
 	 */
 
-	public static String className = SiteTest_IE.class
+	public static String className = SitetestIe.class
 			.getSimpleName();
 
 	
@@ -640,7 +640,7 @@ public class SiteTest_IE {
 	}
 	
 	@Parameters({"siteIE", "newSiteNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit site in IE",priority = 3,dependsOnMethods = "createSite")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit site in IE",priority = 3)
 	public void editSite(String siteName,String newSiteName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -738,7 +738,7 @@ public class SiteTest_IE {
 	}
 	
 	@Parameters({"newSiteNameIE","siteIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 4,dependsOnMethods = "editSite")
+	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Delete site in IE",priority = 4)
 	public void deleteSite(String newSiteName,String siteId,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -843,15 +843,15 @@ public class SiteTest_IE {
 		}
 		else if(Element.isElementPresent(driver,By.xpath("//div[text()='"+siteId+"']")))
 		{
-			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,newSiteName+" SITE IS DELETED SUCCESSFULLY");
-			child4.log(LogStatus.PASS, newSiteName+" SITE IS DELETED SUCCESSFULLY");
+			LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,newSiteName+" SITE IS NOT DELETED SUCCESSFULLY");
+			child4.log(LogStatus.FAIL, newSiteName+" SITE IS NOT DELETED SUCCESSFULLY");
 			
 			
      	   	ts.takeScreenShotIE(driver,className, screenShotName+"A18");
-     	   	child4.log(LogStatus.PASS, "Site is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
+     	   	child4.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
-		}
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteId
 					+ "')]//td//div"));
