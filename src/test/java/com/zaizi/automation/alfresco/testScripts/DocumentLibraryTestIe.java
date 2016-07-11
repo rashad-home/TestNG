@@ -38,7 +38,7 @@ import com.zaizi.automation.testng.core.elements.Span;
 import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 import com.zaizi.automation.testng.core.elements.TextField;
 
-public class DocumentlibraryTestie {
+public class DocumentLibraryTestIe {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class DocumentlibraryTestie {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(DocumentlibraryTestie.class.getName());
+			.getLogger(DocumentLibraryTestIe.class.getName());
 	
 	/**
 	 * 
@@ -76,7 +76,7 @@ public class DocumentlibraryTestie {
 	 * Define className
 	 */
 
-	public static String className = DocumentlibraryTestie.class
+	public static String className = DocumentLibraryTestIe.class
 			.getSimpleName();
 
 	

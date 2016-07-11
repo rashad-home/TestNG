@@ -38,7 +38,7 @@ import com.zaizi.automation.testng.core.elements.TakeScreenShot;
   */
 
 
-public class MaindashboardtestIe {
+public class MainDashboardTestIe {
 
 	
 	/**
@@ -47,7 +47,7 @@ public class MaindashboardtestIe {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(MaindashboardtestIe.class.getName());
+			.getLogger(MainDashboardTestIe.class.getName());
 
 	
 	/**
@@ -72,7 +72,7 @@ public class MaindashboardtestIe {
 	 * Define className
 	 */
 
-	public static String className = MaindashboardtestIe.class
+	public static String className = MainDashboardTestIe.class
 			.getSimpleName();
 
 	

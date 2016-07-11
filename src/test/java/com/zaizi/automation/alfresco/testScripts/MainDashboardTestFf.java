@@ -38,7 +38,7 @@ import com.zaizi.automation.testng.core.elements.TakeScreenShot;
   */
 
 
-public class MaindashboardtestFf {
+public class MainDashboardTestFf {
 
 	
 	/**
@@ -47,7 +47,7 @@ public class MaindashboardtestFf {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(MaindashboardtestFf.class.getName());
+			.getLogger(MainDashboardTestFf.class.getName());
 
 	
 	/**
@@ -72,7 +72,7 @@ public class MaindashboardtestFf {
 	 * Define className
 	 */
 
-	public static String className = MaindashboardtestFf.class
+	public static String className = MainDashboardTestFf.class
 			.getSimpleName();
 
 	

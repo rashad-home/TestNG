@@ -32,7 +32,7 @@ import com.zaizi.automation.testng.core.elements.Element;
 import com.zaizi.automation.testng.core.elements.Span;
 import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 
-public class UsertestFf {
+public class UserTestFf {
 
 	/**
 	 * 
@@ -40,7 +40,7 @@ public class UsertestFf {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UsertestFf.class.getName());
+			.getLogger(UserTestFf.class.getName());
 	
 	/**
 	 * 
@@ -66,7 +66,7 @@ public class UsertestFf {
 	 * Define className
 	 */
 
-	public static String className = UsertestFf.class
+	public static String className = UserTestFf.class
 			.getSimpleName();
 
 	

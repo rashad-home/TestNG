@@ -23,14 +23,14 @@ import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.AdminConsolePage;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
 import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
-import com.zaizi.automation.extentReports.ExtentManagerIE;
-import com.zaizi.automation.listeners.IERetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerFF;
+import com.zaizi.automation.listeners.FFRetryAnalyzer;
 import com.zaizi.automation.testng.core.elements.Button;
 import com.zaizi.automation.testng.core.elements.Element;
 import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 import com.zaizi.automation.testng.core.elements.TextField;
 
-public class UsergrouptestIe {
+public class UserGroupTestFf {
 
 	
 	/**
@@ -39,7 +39,7 @@ public class UsergrouptestIe {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UsergrouptestIe.class.getName());
+			.getLogger(UserGroupTestFf.class.getName());
 	
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class UsergrouptestIe {
 	 * Define className
 	 */
 
-	public static String className = UsergrouptestIe.class
+	public static String className = UserGroupTestFf.class
 			.getSimpleName();
 
 	
@@ -87,8 +87,8 @@ public class UsergrouptestIe {
 
 	{
 		
-		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
-		parent=extent.startTest("<b>User Group Test in IE</b>","This is group Test,<b>Create the group,Edit the Group Name,Delete the group</b>");
+		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
+		parent=extent.startTest("<b>User Group Test in FF</b>","This is group Test,<b>Create the group,Edit the Group Name,Delete the group</b>");
 		LOGGER.info("Testcases Started");		
 		
 		
@@ -98,7 +98,7 @@ public class UsergrouptestIe {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws Exception{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("IE", "WINDOWS");
+				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -116,8 +116,8 @@ public class UsergrouptestIe {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"groupNameIE", "groupIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create Group in IE",priority = 1)
+	@Parameters({"groupNameFF", "groupIdFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create Group in FF",priority = 1)
 	public void createGroup(String groupName,String groupId,String screenShotName) throws Exception
 
 	{
@@ -156,7 +156,7 @@ public class UsergrouptestIe {
 				createGroup.createGroup(groupName,groupId);
 			
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"1");
+	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
 	     	   	child1.log(LogStatus.INFO, "Create Group : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));     		
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();   
@@ -167,7 +167,7 @@ public class UsergrouptestIe {
 					child1.log(LogStatus.INFO, "Group "+groupName +" is already exist");
 					
 					
-		     	   	ts.takeScreenShotIE(driver,className, screenShotName+"1T");
+		     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1T");
 		     	   	child1.log(LogStatus.INFO, "Create Group : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1T"+".png"));     		
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();
@@ -206,7 +206,7 @@ public class UsergrouptestIe {
 				groupSearchBar.clearText();
 				groupSearchBar.enterText(groupName);
 				 
-				ts.takeScreenShotIE(driver,className, screenShotName+"2");
+				ts.takeScreenShotFF(driver,className, screenShotName+"2");
 	     	   	child1.log(LogStatus.INFO, "Group search : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -220,6 +220,7 @@ public class UsergrouptestIe {
 						By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 				searchButton.click();
 				Thread.sleep(5000);
+				
 				 
 				
 				if (Element.isTextPresentInListForGroup(
@@ -230,7 +231,7 @@ public class UsergrouptestIe {
 					LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Group "+groupName+" IS SUCCESSFULLY CREATED");
 					child1.log(LogStatus.PASS, "Group "+groupName+" IS SUCCESSFULLY CREATED");
 					
-					ts.takeScreenShotIE(driver,className, screenShotName+"3");
+					ts.takeScreenShotFF(driver,className, screenShotName+"3");
 		     	   	child1.log(LogStatus.PASS, "Group is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();  
@@ -242,7 +243,7 @@ public class UsergrouptestIe {
 					LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,"Group "+groupName+" IS NOT SUCCESSFULLY CREATED");
 					child1.log(LogStatus.FAIL, "Group "+groupName+" IS NOT SUCCESSFULLY CREATED");
 					
-					ts.takeScreenShotIE(driver,className, screenShotName+"3");
+					ts.takeScreenShotFF(driver,className, screenShotName+"3");
 		     	   	child1.log(LogStatus.FAIL, "Group is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
 		     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 		            extent.flush();  
@@ -266,8 +267,8 @@ public class UsergrouptestIe {
 	 * @throws Exception InterruptedException, IOException
 	 */
 	
-	@Parameters({"groupNameIE", "newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Edit Group in IE",priority = 2)
+	@Parameters({"groupNameFF", "newGroupNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Edit Group in FF",priority = 2)
 	public void editGroup(String groupName,String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -308,7 +309,7 @@ public class UsergrouptestIe {
 		editGroup.editGroup(groupName,newGroupName);
 		
 		TakeScreenShot ts=new TakeScreenShot();
-		ts.takeScreenShotIE(driver,className, screenShotName+"4");
+		ts.takeScreenShotFF(driver,className, screenShotName+"4");
 		child2.log(LogStatus.INFO, "Login Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
 	    extent.flush(); 
         
@@ -332,7 +333,7 @@ public class UsergrouptestIe {
 		groupSearchBar.clearText();
 		groupSearchBar.enterText(newGroupName);		 
 		
-		   ts.takeScreenShotIE(driver,className, screenShotName+"5");
+		   ts.takeScreenShotFF(driver,className, screenShotName+"5");
 		   child2.log(LogStatus.INFO, "Login Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"5"+".png"));
 	       extent.flush(); 
 		
@@ -356,7 +357,7 @@ public class UsergrouptestIe {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_PASS,"Group "+groupName+" IS SUCCESSFULLY EDITED as Group "+newGroupName);
 			child2.log(LogStatus.PASS, "Group "+groupName+"  IS SUCCESSFULLY EDITED as Group "+newGroupName);	
 			
-			ts.takeScreenShotIE(driver,className, screenShotName+"6");
+			ts.takeScreenShotFF(driver,className, screenShotName+"6");
 			   child2.log(LogStatus.PASS, "Group successfully edited: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"6"+".png"));
 		       extent.flush();
 		}
@@ -365,7 +366,7 @@ public class UsergrouptestIe {
 			LOGGER.info(TestCaseProperties.TEXT_TEST_FAIL,"Group "+groupName+" IS NOT SUCCESSFULLY EDITED as Group "+newGroupName);
 			child2.log(LogStatus.FAIL, "Group "+groupName+" IS NOT SUCCESSFULLY EDITED as Group "+newGroupName);
 			
-				ts.takeScreenShotIE(driver,className, screenShotName+"7");
+				ts.takeScreenShotFF(driver,className, screenShotName+"7");
 			   child2.log(LogStatus.FAIL, "Group is not successfully edited: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"7"+".png"));
 		       extent.flush();
 		}
@@ -387,8 +388,8 @@ public class UsergrouptestIe {
 	 * @throws Exception InterruptedException, IOException
 	 */
 	
-	@Parameters({"newGroupNameIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Remove Group in IE",priority = 3)
+	@Parameters({"newGroupNameFF","screenShotNameFF" })
+	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Remove Group in FF",priority = 3)
 	public void removeGroup(String newGroupName,String screenShotName) throws InterruptedException, IOException
 
 	{
@@ -430,7 +431,7 @@ public class UsergrouptestIe {
 		removeGroup.removeGroup(newGroupName);
 		
 		   TakeScreenShot ts=new TakeScreenShot();
-		   ts.takeScreenShotIE(driver,className, screenShotName+"8");
+		   ts.takeScreenShotFF(driver,className, screenShotName+"8");
 		   child3.log(LogStatus.INFO, "Remove Group Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"8"+".png"));
 	       extent.flush(); 
                 
@@ -456,7 +457,7 @@ public class UsergrouptestIe {
 		groupSearchBar.enterText(newGroupName);
 		 
 		
-		   ts.takeScreenShotIE(driver,className, screenShotName+"9");
+		   ts.takeScreenShotFF(driver,className, screenShotName+"9");
 		   child3.log(LogStatus.INFO, "Group Search below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"9"+".png"));
 	       extent.flush(); 
 		
@@ -468,8 +469,7 @@ public class UsergrouptestIe {
 				driver,
 				By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-button-button"));
 		searchButton.click();
-		Element.waitForLoad(driver);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		 
 		
 		if (Element.isTextPresentInListForGroup(
@@ -481,7 +481,7 @@ public class UsergrouptestIe {
 			child3.log(LogStatus.FAIL, "Group "+newGroupName+" IS NOT SUCCESSFULLY Removed");	
 			
 			
-			   ts.takeScreenShotIE(driver,className, screenShotName+"10");
+			   ts.takeScreenShotFF(driver,className, screenShotName+"10");
 			   child3.log(LogStatus.FAIL, "Group is not successfully DELETE: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"10"+".png"));
 		       extent.flush(); 
 		       
@@ -494,7 +494,7 @@ public class UsergrouptestIe {
 			child3.log(LogStatus.PASS, "Group "+newGroupName+" IS SUCCESSFULLY Removed");
 			
 			
-			   ts.takeScreenShotIE(driver,className, screenShotName+"11");
+			   ts.takeScreenShotFF(driver,className, screenShotName+"11");
 			   child3.log(LogStatus.PASS, "Group is successfully removed: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"11"+".png"));
 		       extent.flush(); 
 			

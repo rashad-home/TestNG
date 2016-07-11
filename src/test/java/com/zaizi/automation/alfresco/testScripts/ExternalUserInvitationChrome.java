@@ -30,8 +30,8 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
 import com.zaizi.automation.alfresco.core.pages.SearchObjects;
 import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
-import com.zaizi.automation.extentReports.ExtentManagerIE;
-import com.zaizi.automation.listeners.IERetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerChrome;
+import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
 import com.zaizi.automation.testng.core.elements.Button;
 import com.zaizi.automation.testng.core.elements.Element;
 import com.zaizi.automation.testng.core.elements.Span;
@@ -46,7 +46,7 @@ import com.zaizi.automation.testng.core.elements.TextField;
 
 
 
-public class ExternaluserInvitationie {
+public class ExternalUserInvitationChrome {
 
 	
 	/**
@@ -55,7 +55,7 @@ public class ExternaluserInvitationie {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(ExternaluserInvitationie.class.getName());
+			.getLogger(ExternalUserInvitationChrome.class.getName());
 
 
 
@@ -84,7 +84,7 @@ public class ExternaluserInvitationie {
 	 * Define className
 	 */
 
-	public static String className = ExternaluserInvitationie.class
+	public static String className = ExternalUserInvitationChrome.class
 			.getSimpleName();
 
 	
@@ -106,8 +106,8 @@ public class ExternaluserInvitationie {
 
 	{
 		
-		extent = ExtentManagerIE.getReporter(TestCaseProperties.REPORT_TEST_PATH_IE+"IEFullReport.html");
-		parent=extent.startTest("<b>Send invitation to externalUser Test in IE</b>","This is external User invitation Test,<b>Create the site,Send invitation to external user,Delete the site</b>");
+		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
+		parent=extent.startTest("<b>Send invitation to externalUser Test in Chrome</b>","This is external User invitation Test,<b>Create the site,Send invitation to external user,Delete the site</b>");
 		System.out.println("Testcase started");
 		
 
@@ -117,7 +117,7 @@ public class ExternaluserInvitationie {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("IE", "WINDOWS");
+				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -136,8 +136,8 @@ public class ExternaluserInvitationie {
 	 * @throws Exception InterruptedException, IOException
 	 */
 	
-	@Parameters({"siteIE","siteIdIE","siteCreatorNameIE","expectedResultIE","isPrivateIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "Create user in IE",priority = 1)
+	@Parameters({"siteChrome","siteIdChrome","siteCreatorNameChrome","expectedResultChrome","isPrivateChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 1)
 	public void createSite(String siteName,String siteId,String siteCreatorName,String expectedResult,
 			Boolean isPrivate,String screenShotName) throws InterruptedException, IOException
 	{
@@ -175,7 +175,7 @@ public class ExternaluserInvitationie {
              createObjects.createPrivateSite(siteName, siteId,expectedResult+ "private2");
 			
              TakeScreenShot ts=new TakeScreenShot();
-      	   	ts.takeScreenShotIE(driver,className, screenShotName+"195");
+      	   	ts.takeScreenShot(driver,className, screenShotName+"195");
       	   	child1.log(LogStatus.PASS, "Snapshot below:" +child1.addScreenCapture("./"+className+"/"+screenShotName+"195"+".png"));
       	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
              extent.flush();    
@@ -244,7 +244,7 @@ public class ExternaluserInvitationie {
 				child1.log(LogStatus.FAIL,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts1=new TakeScreenShot();
-	     	   	ts1.takeScreenShotIE(driver,className, screenShotName+"196");
+	     	   	ts1.takeScreenShot(driver,className, screenShotName+"196");
 	     	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"196"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    
@@ -256,7 +256,7 @@ public class ExternaluserInvitationie {
 				child1.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts3=new TakeScreenShot();
-	     	   	ts3.takeScreenShotIE(driver,className, screenShotName+"197");
+	     	   	ts3.takeScreenShot(driver,className, screenShotName+"197");
 	     	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"197"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    
@@ -296,7 +296,7 @@ public class ExternaluserInvitationie {
                     child1.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
                     TakeScreenShot ts4=new TakeScreenShot();
-             	   	ts4.takeScreenShotIE(driver,className, screenShotName+"198");
+             	   	ts4.takeScreenShot(driver,className, screenShotName+"198");
              	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"198"+".png"));
              	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                     extent.flush();    
@@ -311,7 +311,7 @@ public class ExternaluserInvitationie {
                         child1.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
                         TakeScreenShot ts5=new TakeScreenShot();
-                 	   	ts5.takeScreenShotIE(driver,className, screenShotName+"199");
+                 	   	ts5.takeScreenShot(driver,className, screenShotName+"199");
                  	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"199"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();    
@@ -323,7 +323,7 @@ public class ExternaluserInvitationie {
                         
                         
                         TakeScreenShot ts6=new TakeScreenShot();
-                 	   	ts6.takeScreenShotIE(driver,className, screenShotName+"200");
+                 	   	ts6.takeScreenShot(driver,className, screenShotName+"200");
                  	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"200"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();    	
@@ -353,7 +353,7 @@ public class ExternaluserInvitationie {
 			child1.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"201");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"201");
      	   	child1.log(LogStatus.INFO, "User is created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"201"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
@@ -376,7 +376,7 @@ public class ExternaluserInvitationie {
 	        	child1.log(LogStatus.PASS, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"202");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"202");
 	     	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"202"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();    	
@@ -397,7 +397,7 @@ public class ExternaluserInvitationie {
 	        	child1.log(LogStatus.FAIL, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotIE(driver,className, screenShotName+"203");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"203");
 	     	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"203"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush(); 
@@ -427,7 +427,7 @@ public class ExternaluserInvitationie {
 			child1.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"204");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"204");
      	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"204"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -441,7 +441,7 @@ public class ExternaluserInvitationie {
                             child1.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShotIE(driver,className, screenShotName+"205");
+                     	   	ts.takeScreenShot(driver,className, screenShotName+"205");
                      	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"205"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
@@ -453,7 +453,7 @@ public class ExternaluserInvitationie {
                             child1.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                             TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShotIE(driver,className, screenShotName+"206");
+                     	   	ts.takeScreenShot(driver,className, screenShotName+"206");
                      	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"206"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush(); 
@@ -483,8 +483,8 @@ public class ExternaluserInvitationie {
 	 * @throws Exception InterruptedException, IOException
 	 */
 	
-	@Parameters({"firstNameIE","lastNameIE","userNameIE","PasswordIE","siteIE","siteIdIE","roleNameIE","emailIE","expectedResultIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "sendSiteInvitationToExternallUser in IE",priority = 2)
+	@Parameters({"firstNameChrome","lastNameChrome","userNameChrome","PasswordChrome","siteChrome","siteIdChrome","roleNameChrome","emailChrome","expectedResultChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "sendSiteInvitationToExternallUser in Chrome",priority = 2)
     public void sendSiteinvitationToexternallUser(String firstName, String lastName, String userName, String password, String siteName,String siteId,
 			String roleName,String email, String expectedResult,String screenShotName) throws InterruptedException, IOException
     {
@@ -577,7 +577,7 @@ public class ExternaluserInvitationie {
             LOGGER.info("The invitation has been received!");
             child2.log(LogStatus.PASS, "The invitation has been received!");
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"207");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"207");
      	   	child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"207"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -587,7 +587,7 @@ public class ExternaluserInvitationie {
             LOGGER.info("The invitation was not found!");
             child2.log(LogStatus.FAIL, "The invitation was not found!");
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"208");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"208");
      	   	child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"208"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -616,8 +616,8 @@ public class ExternaluserInvitationie {
 	 * @throws Exception InterruptedException, IOException
 	 */	 
 	
-	@Parameters({"siteIE", "siteIdIE","screenShotNameIE" })
-	@Test(retryAnalyzer=IERetryAnalyzer.class,testName = "DeleteSite in IE",priority = 4)
+	@Parameters({"siteChrome", "siteIdChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "DeleteSite in Chrome",priority = 4)
     public void deleteSite(String siteName,String siteId,
 			String screenShotName) throws InterruptedException, IOException
     {
@@ -686,7 +686,7 @@ public class ExternaluserInvitationie {
 		Thread.sleep(2000);
                 
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShotIE(driver,className, screenShotName+"210");
+ 	   	ts.takeScreenShot(driver,className, screenShotName+"210");
  	   	child3.log(LogStatus.PASS, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"210"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush();  
@@ -704,7 +704,7 @@ public class ExternaluserInvitationie {
 			child3.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"211");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"211");
      	   	child3.log(LogStatus.PASS, "Site is Deleted : " +child3.addScreenCapture("./"+className+"/"+screenShotName+"211"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -715,13 +715,11 @@ public class ExternaluserInvitationie {
 			child3.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShotIE(driver,className, screenShotName+"A18");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
      	   	child3.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
-		}
-			
-		
+		}		
 		else{
 			Element.waitUntilElementPresent(driver, By.xpath("//div//div//table//tbody//tr[contains(.,'" + siteId
 					+ "')]//td//div"));
@@ -738,7 +736,7 @@ public class ExternaluserInvitationie {
 			LOGGER.info(siteName+ "SITE IS NOT DELETED");
 			child3.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 			TakeScreenShot ts2=new TakeScreenShot();
-     	   	ts2.takeScreenShotIE(driver,className, screenShotName+"212");
+     	   	ts2.takeScreenShot(driver,className, screenShotName+"212");
      	   	child3.log(LogStatus.FAIL, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"212"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -748,7 +746,7 @@ public class ExternaluserInvitationie {
 			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
 			child3.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 			TakeScreenShot ts3=new TakeScreenShot();
-     	   	ts3.takeScreenShotIE(driver,className, screenShotName+"213");
+     	   	ts3.takeScreenShot(driver,className, screenShotName+"213");
      	   	child3.log(LogStatus.PASS, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"213"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -767,6 +765,8 @@ public class ExternaluserInvitationie {
                 extent.flush();
 		
     }
+	
+	
 	
    
 	@AfterMethod

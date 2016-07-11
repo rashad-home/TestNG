@@ -38,7 +38,7 @@ import com.zaizi.automation.testng.core.elements.TakeScreenShot;
   */
 
 
-public class MaindashboardtestChrome {
+public class MainDashBoardTestChrome {
 
 	
 	/**
@@ -47,7 +47,7 @@ public class MaindashboardtestChrome {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(MaindashboardtestChrome.class.getName());
+			.getLogger(MainDashBoardTestChrome.class.getName());
 
 	
 	/**
@@ -72,7 +72,7 @@ public class MaindashboardtestChrome {
 	 * Define className
 	 */
 
-	public static String className = MaindashboardtestChrome.class
+	public static String className = MainDashBoardTestChrome.class
 			.getSimpleName();
 
 	

@@ -35,8 +35,8 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
 import com.zaizi.automation.alfresco.core.pages.SearchObjects;
 import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
-import com.zaizi.automation.extentReports.ExtentManagerFF;
-import com.zaizi.automation.listeners.FFRetryAnalyzer;
+import com.zaizi.automation.extentReports.ExtentManagerChrome;
+import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
 import com.zaizi.automation.testng.core.elements.Button;
 import com.zaizi.automation.testng.core.elements.Element;
 import com.zaizi.automation.testng.core.elements.Span;
@@ -52,7 +52,7 @@ import com.zaizi.automation.testng.core.elements.TextField;
   * @author mrashad@zaizi.com
   */
 
-public class InternaluserinvitationsFf  {
+public class InternalUserInvitationsChrome  {
 
 	
 	/**
@@ -61,7 +61,7 @@ public class InternaluserinvitationsFf  {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(InternaluserinvitationsFf.class.getName());
+			.getLogger(InternalUserInvitationsChrome.class.getName());
 
 	
 	/**
@@ -91,7 +91,7 @@ public class InternaluserinvitationsFf  {
 	 * Define className
 	 */
 
-	public static String className = InternaluserinvitationsFf.class
+	public static String className = InternalUserInvitationsChrome.class
 			.getSimpleName();
 
 	
@@ -113,8 +113,8 @@ public class InternaluserinvitationsFf  {
 
 	{
 		
-		extent = ExtentManagerFF.getReporter(TestCaseProperties.REPORT_TEST_PATH_FF+"FFFullReport.html");
-		parent=extent.startTest("<b>Send invitation to internalUser Test in FF</b>","This is internal User invitation Test,<b>Create the user,Create the site,Send invitation to internal user,Delete the user,Delete the site</b>");
+		extent = ExtentManagerChrome.getReporter(TestCaseProperties.REPORT_TEST_PATH_CHROME+"chromeFullReport.html");
+		parent=extent.startTest("<b>Send invitation to internalUser Test in Chrome</b>","This is internal User invitation Test,<b>Create the user,Create the site,Send invitation to internal user,Delete the user,Delete the site</b>");
 		System.out.println("Testcase started");
 		
 	}
@@ -123,7 +123,7 @@ public class InternaluserinvitationsFf  {
 	@BeforeMethod(alwaysRun=true)
 	public static void beforemethod() throws MalformedURLException{
 				//Set the DriverType(BrowserName,Platform)
-				driver = TestCaseProperties.driverType("Firefox", "WINDOWS");
+				driver = TestCaseProperties.driverType("Chrome", "WINDOWS");
 				
 				driver.manage().window().setSize(new Dimension(1920, 1920));
 				
@@ -140,14 +140,14 @@ public class InternaluserinvitationsFf  {
 
 	
 
-	@Parameters({"firstNameFF", "lastNameFF","emailFF","userNameFF","PasswordFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 1)
+	@Parameters({"firstNameChrome", "lastNameChrome","emailChrome","userNameChrome","PasswordChrome","fullNameChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 1)
 	public void createUser(String firstName,String lastName,String email,String userName,String password,String fullName,String screenShotName) throws InterruptedException, IOException
 
 	{
 
 		
-		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in FF "+userName);
+		LOGGER.info(TestCaseProperties.TEXT_TEST_EXECUTING, "Create User in Chrome "+userName);
 
 		//Extent Report Start Configuration(testCaseName,Definition of testCase)
 		child1 = extent.startTest("Create new User","Create new user : \" "+userName+" \"");
@@ -193,7 +193,7 @@ public class InternaluserinvitationsFf  {
             child1.log(LogStatus.INFO, "<font color=blue>Message display as : "+notification.getText()+"<font>");
             
             TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"1");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"1");
      	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"1"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -213,7 +213,7 @@ public class InternaluserinvitationsFf  {
         	child1.log(LogStatus.INFO, "<font color=green>User is Successfully Created<font>");
         	
         	TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"2");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"2");
      	   	child1.log(LogStatus.INFO, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"2"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();          
@@ -254,7 +254,7 @@ public class InternaluserinvitationsFf  {
  			child1.log(LogStatus.PASS, "<font color=green>User is Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.PASS, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();    	
@@ -264,7 +264,7 @@ public class InternaluserinvitationsFf  {
  			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
  			
  			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"3");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"3");
      	   	child1.log(LogStatus.FAIL, "Snapshot below: " +child1.addScreenCapture("./"+className+"/"+screenShotName+"3"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();   
@@ -280,7 +280,7 @@ public class InternaluserinvitationsFf  {
   			child1.log(LogStatus.FAIL, "<font color=RED>User is NOT Sucessfully Created<font>");
   			
   			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"4");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"4");
      	   	child1.log(LogStatus.FAIL, "User is NOT created : " +child1.addScreenCapture("./"+className+"/"+screenShotName+"4"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();        
@@ -308,8 +308,8 @@ public class InternaluserinvitationsFf  {
 	 * @throws Exception InterruptedException, IOException
 	 */
 
-	@Parameters({"siteFF", "siteIdFF", "siteCreatorNameFF","expectedResultFF","isPrivateFF", "screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "createSite in FF",priority = 2)
+	@Parameters({"siteChrome", "siteIdChrome", "siteCreatorNameChrome","expectedResultChrome","isPrivateChrome", "screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "createSite in Chrome",priority = 2)
     public void createSite(String siteName,String siteId,String siteCreatorName,String expectedResult,
 			Boolean isPrivate,String screenShotName) throws InterruptedException, IOException
     {
@@ -350,7 +350,7 @@ public class InternaluserinvitationsFf  {
 			
                         WebDriver augmentedDriver1 = new Augmenter().augment(driver);
 		        File screenshot1 = ((TakesScreenshot)augmentedDriver1).getScreenshotAs(OutputType.FILE);
-		    	FileUtils.copyFile(screenshot1, new File(TestCaseProperties.REPORT_TEST_PATH_FF+className+"/"+screenShotName+"171"+".jpg"));	
+		    	FileUtils.copyFile(screenshot1, new File(TestCaseProperties.REPORT_TEST_PATH_CHROME+className+"/"+screenShotName+"171"+".jpg"));	
 		    	child2.log(LogStatus.INFO, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"171"+".jpg"));  		
 		        System.out.println("Screenshot Taken Successfully!!!!"); 
                         
@@ -418,7 +418,7 @@ public class InternaluserinvitationsFf  {
 				child2.log(LogStatus.FAIL,"<font color=blue>"+siteName+ " SITE IS NOT VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"172");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"172");
 	     	   	child2.log(LogStatus.FAIL, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"172"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -430,7 +430,7 @@ public class InternaluserinvitationsFf  {
 				child2.log(LogStatus.INFO,"<font color=blue>"+siteName+ " SITE IS VISIBLE TO "+siteCreatorName+"<font>");
                                 
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"172");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"172");
 	     	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"173"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -470,7 +470,7 @@ public class InternaluserinvitationsFf  {
                     child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                     
                     TakeScreenShot ts=new TakeScreenShot();
-             	   	ts.takeScreenShotFF(driver,className, screenShotName+"174");
+             	   	ts.takeScreenShot(driver,className, screenShotName+"174");
              	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"174"+".png"));
              	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                     extent.flush();   
@@ -485,7 +485,7 @@ public class InternaluserinvitationsFf  {
                         child2.log(LogStatus.FAIL,siteName+ " SITE IS VISIBLE TO UNJOIN USER \"privateuser\"");
                         
                         TakeScreenShot ts=new TakeScreenShot();
-                 	   	ts.takeScreenShotFF(driver,className, screenShotName+"175");
+                 	   	ts.takeScreenShot(driver,className, screenShotName+"175");
                  	   	child2.log(LogStatus.FAIL, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"175"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();  
@@ -495,7 +495,7 @@ public class InternaluserinvitationsFf  {
                         LOGGER.info(siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER");
                         child2.log(LogStatus.PASS,siteName+ " SITE IS NOT VISIBLE TO UNJOIN USER \"privateuser\"");
                         TakeScreenShot ts=new TakeScreenShot();
-                 	   	ts.takeScreenShotFF(driver,className, screenShotName+"176");
+                 	   	ts.takeScreenShot(driver,className, screenShotName+"176");
                  	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"176"+".png"));
                  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                         extent.flush();  
@@ -516,7 +516,7 @@ public class InternaluserinvitationsFf  {
              child2.log(LogStatus.INFO,"Click \"OK\" Button ");
              
 			createObjects.createPublicSite(siteName, siteId, expectedResult);
-                        Thread.sleep(5000);
+                    Thread.sleep(5000);    
                                                 
                         //If Site Created
 	    if(Element.isElementPresent(driver, By.xpath("//h1[@id='HEADER_TITLE']/a[text()='"+siteName+"']")))
@@ -525,7 +525,7 @@ public class InternaluserinvitationsFf  {
 			child2.log(LogStatus.INFO, "<font color=blue>Site "+siteName +" CREATED <font> ");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"177");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"177");
      	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"177"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -548,7 +548,7 @@ public class InternaluserinvitationsFf  {
 	        	child2.log(LogStatus.PASS, "Current Test Results : " +"<font color=green>" +siteErrorNotification+"<font>");	        	
 
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"178");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"178");
 	     	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"178"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -569,7 +569,7 @@ public class InternaluserinvitationsFf  {
 	        	child2.log(LogStatus.FAIL, "Current Test Results : " +"<font color=red>" +siteErrorNotification+"<font>");        	
 	        	
 	        	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"179");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"179");
 	     	   	child2.log(LogStatus.FAIL, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"179"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -599,7 +599,7 @@ public class InternaluserinvitationsFf  {
 			child2.log(LogStatus.INFO, "Message display as \"No sites found\"");
                         
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"180");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"180");
      	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"180"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -613,7 +613,7 @@ public class InternaluserinvitationsFf  {
                             child2.log(LogStatus.PASS, "<font color=green>Site is Display in \"Site Search\"<font>");
                             
                         	TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShotFF(driver,className, screenShotName+"181");
+                     	   	ts.takeScreenShot(driver,className, screenShotName+"181");
                      	   	child2.log(LogStatus.PASS, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"181"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush();  
@@ -625,7 +625,7 @@ public class InternaluserinvitationsFf  {
                             child2.log(LogStatus.FAIL, "<font color=red>Site is NOT Display in \"Site Search\"<font>");
                             
                         	TakeScreenShot ts=new TakeScreenShot();
-                     	   	ts.takeScreenShotFF(driver,className, screenShotName+"182");
+                     	   	ts.takeScreenShot(driver,className, screenShotName+"182");
                      	   	child2.log(LogStatus.FAIL, "Snapshot below: " +child2.addScreenCapture("./"+className+"/"+screenShotName+"182"+".png"));
                      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
                             extent.flush();  
@@ -654,8 +654,8 @@ public class InternaluserinvitationsFf  {
 	 */
 	
 	
-	@Parameters({"firstNameFF","userNameFF","siteFF", "siteIdFF","roleNameFF","expectedInvitationresultFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in FF",priority = 3)
+	@Parameters({"firstNameChrome","userNameChrome","siteChrome", "siteIdChrome","roleNameChrome","expectedInvitationresultChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "sendSiteInvitationtointernalUser in Chrome",priority = 3)
     public void sendSiteinvitationtoInternaluser(String firstName,String userName, String siteName,String siteId,
 			String roleName,String expectedInvitationresult,String screenShotName) throws InterruptedException, IOException
     {
@@ -679,9 +679,9 @@ public class InternaluserinvitationsFf  {
 		loginPage.loginAsAdmin();
 		Element.waitForLoad(driver);
 
-		LOGGER.info("Test case sendSiteInvitation started executing");
+		LOGGER.info("Test case c_sendSiteInvitation started executing");
 		child3.log(LogStatus.INFO,
-				"Test case sendSiteInvitation started executing");
+				"Test case c_sendSiteInvitation started executing");
 
 		//Check whether Invite Option is Available For InternalUsers
 		
@@ -724,7 +724,7 @@ public class InternaluserinvitationsFf  {
 						+ "<font color=green>" + str1 + "<font>");
 				
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"183");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"183");
 	     	   	child3.log(LogStatus.PASS, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"183"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -742,7 +742,7 @@ public class InternaluserinvitationsFf  {
 						+ "<font color=red>" + str1 + "<font>");
 				
 				TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"184");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"184");
 	     	   	child3.log(LogStatus.PASS, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"184"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -757,7 +757,7 @@ public class InternaluserinvitationsFf  {
 					"\"Search for People \" OPTION IS NOT AVAILABLE for INTERNAL USERS ");
 			
 			TakeScreenShot ts=new TakeScreenShot();
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"185");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"185");
      	   	child3.log(LogStatus.PASS, "Snapshot below: " +child3.addScreenCapture("./"+className+"/"+screenShotName+"185"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -782,8 +782,8 @@ public class InternaluserinvitationsFf  {
 	 * @throws Exception InterruptedException, IOException
 	 */	 
 	
-	@Parameters({"siteFF", "siteIdFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "DeleteSite in FF",priority = 4)
+	@Parameters({"siteChrome", "siteIdChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "DeleteSite in Chrome",priority = 4)
     public void deleteSite(String siteName,String siteId,
 			String screenShotName) throws InterruptedException, IOException
     {
@@ -853,7 +853,7 @@ public class InternaluserinvitationsFf  {
 		Thread.sleep(2000);
                 
 		TakeScreenShot ts=new TakeScreenShot();
- 	   	ts.takeScreenShotFF(driver,className, screenShotName+"186");
+ 	   	ts.takeScreenShot(driver,className, screenShotName+"186");
  	   	child4.log(LogStatus.PASS, "Snapshot below: " +child4.addScreenCapture("./"+className+"/"+screenShotName+"186"+".png"));
  	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
         extent.flush();  
@@ -871,7 +871,7 @@ public class InternaluserinvitationsFf  {
 			child4.log(LogStatus.PASS, siteName+" SITE IS DELETED SUCCESSFULLY");
 			
 			
-     	   	ts.takeScreenShotFF(driver,className, screenShotName+"187");
+     	   	ts.takeScreenShot(driver,className, screenShotName+"187");
      	   	child4.log(LogStatus.PASS, "Site is Deleted : " +child4.addScreenCapture("./"+className+"/"+screenShotName+"187"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush(); 
@@ -882,7 +882,7 @@ public class InternaluserinvitationsFf  {
 			child4.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED SUCCESSFULLY");
 			
 			
-	 	   	ts.takeScreenShotFF(driver,className, screenShotName+"A18");
+	 	   	ts.takeScreenShot(driver,className, screenShotName+"A18");
 	 	   	child4.log(LogStatus.FAIL, "Site is NOT Deleted : " +child2.addScreenCapture("./"+className+"/"+screenShotName+"A18"+".png"));
 	 	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	        extent.flush(); 
@@ -903,7 +903,7 @@ public class InternaluserinvitationsFf  {
 			LOGGER.info(siteName+ "SITE IS NOT DELETED");
 			child4.log(LogStatus.FAIL, siteName+" SITE IS NOT DELETED");
 			TakeScreenShot ts2=new TakeScreenShot();
-     	   	ts2.takeScreenShotFF(driver,className, screenShotName+"188");
+     	   	ts2.takeScreenShot(driver,className, screenShotName+"188");
      	   	child4.log(LogStatus.FAIL, "Snapshot below: " +child4.addScreenCapture("./"+className+"/"+screenShotName+"188"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -913,7 +913,7 @@ public class InternaluserinvitationsFf  {
 			LOGGER.info(siteName+" SITE IS DELETED SUCCESSFULLY");
 			child4.log(LogStatus.PASS, siteName+"SITE IS DELETED SUCCESSFULLY");
 			TakeScreenShot ts3=new TakeScreenShot();
-     	   	ts3.takeScreenShotFF(driver,className, screenShotName+"189");
+     	   	ts3.takeScreenShot(driver,className, screenShotName+"189");
      	   	child4.log(LogStatus.PASS, "Snapshot below: " +child4.addScreenCapture("./"+className+"/"+screenShotName+"189"+".png"));
      	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
             extent.flush();  
@@ -943,8 +943,8 @@ public class InternaluserinvitationsFf  {
      */
 	
 	
-	@Parameters({"firstNameFF", "userNameFF", "lastNameFF","emailFF","fullNameFF","screenShotNameFF" })
-	@Test(retryAnalyzer=FFRetryAnalyzer.class,testName = "Create user in FF",priority = 5)
+	@Parameters({"firstNameChrome", "userNameChrome", "lastNameChrome","emailChrome","fullNameChrome","screenShotNameChrome" })
+	@Test(retryAnalyzer=ChromeRetryAnalyzer.class,testName = "Create user in Chrome",priority = 5)
 	public void deleteUser(String firstName,String userName, String lastName,String email,String fullName,String screenShotName) throws InterruptedException, IOException
 
 
@@ -988,7 +988,7 @@ public class InternaluserinvitationsFf  {
 			child5.log(LogStatus.INFO, "<font color=green>User "+firstName+" is exist <font>");
 			WebDriver augmentedDriver1 = new Augmenter().augment(driver);
 	        File screenshot1 = ((TakesScreenshot)augmentedDriver1).getScreenshotAs(OutputType.FILE);
-	    	FileUtils.copyFile(screenshot1, new File(TestCaseProperties.REPORT_TEST_PATH_FF+className+"/"+screenShotName+"192"+".jpg"));	
+	    	FileUtils.copyFile(screenshot1, new File(TestCaseProperties.REPORT_TEST_PATH_CHROME+className+"/"+screenShotName+"192"+".jpg"));	
 	    	child5.log(LogStatus.INFO, "Snapshot below: " +child5.addScreenCapture("./"+className+"/"+screenShotName+"192"+".jpg"));  		
 	        System.out.println("Screenshot Taken Successfully!!!!");  
 	            
@@ -1029,7 +1029,7 @@ public class InternaluserinvitationsFf  {
 		    	child5.log(LogStatus.FAIL, "<font color=red>User "+firstName+" IS NOT DELETED<font>");
 		    	
 		    	TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"190");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"190");
 	     	   	child5.log(LogStatus.FAIL, "Snapshot below: " +child5.addScreenCapture("./"+className+"/"+screenShotName+"190"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
@@ -1042,7 +1042,7 @@ public class InternaluserinvitationsFf  {
 		        child5.log(LogStatus.PASS, "<font color=green>User "+firstName+" IS SUCCESSFULLY DELETED<font>");
 		        
 		        TakeScreenShot ts=new TakeScreenShot();
-	     	   	ts.takeScreenShotFF(driver,className, screenShotName+"191");
+	     	   	ts.takeScreenShot(driver,className, screenShotName+"191");
 	     	   	child5.log(LogStatus.PASS, "Snapshot below: " +child5.addScreenCapture("./"+className+"/"+screenShotName+"191"+".png"));
 	     	   	LOGGER.info("Screenshot Taken Successfully!!!!");  
 	            extent.flush();  
