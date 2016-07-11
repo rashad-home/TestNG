@@ -52,7 +52,7 @@ import com.zaizi.automation.testng.core.elements.TextField;
   * @author mrashad@zaizi.com
   */
 
-public class InternalUserInvitationsFf  {
+public class InternalUserInvitationsFF  {
 
 	
 	/**
@@ -61,7 +61,7 @@ public class InternalUserInvitationsFf  {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(InternalUserInvitationsFf.class.getName());
+			.getLogger(InternalUserInvitationsFF.class.getName());
 
 	
 	/**
@@ -91,7 +91,7 @@ public class InternalUserInvitationsFf  {
 	 * Define className
 	 */
 
-	public static String className = InternalUserInvitationsFf.class
+	public static String className = InternalUserInvitationsFF.class
 			.getSimpleName();
 
 	

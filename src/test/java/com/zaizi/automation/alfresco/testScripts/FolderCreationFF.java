@@ -38,7 +38,7 @@ import com.zaizi.automation.testng.core.elements.Span;
 import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 import com.zaizi.automation.testng.core.elements.TextField;
 
-public class FolderCreationFf {
+public class FolderCreationFF {
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class FolderCreationFf {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(FolderCreationFf.class.getName());
+			.getLogger(FolderCreationFF.class.getName());
 	
 	/**
 	 * 
@@ -73,7 +73,7 @@ public class FolderCreationFf {
 	 * Define className
 	 */
 
-	public static String className = FolderCreationFf.class
+	public static String className = FolderCreationFF.class
 			.getSimpleName();
 
 	

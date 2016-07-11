@@ -40,7 +40,7 @@ import com.zaizi.automation.testng.core.elements.TextField;
 * @author mrashad@zaizi.com
 */
 
-public class SiteDashboardTestFf {
+public class SiteDashboardTestFF {
 
 	
 	/**
@@ -49,7 +49,7 @@ public class SiteDashboardTestFf {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(SiteDashboardTestFf.class.getName());
+			.getLogger(SiteDashboardTestFF.class.getName());
 
 
 	
@@ -78,7 +78,7 @@ public class SiteDashboardTestFf {
 	 * Define className
 	 */
 
-	public static String className = SiteDashboardTestFf.class
+	public static String className = SiteDashboardTestFF.class
 			.getSimpleName();
 
 	
