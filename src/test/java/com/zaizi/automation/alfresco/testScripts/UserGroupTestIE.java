@@ -30,7 +30,7 @@ import com.zaizi.automation.testng.core.elements.Element;
 import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 import com.zaizi.automation.testng.core.elements.TextField;
 
-public class UserGroupTestIe {
+public class UserGroupTestIE {
 
 	
 	/**
@@ -39,7 +39,7 @@ public class UserGroupTestIe {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(UserGroupTestIe.class.getName());
+			.getLogger(UserGroupTestIE.class.getName());
 	
 	/**
 	 * 
@@ -65,7 +65,7 @@ public class UserGroupTestIe {
 	 * Define className
 	 */
 
-	public static String className = UserGroupTestIe.class
+	public static String className = UserGroupTestIE.class
 			.getSimpleName();
 
 	

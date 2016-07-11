@@ -46,7 +46,7 @@ import com.zaizi.automation.testng.core.elements.TextField;
 
 
 
-public class ExternalUserInvitationIe {
+public class ExternalUserInvitationIE {
 
 	
 	/**
@@ -55,7 +55,7 @@ public class ExternalUserInvitationIe {
 	 */
 
 	public static final Logger LOGGER = LogManager
-			.getLogger(ExternalUserInvitationIe.class.getName());
+			.getLogger(ExternalUserInvitationIE.class.getName());
 
 
 
@@ -84,7 +84,7 @@ public class ExternalUserInvitationIe {
 	 * Define className
 	 */
 
-	public static String className = ExternalUserInvitationIe.class
+	public static String className = ExternalUserInvitationIE.class
 			.getSimpleName();
 
 	
