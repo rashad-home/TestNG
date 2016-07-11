@@ -6,8 +6,8 @@ package com.zaizi.automation.alfresco.core.pages;
 
 import java.io.IOException;
 
+import com.zaizi.automation.testng.core.elements.*;
 import com.zaizi.automation.zaiziautomationapi.core.ZaiziPageObject;
-import com.zaizi.automation.alfresco.core.elements.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

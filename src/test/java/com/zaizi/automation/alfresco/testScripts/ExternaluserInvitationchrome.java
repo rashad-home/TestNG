@@ -23,11 +23,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 
-import com.zaizi.automation.alfresco.core.elements.Button;
-import com.zaizi.automation.alfresco.core.elements.Element;
-import com.zaizi.automation.alfresco.core.elements.Span;
-import com.zaizi.automation.alfresco.core.elements.TakeScreenShot;
-import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.CreateObjects;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
@@ -37,6 +32,11 @@ import com.zaizi.automation.alfresco.core.pages.SearchObjects;
 import com.zaizi.automation.alfresco.core.pages.SiteDashboardPage;
 import com.zaizi.automation.extentReports.ExtentManagerChrome;
 import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
+import com.zaizi.automation.testng.core.elements.Button;
+import com.zaizi.automation.testng.core.elements.Element;
+import com.zaizi.automation.testng.core.elements.Span;
+import com.zaizi.automation.testng.core.elements.TakeScreenShot;
+import com.zaizi.automation.testng.core.elements.TextField;
 
 
 /**

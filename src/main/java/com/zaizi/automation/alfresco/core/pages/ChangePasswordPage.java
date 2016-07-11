@@ -12,8 +12,8 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 
-import com.zaizi.automation.alfresco.core.elements.*;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
+import com.zaizi.automation.testng.core.elements.*;
 
 
 

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with AlfrescoBasicFunctionalityTestingScripts.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.zaizi.automation.alfresco.core.elements;
+package com.zaizi.automation.testng.core.elements;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

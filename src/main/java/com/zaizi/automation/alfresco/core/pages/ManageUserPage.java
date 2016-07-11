@@ -4,8 +4,8 @@
  */
 package com.zaizi.automation.alfresco.core.pages;
 
-import com.zaizi.automation.alfresco.core.elements.*;
 import com.zaizi.automation.alfresco.core.info.*;
+import com.zaizi.automation.testng.core.elements.*;
 import com.zaizi.automation.zaiziautomationapi.core.*;
 
 import org.openqa.selenium.By;

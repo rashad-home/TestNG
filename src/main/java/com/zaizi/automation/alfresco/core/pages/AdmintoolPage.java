@@ -13,12 +13,11 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
-import com.zaizi.automation.alfresco.core.elements.Button;
-import com.zaizi.automation.alfresco.core.elements.Element;
-import com.zaizi.automation.alfresco.core.elements.Span;
-import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
+import com.zaizi.automation.testng.core.elements.Button;
+import com.zaizi.automation.testng.core.elements.Element;
+import com.zaizi.automation.testng.core.elements.Span;
+import com.zaizi.automation.testng.core.elements.TextField;
 
 
 /**

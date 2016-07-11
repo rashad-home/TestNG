@@ -1,4 +1,4 @@
-package com.zaizi.automation.alfresco.core.elements;
+package com.zaizi.automation.testng.core.elements;
 
 import java.util.concurrent.TimeUnit;
 

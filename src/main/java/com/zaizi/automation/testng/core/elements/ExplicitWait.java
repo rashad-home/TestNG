@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.zaizi.automation.alfresco.core.elements;
+package com.zaizi.automation.testng.core.elements;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

@@ -22,13 +22,13 @@ import org.testng.annotations.BeforeTest;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.zaizi.automation.alfresco.core.elements.Division;
-import com.zaizi.automation.alfresco.core.elements.TakeScreenShot;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.Dashboard;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
 import com.zaizi.automation.extentReports.ExtentManagerChrome;
 import com.zaizi.automation.listeners.ChromeRetryAnalyzer;
+import com.zaizi.automation.testng.core.elements.Division;
+import com.zaizi.automation.testng.core.elements.TakeScreenShot;
 
 
 

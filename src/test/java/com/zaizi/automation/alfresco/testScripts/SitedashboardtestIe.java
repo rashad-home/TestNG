@@ -22,10 +22,6 @@ import org.testng.annotations.BeforeTest;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import com.zaizi.automation.alfresco.core.elements.Button;
-import com.zaizi.automation.alfresco.core.elements.Element;
-import com.zaizi.automation.alfresco.core.elements.TakeScreenShot;
-import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
 import com.zaizi.automation.alfresco.core.pages.Dashboard;
 import com.zaizi.automation.alfresco.core.pages.LoginPage;
@@ -33,6 +29,10 @@ import com.zaizi.automation.alfresco.core.pages.NavigateToPage;
 import com.zaizi.automation.alfresco.core.pages.RemoveObjects;
 import com.zaizi.automation.extentReports.ExtentManagerIE;
 import com.zaizi.automation.listeners.IERetryAnalyzer;
+import com.zaizi.automation.testng.core.elements.Button;
+import com.zaizi.automation.testng.core.elements.Element;
+import com.zaizi.automation.testng.core.elements.TakeScreenShot;
+import com.zaizi.automation.testng.core.elements.TextField;
 
 
 /**

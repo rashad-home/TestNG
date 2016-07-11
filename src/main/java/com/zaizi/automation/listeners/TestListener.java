@@ -10,25 +10,18 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-
-
-
-
 /**
-*
-* @author mrashad@zaizi.com
-*/
-
+ *
+ * @author mrashad@zaizi.com
+ */
 
 public class TestListener implements ITestListener {
 
-	public static final Logger LOGGER = LogManager
-			.getLogger(TestListener.class.getName());
-	
-    public static WebDriver driver;
+	public static final Logger LOGGER = LogManager.getLogger(TestListener.class
+			.getName());
 
-	
-	
+	public static WebDriver driver;
+
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 
@@ -40,27 +33,22 @@ public class TestListener implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
 
-		
+		if (result.getStatus() == ITestResult.FAILURE) {
+			LOGGER.info("***** Error " + result.getName()
+					+ " test has failed *****");
 
-		
-		 if (result.getStatus() == ITestResult.FAILURE) {            
-             LOGGER.info("***** Error " + result.getName()
-                      + " test has failed *****");
-            
-         }
-        
+		}
+
 	}
 
-	
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		 if (result.getStatus() == ITestResult.SKIP) {
-            
-             LOGGER.info("***** Error " + result.getName()
-                      + " test has skiped *****");
-            
-         }
-         
+		if (result.getStatus() == ITestResult.SKIP) {
+
+			LOGGER.info("***** Error " + result.getName()
+					+ " test has skiped *****");
+
+		}
 
 	}
 
@@ -73,7 +61,6 @@ public class TestListener implements ITestListener {
 		// TODO Auto-generated method stub
 
 	}
-
 
 	public void onFinish(ITestContext context) {
 
@@ -88,13 +75,7 @@ public class TestListener implements ITestListener {
 				}
 			}
 		}
-		
-			
-					
+
 	}
-
-	
-
-	
 
 }

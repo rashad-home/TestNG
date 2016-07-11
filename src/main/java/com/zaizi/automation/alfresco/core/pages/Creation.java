@@ -11,11 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebElement;
 
-import com.zaizi.automation.alfresco.core.elements.Button;
-import com.zaizi.automation.alfresco.core.elements.Element;
-import com.zaizi.automation.alfresco.core.elements.Link;
-import com.zaizi.automation.alfresco.core.elements.TextField;
 import com.zaizi.automation.alfresco.core.info.TestCaseProperties;
+import com.zaizi.automation.testng.core.elements.Button;
+import com.zaizi.automation.testng.core.elements.Element;
+import com.zaizi.automation.testng.core.elements.Link;
+import com.zaizi.automation.testng.core.elements.TextField;
 
 
 
